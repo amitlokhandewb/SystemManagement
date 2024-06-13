@@ -1,0 +1,394 @@
+{
+
+    "assetData": [
+
+        {
+
+            "assetId": "cf7d8665-107e-4565-8316-fe78afb79394",
+
+            "assetName": "M580dPAC_1",
+
+            "assetType": "Controller",
+
+            "assetConnectedStatus": "Unavailable",
+
+            "assetHealthStatus": null,
+
+            "assetSecurityStatus": null,
+
+            "subAsset": [{
+
+                "assetId": "33030044-0146-4770-8478-9ae9fb8efd7a",
+
+                "assetName": "BME XBP 0800 #0",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": [{
+
+                    "assetId": "588ff480-a2ee-4199-bfec-ecc9333036a2",
+
+                    "assetName": "BME D58 1020 #0",
+
+                    "assetType": "Controller",
+
+                    "assetConnectedStatus": "Unavailable",
+
+                    "assetHealthStatus": null,
+
+                    "assetSecurityStatus": null,
+
+                    "subAsset": null
+
+                }]
+
+            }]
+
+        },
+
+        {
+
+            "assetId": "c00a7c91-76ec-4fad-9fbc-b7d7fb1d1c53",
+
+            "assetName": "M251dPAC_1",
+
+            "assetType": "Controller",
+
+            "assetConnectedStatus": "Unavailable",
+
+            "assetHealthStatus": null,
+
+            "assetSecurityStatus": null,
+
+            "subAsset": null
+
+        },
+
+        {
+
+            "assetId": "c0ecc4d0-a731-4f14-aa34-ebe8507786fc",
+
+            "assetName": "Server_1",
+
+            "assetType": "DCN",
+
+            "assetConnectedStatus": "Unavailable",
+
+            "assetHealthStatus": null,
+
+            "assetSecurityStatus": null,
+
+            "subAsset": [{
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            }
+
+        ]
+
+        },
+        {
+
+            "assetId": "cf7d8665-107e-4565-8316-fe78afb79394",
+
+            "assetName": "M580dPAC_1",
+
+            "assetType": "Controller",
+
+            "assetConnectedStatus": "Unavailable",
+
+            "assetHealthStatus": null,
+
+            "assetSecurityStatus": null,
+
+            "subAsset": [{
+
+                "assetId": "33030044-0146-4770-8478-9ae9fb8efd7a",
+
+                "assetName": "BME XBP 0800 #0",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": [{
+
+                    "assetId": "588ff480-a2ee-4199-bfec-ecc9333036a2",
+
+                    "assetName": "BME D58 1020 #0",
+
+                    "assetType": "Controller",
+
+                    "assetConnectedStatus": "Unavailable",
+
+                    "assetHealthStatus": null,
+
+                    "assetSecurityStatus": null,
+
+                    "subAsset": null
+
+                }]
+
+            }]
+
+        },
+
+        {
+
+            "assetId": "c00a7c91-76ec-4fad-9fbc-b7d7fb1d1c53",
+
+            "assetName": "M251dPAC_1",
+
+            "assetType": "Controller",
+
+            "assetConnectedStatus": "Unavailable",
+
+            "assetHealthStatus": null,
+
+            "assetSecurityStatus": null,
+
+            "subAsset": null
+
+        },
+
+        {
+
+            "assetId": "c0ecc4d0-a731-4f14-aa34-ebe8507786fc",
+
+            "assetName": "Server_1",
+
+            "assetType": "DCN",
+
+            "assetConnectedStatus": "Unavailable",
+
+            "assetHealthStatus": null,
+
+            "assetSecurityStatus": null,
+
+            "subAsset": [{
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            },
+
+            {
+
+                "assetId": "053da989-68af-4ee3-911a-1e81028a5036",
+
+                "assetName": "Softdpac_1",
+
+                "assetType": "Controller",
+
+                "assetConnectedStatus": "Unavailable",
+
+                "assetHealthStatus": null,
+
+                "assetSecurityStatus": null,
+
+                "subAsset": null
+
+            }
+
+        ]
+
+        }
+
+    ]
+
+}

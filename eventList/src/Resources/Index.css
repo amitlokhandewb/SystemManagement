@@ -1,0 +1,80 @@
+body {
+  background-color: #f7f7f7;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  justify-content: center;
+  text-align: center;
+}
+
+th {
+  background-color: white;
+  font-weight: bold;
+}
+.custmizebutton {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.custmizebutton:hover {
+  box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 50px;
+  height: 20px;
+  accent-color: forestgreen;
+  color: white;
+}
+
+.buttons button{
+    padding: 10px;
+    margin-top: 10px;
+    width: 100px;
+    margin-left: 5px;
+}
+.submitcustomize{
+    background-color: #3dcd54;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+.closecustomize{
+    background-color: #f4db4c;
+    color: black;
+    border: none;
+    border-radius: 20px;
+}
+.buttons{
+    display: flex;
+    justify-content: end;
+}
+.event-layout{
+    margin: 10px;
+    background-color: white;
+    padding: 20px;
+    width: 1770px;
+    height: 770px;
+    box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.item-x-center{
+    display: flex;
+    justify-content: center;
+}
+.table-layout{
+    height: 612px;
+    overflow-y: auto;
+}

@@ -1,0 +1,86 @@
+[
+
+    {
+  
+      "alertType": "Failure",
+  
+      "alertMessage": "A hardware failure has been detected on Mini computer Mini-X.",
+  
+      "alertTime": "2024-05-27T11:18:00.000Z",
+  
+      "deviceId": "Mini-X"
+  
+    },
+  
+    {
+  
+      "alertType": "MaintenanceRequired",
+  
+      "alertMessage": "Routine maintenance is due for Mini computer Mini-Y. Please schedule a service.",
+  
+      "alertTime": "2024-05-27T11:18:00.000Z",
+  
+      "deviceId": "Mini-Y"
+  
+    },
+  
+    {
+  
+      "alertType": "CheckFunction",
+  
+      "alertMessage": "Anomaly detected in Mini computer Mini-Z. Please investigate specific functionality.",
+  
+      "alertTime": "2024-05-27T11:18:00.000Z",
+  
+      "deviceId": "Mini-Z"
+  
+    },
+  
+    {
+  
+      "alertType": "OutOfSpecification",
+  
+      "alertMessage": "Mini computer Mini-W is operating outside expected performance parameters.",
+  
+      "alertTime": "2024-05-27T11:18:00.000Z",
+  
+      "deviceId": "Mini-W"
+  
+    },
+  
+    {
+  
+      "alertType": "Failure",
+  
+      "alertMessage": "Software crash detected on Mini computer Mini-D. Restart required.",
+  
+      "alertTime": "2024-05-27T11:22:00.000Z",
+  
+      "deviceId": "Mini-D"
+  
+    },
+  
+    {
+  
+      "alertType": "CheckFunction",
+  
+      "alertMessage": "Unusual data pattern detected in sensor readings from Mini computer Mini-E. Investigate potential issues.",
+  
+      "alertTime": "2024-05-27T11:23:00.000Z",
+  
+      "deviceId": "Mini-E"
+  
+    },
+  
+    {
+  
+      "alertType": "MaintenanceRequired",
+  
+      "alertMessage": "Security update available for Mini computer Mini-F. Please install to maintain system integrity.",
+  
+      "alertTime": "2024-05-27T11:24:00.000Z",
+  
+      "deviceId": "Mini-F"
+  
+    }
+  ]

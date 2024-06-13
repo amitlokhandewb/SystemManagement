@@ -1,0 +1,37 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+  <application name="@SET/appbar"></application>
+
+  <div style="display: flex">
+    <application  name="@SET/sidebar"></application>
+    <main>
+      <route default>
+        <div style="display: flex;">
+          <application name="@SET/monitor"></application>
+          <application name="@SET/assetinventory"></application>
+        </div>
+      </route>
+      <route path="maintainance-event">
+        <div style="display: flex;">
+          <application name="@SET/eventList"></application>
+        </div>
+      </route>
+    </main>
+  </div>
+</single-spa-router>

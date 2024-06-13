@@ -1,0 +1,65 @@
+{
+    "apiVersion": "string",
+    "response": {
+        "Device Name": "string",
+        "Device Type": "string",
+        "System": {
+            "Host": "Prakash Host",
+            "Manufacturer": "string",
+            "Model": "string",
+            "Serial Number": "string"
+        },
+        "Bios": {
+            "Version": "string",
+            "Boot Type": "string"
+        },
+        "Ethernet Interfaces": [
+            {
+                "Indicator Status": [
+                    {
+                        "Link Status": "Down"
+                    },
+                    {
+                        "Health": "OK"
+                    },
+                    {
+                        "Interface State": "Enabled"
+                    }
+                ],
+                "IPv4 Address": "string",
+                "Subnet": "string",
+                "Gateway": "string",
+                "IPv6 Address": "string",
+                "MAC Address": "string"
+            }
+        ],
+        "Processor": {
+            "Physical Processors": 0,
+            "Logical Processors": 0,
+            "Processors": [
+                {
+                    "Model": "string",
+                    "Architecture": "string",
+                    "Total Cores": 0,
+                    "Total Threads": 0,
+                    "Memory Type": "string",
+                    "Memory Size (MB)": 0
+                }
+            ]
+        },
+        "Memory": {
+            "Total System Memory (GB)": 0
+        },
+        "Operating System": {
+            "OS Name": "string",
+            "Kernel": "string",
+            "Kernel Release": "string",
+            "Kernel Version": "string"
+        }
+    },
+    "status": {
+        "isSuccessful": true,
+        "statusCode": 100,
+        "statusMessage": "string"
+    }
+}
