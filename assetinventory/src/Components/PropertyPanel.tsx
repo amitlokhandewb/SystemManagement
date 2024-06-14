@@ -42,6 +42,7 @@ function PropertyPanel({ setshowPropertyPanel }) {
               onClick={() => settab(false)}
               style={{
                 borderBottom: tab === false ? "2px solid rgb(21, 203, 54)" : "",
+                cursor: 'pointer'
               }}
             >
               Configuration
@@ -51,6 +52,7 @@ function PropertyPanel({ setshowPropertyPanel }) {
               onClick={() => settab(true)}
               style={{
                 borderBottom: tab === true ? "2px solid rgb(21, 203, 54)" : "",
+                cursor: 'pointer'
               }}
             >
               Health
@@ -60,7 +62,7 @@ function PropertyPanel({ setshowPropertyPanel }) {
             {tab === false && (
               <button
                 onClick={closeAllAccordions}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", border: 'none', padding: "5px" }}
               >
                 Close All
               </button>

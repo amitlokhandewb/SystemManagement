@@ -72,8 +72,14 @@ function CustomTable() {
     }),
     columnHelper.accessor("assetId", {
       header: "Asset ID",
-      cell: (info) => info.getValue(),
-      
+      cell: (info) => (
+        <div
+          onClick={() => setshowPropertyPanel(true)}
+          style={{ cursor: "pointer" }}
+        >
+          {info.getValue()}
+        </div>
+      ),
     }),
     columnHelper.accessor("assetType", {
       header: "Asset Type",
@@ -156,7 +162,6 @@ function CustomTable() {
                   style={{
                     backgroundColor: row.original.isExpanded ? "#f7f7f7" : "",
                   }}
-                  onClick={() => setshowPropertyPanel(true)}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <td key={cell.id}>

@@ -7,7 +7,13 @@ import { FiAlertTriangle } from "react-icons/fi";
 import { FaListCheck } from "react-icons/fa6";
 import { MdOutlineSpeakerNotesOff } from "react-icons/md";
 
-function CustomAccordion({ title, content,clickstate}) {
+function CustomAccordion({
+  title,
+  content,
+  clickstate,
+  setclickstate,
+  allClosed,
+}) {
   const [open, setOpen] = useState<Boolean>(false);
   const Icons = [
     {
@@ -38,8 +44,15 @@ function CustomAccordion({ title, content,clickstate}) {
       color: "gray",
     },
   ];
-
-
+  useEffect(() => {
+    if (clickstate === title) {
+      setOpen(true);
+      setclickstate("");
+    }
+  }, [clickstate]);
+  useEffect(() => {
+    setOpen(false);
+  }, [allClosed]);
 
   const geticonbytypeid = (id: string) => {
     return Icons.find((item) => item.alertType === id).icon;
@@ -47,7 +60,8 @@ function CustomAccordion({ title, content,clickstate}) {
   const geticoncolor = (id: string) => {
     return Icons.find((item) => item.alertType === id).color;
   };
-  console.log("content", content)
+  console.log("content", content);
+
   return (
     <div>
       <div

@@ -3,20 +3,24 @@ import Status from "../Resources/Status.json";
 import CustomAccordion from "./CustomAccordion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 function MonitorLayout() {
   const [data, setData] = useState(Status);
-  const [clickstate, setclickstate] = useState('');
-  const getBytypes = (typename: string) => {
-    var databyTYpe = data.filter((item) => item.alertType === typename);
-    return databyTYpe;
+  const [clickstate, setclickstate] = useState("");
+  const [allClosed, setAllClosed] = useState(false);
+
+  const getBytypes = (typename) => {
+    return data.filter((item) => item.alertType === typename);
   };
 
   useEffect(() => {
     ReturnrandomType(RandomIndex() - 1);
   }, [data]);
+
   function RandomIndex() {
     return Math.floor(Math.random() * 4) + 1;
   }
+
   function ReturnrandomType(x) {
     setTimeout(() => {
       const newdata = [
@@ -33,44 +37,39 @@ function MonitorLayout() {
       GetToast(newdata[0].alertType);
     }, 10000);
   }
-  const handleClickType = (alertType : string) => {
-    setclickstate(alertType);
-  }
+
+  const handleClickType = (alertType) => {
+    var found = diftypes.find((item) => item.type === alertType);
+    setclickstate(found.title);
+  };
+
   function GetToast(x) {
     const found = diftypes.find((item) => item.type === x);
     let itemmessagewitchcolor;
     if (found.id === 0) {
       itemmessagewitchcolor = toast.error(`${found.title} `, {
         position: "top-center",
-        onClick: () => handleClickType(found.type)
+        onClick: () => handleClickType(found.type),
       });
     } else if (found.id === 1) {
       itemmessagewitchcolor = toast.warning(`${found.title} `, {
         position: "top-center",
+        onClick: () => handleClickType(found.type),
       });
     } else if (found.id === 2) {
       itemmessagewitchcolor = toast.success(`${found.title} `, {
         position: "top-center",
+        onClick: () => handleClickType(found.type),
       });
     } else {
       itemmessagewitchcolor = toast.info(`${found.title} `, {
         position: "top-center",
+        onClick: () => handleClickType(found.type),
       });
     }
-    // switch (found.id) {
-    //   case 0:
-    //     itemmessagewitchcolor = toast.error(`${found.title} `);
-    //   case 1:
-    //     itemmessagewitchcolor = toast.warning(`${found.title} `);
-    //   case 2:
-    //     itemmessagewitchcolor = toast.success(`${found.title} `);
-    //   case 3:
-    //     itemmessagewitchcolor = toast.info(`${found.title} `);
-    //   default:
-    //     console.log('avsdvas')
-    // }
     return itemmessagewitchcolor;
   }
+
   let diftypes = [
     {
       id: 0,
@@ -93,6 +92,7 @@ function MonitorLayout() {
       type: "OutOfSpecification",
     },
   ];
+
   const renderMethods = () => {
     return (
       <>
@@ -102,12 +102,19 @@ function MonitorLayout() {
               title={item.title}
               content={getBytypes(item.type)}
               clickstate={clickstate}
+              setclickstate={setclickstate}
+              allClosed={allClosed}
             />
           </div>
         ))}
       </>
     );
   };
+
+  const closeAllAccordions = () => {
+    setAllClosed(!allClosed);
+  };
+
   return (
     <div>
       <div style={{ width: "400px" }} className="monitor">
@@ -130,12 +137,20 @@ function MonitorLayout() {
             ></div>
             Diagnostic Monitor
           </h3>
-          <div>
-            Sort:
-            <select>
-              <option value="">High</option>
-              <option value="">Low</option>
-            </select>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div>
+              Sort:
+              <select>
+                <option value="">High</option>
+                <option value="">Low</option>
+              </select>
+            </div>
+            <button
+              onClick={closeAllAccordions}
+              style={{ cursor: "pointer", border: "none", padding: "5px" }}
+            >
+              Close All
+            </button>
           </div>
         </div>
         {renderMethods()}
