@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import data from "../Resources/PropertyPanel.json";
 import { FaKey } from "react-icons/fa";
 import CustomAccordion from "./CustomeAccordion";
+import { TbLayoutBottombarExpandFilled } from "react-icons/tb";
+import { TbLayoutNavbarExpandFilled } from "react-icons/tb";
 
 function PropertyPanel({ setshowPropertyPanel }) {
   const [tab, settab] = useState(false);
@@ -28,6 +30,18 @@ function PropertyPanel({ setshowPropertyPanel }) {
       }, {})
     );
   }
+  function openAllAccordions() {
+    setAccordionStates(
+      Object.keys(accordionStates).reduce((acc, key) => {
+        acc[key] = true;
+        return acc;
+      }, {})
+    );
+  }
+
+  useEffect(() => {
+    openAllAccordions();
+  },[])
 
   function getResponse(data) {
     return (
@@ -36,7 +50,7 @@ function PropertyPanel({ setshowPropertyPanel }) {
         <h3>ASRock_DCN2</h3>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
-            <FaKey size={"15"} />
+            {/* <FaKey size={"15"} /> */}
             <span
               className="tab-row"
               onClick={() => settab(false)}
@@ -52,7 +66,8 @@ function PropertyPanel({ setshowPropertyPanel }) {
               onClick={() => settab(true)}
               style={{
                 borderBottom: tab === true ? "2px solid rgb(21, 203, 54)" : "",
-                cursor: 'pointer'
+                cursor: 'pointer',
+                marginLeft: '15px'
               }}
             >
               Health
@@ -60,12 +75,16 @@ function PropertyPanel({ setshowPropertyPanel }) {
           </div>
           <div>
             {tab === false && (
-              <button
-                onClick={closeAllAccordions}
-                style={{ cursor: "pointer", border: 'none', padding: "5px" }}
-              >
-                Close All
-              </button>
+              // <button
+              //   onClick={closeAllAccordions}
+              //   style={{ cursor: "pointer", border: 'none', padding: "5px" }}
+              // >
+              //   Close All
+              // </button>
+              <><TbLayoutNavbarExpandFilled onClick={openAllAccordions} size={25}  color="green"/>
+              <TbLayoutBottombarExpandFilled onClick={closeAllAccordions} size={25} color="green" /></>
+
+              
             )}
           </div>
         </div>
@@ -93,7 +112,7 @@ function PropertyPanel({ setshowPropertyPanel }) {
   }
 
   return (
-    <div className="property" style={{ width: "320px" }}>
+    <div className="property" style={{ width: "330px" }}>
       <div className="property-head">
         <div>{getResponse(data.response)}</div>
         <div>

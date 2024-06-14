@@ -65,6 +65,7 @@ function MonitorLayout() {
       itemmessagewitchcolor = toast.info(`${found.title} `, {
         position: "top-center",
         onClick: () => handleClickType(found.type),
+        className: 'grey-toast'
       });
     }
     return itemmessagewitchcolor;

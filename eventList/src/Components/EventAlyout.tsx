@@ -1,4 +1,3 @@
-// EventLayout.tsx
 import React, { useEffect, useState } from "react";
 import EventTable from "./EventTable";
 import Datafromjson from "../Resources/EventList.json";
@@ -12,8 +11,9 @@ import { ClipLoader } from "react-spinners";
 
 function EventLayout() {
   const visibleColumnKeys = ["eventDescription", "priority", "dateTime",'eventType'];
-  const initialVisibleColumns = allColumns.map((col) => ({
+  const initialVisibleColumns = allColumns.map((col, index) => ({
     ...col,
+    id: `column-${index}`, // Ensure each column has a unique id
     visible: visibleColumnKeys.includes(col.accessorKey),
   }));
 
@@ -46,6 +46,7 @@ function EventLayout() {
         setData(Datafromjson)
     }, 3000);
   }, []);
+
   return (
     <div className="event-layout">
       <h2>Event Table</h2>
@@ -59,6 +60,7 @@ function EventLayout() {
       </div>
       <Dialog
         tempVisibleColumns={tempVisibleColumns}
+        setTempVisibleColumns={setTempVisibleColumns} // Add this line
         toggleTempColumnVisibility={toggleTempColumnVisibility}
         handleSubmit={handleSubmit}
         setIsModalOpen={setIsModalOpen}

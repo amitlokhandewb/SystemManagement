@@ -31,6 +31,24 @@
                 "Gateway": "string",
                 "IPv6 Address": "string",
                 "MAC Address": "string"
+            },
+            {
+                "Indicator Status": [
+                    {
+                        "Link Status": "Down"
+                    },
+                    {
+                        "Health": "OK"
+                    },
+                    {
+                        "Interface State": "Enabled"
+                    }
+                ],
+                "IPv4 Address": "string",
+                "Subnet": "string",
+                "Gateway": "string",
+                "IPv6 Address": "string",
+                "MAC Address": "string"
             }
         ],
         "Processor": {

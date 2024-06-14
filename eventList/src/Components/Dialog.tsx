@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 import { IoMdClose } from "react-icons/io";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function Dialog({
   tempVisibleColumns,
+  setTempVisibleColumns,
   toggleTempColumnVisibility,
   handleSubmit,
   isModalOpen,
   setIsModalOpen
 }) {
 
+  const onDragEnd = (result) => {
+    if (!result.destination) {
+      return;
+    }
+
+    const reorderedColumns = Array.from(tempVisibleColumns);
+    const [movedColumn] = reorderedColumns.splice(result.source.index, 1);
+    reorderedColumns.splice(result.destination.index, 0, movedColumn);
+
+    setTempVisibleColumns(reorderedColumns);
+  };
+
   return (
-    <div >
+    <div>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
@@ -19,11 +33,10 @@ function Dialog({
         style={{
           overlay: {
             backgroundColor: "rgba(105, 104, 104, 0.75)",
-            
           },
           content: {
             width: "20%",
-            height: "38%",
+            height: "60%",
             margin: "auto",
             borderRadius: '10px'
           },
@@ -43,16 +56,41 @@ function Dialog({
             style={{ marginTop: "23px", marginRight: "20px" }}
           />
         </div>
-        {tempVisibleColumns.map((col, index) => (
-          <div key={index}>
-            <input
-              type="checkbox"
-              checked={col.visible}
-              onChange={() => toggleTempColumnVisibility(index)}
-            />
-            {col.header}
-          </div>
-        ))}
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId="columns">
+            {(provided) => (
+              <div {...provided.droppableProps} ref={provided.innerRef}>
+                {tempVisibleColumns.map((col, index) => (
+                  <Draggable key={col.id} draggableId={col.id} index={index}>
+                    {(provided) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        style={{
+                          userSelect: "none",
+                          padding: "8px",
+                          margin: "0 0 8px 0",
+                          borderRadius: "4px",
+                          background: "#fff",
+                          ...provided.draggableProps.style
+                        }}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={col.visible}
+                          onChange={() => toggleTempColumnVisibility(index)}
+                        />
+                        {col.header}
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
         <div className="buttons">
           <button onClick={handleSubmit} className="submitcustomize">
             Submit

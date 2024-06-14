@@ -7,7 +7,7 @@
   padding-bottom: 10px;
   padding-top: 10px;
   margin-bottom: 10px;
-   /* 5px rounded corners */
+  /* 5px rounded corners */
 }
 .container {
   padding: 2px 16px;
@@ -34,38 +34,39 @@
     opacity: 1;
   }
 }
-.accordion{
-   margin: 10px;
-
+.accordion {
+  margin: 10px;
 }
-.accordion:hover{
+.accordion:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  
 }
-.title{
-    margin: 10px;
+.title {
+  margin: 10px;
 }
-.accordion-body{
+.accordion-body {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
-select{
-    margin-left: 10px;
-    padding: 5px;
+select {
+  margin-left: 10px;
+  padding: 5px;
 }
-.monitor{
-    background-color: white;
-    margin-left: 10px;
-    border-radius: 5px;
-    height: 820px;
-    overflow-y: auto;
-    box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
+.monitor {
+  background-color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 820px;
+  overflow-y: auto;
+  box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
 }
-body{
-    background-color: #f7f7f7;
+body {
+  background-color: #f7f7f7;
 }
-.items:hover{
+.items:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  
 }
 
+.grey-toast {
+  background-color: grey !important;
+  color: white !important;
+}

@@ -68,7 +68,7 @@ tbody tr:hover {
   justify-content: space-between;
 }
 .tab-row {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   /* border-bottom: 2px solid ; */
 }
 .custom-accordion2 {
