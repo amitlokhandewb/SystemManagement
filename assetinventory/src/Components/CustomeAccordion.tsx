@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-function CustomAccordion({ title, data, isOpen, toggle }) {
-  const [nestedAccordionStates, setNestedAccordionStates] = useState({});
+interface CustomAccordionProps {
+  title: string;
+  data: any;
+  isOpen: boolean;
+  toggle: () => void;
+  parentKey?: string;  // Make parentKey optional
+}
 
-  function toggleNestedAccordion(key) {
+const CustomAccordion: React.FC<CustomAccordionProps> = ({ title, data, isOpen, toggle, parentKey }) => {
+  const [nestedAccordionStates, setNestedAccordionStates] = useState<{ [key: string]: boolean }>({});
+
+  function toggleNestedAccordion(key: string) {
     setNestedAccordionStates((prevState) => ({
       ...prevState,
       [key]: !prevState[key],
     }));
   }
 
-  function renderKeyValue(item) {
+  function renderKeyValue(item: any, parentKey: string = "") {
     return Object.entries(item).map(([key, value]) => {
       if (Array.isArray(value)) {
         return (
@@ -21,6 +29,7 @@ function CustomAccordion({ title, data, isOpen, toggle }) {
               data={value}
               isOpen={nestedAccordionStates[key]}
               toggle={() => toggleNestedAccordion(key)}
+              parentKey={key}
             />
           </div>
         );
@@ -32,6 +41,7 @@ function CustomAccordion({ title, data, isOpen, toggle }) {
               data={value}
               isOpen={nestedAccordionStates[key]}
               toggle={() => toggleNestedAccordion(key)}
+              parentKey={parentKey}
             />
           </div>
         );
@@ -53,6 +63,22 @@ function CustomAccordion({ title, data, isOpen, toggle }) {
     });
   }
 
+  function renderArray(array: any[], parentKey: string) {
+    return array.map((item, index) => {
+      const title = `${parentKey} ${index + 1}`;
+      return (
+        <div key={index} style={{ marginBottom: "10px" }}>
+          <CustomAccordion
+            title={title}
+            data={item}
+            isOpen={nestedAccordionStates[title]}
+            toggle={() => toggleNestedAccordion(title)}
+          />
+        </div>
+      );
+    });
+  }
+
   return (
     <div>
       <div
@@ -68,6 +94,8 @@ function CustomAccordion({ title, data, isOpen, toggle }) {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
+            cursor: "pointer",
+            padding: "2px",
           }}
         >
           {title}
@@ -78,13 +106,7 @@ function CustomAccordion({ title, data, isOpen, toggle }) {
       </div>
       {isOpen && (
         <div style={{ padding: "10px" }}>
-          {Array.isArray(data)
-            ? data.map((item, index) => (
-                <div key={index} style={{ marginBottom: "10px" }}>
-                  {renderKeyValue(item)}
-                </div>
-              ))
-            : renderKeyValue(data)}
+          {Array.isArray(data) ? renderArray(data, title) : renderKeyValue(data, title)}
         </div>
       )}
     </div>

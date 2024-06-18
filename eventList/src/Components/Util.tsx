@@ -21,7 +21,7 @@ const allColumns = [
   //   }),
   columnHelper.accessor("eventDescription", {
     header: "Event Description",
-    cell: (info) => info.getValue(),
+    cell: (info) => <div style={{ textAlign: 'left'}}>{info.getValue()}</div>,
   }),
   columnHelper.accessor("priority", {
     header: "Priority",

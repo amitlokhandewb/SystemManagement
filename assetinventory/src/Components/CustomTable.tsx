@@ -46,11 +46,6 @@ function CustomTable() {
   };
 
   const columns = [
-    columnHelper.accessor("assetHealthStatus", {
-      header: "Sr. No",
-      cell: (info) => info.row.index + 1,
-      enableSorting: false,
-    }),
     columnHelper.accessor("assetName", {
       header: "Asset Name",
       // cell: (info) => info.getValue().substring(0,10)
@@ -102,6 +97,7 @@ function CustomTable() {
   const table = useReactTable({
     data,
     columns,
+    enableSortingRemoval: false,
     getCoreRowModel: getCoreRowModel(),
     state: {
       sorting,
@@ -132,6 +128,7 @@ function CustomTable() {
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
+                <th>Sr .No</th>
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
@@ -156,18 +153,19 @@ function CustomTable() {
             ))}
           </thead>
           <tbody>
-            {table.getRowModel().rows.map((row) => (
+            {table.getRowModel().rows.map((row, index) => (
               <React.Fragment key={row.id}>
                 <tr
                   style={{
                     backgroundColor: row.original.isExpanded ? "#f7f7f7" : "",
                   }}
                 >
+                  <td>{index + 1}</td>
                   {row.getVisibleCells().map((cell) => (
                     <td key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </td>
                   ))}
@@ -175,7 +173,7 @@ function CustomTable() {
                 {row.original.isExpanded &&
                   row.original.subAsset &&
                   row.original.subAsset.length > 0 && (
-                    <SubAssestTable data={row.original.subAsset} index={row.index} />
+                    <SubAssestTable data={row.original.subAsset} index={index} />
                   )}
               </React.Fragment>
             ))}

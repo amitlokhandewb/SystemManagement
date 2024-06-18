@@ -1,0 +1,124 @@
+{
+    "Device Name": "TSTP1RK1-AsRock",
+    "Device Type": "SoftdpacHA",
+    "Ethernet Interfaces": [
+      {
+        "Name": "lo",
+        "Indicator Status": {
+          "Link Status": "LinkDown",
+          "Health": "Critical",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "127.0.0.1",
+        "Subnet": "255.0.0.0",
+        "Gateway": "N/A",
+        "IPv6 Address": "::1",
+        "MAC Address": "00:00:00:00:00:00"
+      },
+      {
+        "Name": "enx00e04c685902",
+        "Indicator Status": {
+          "Link Status": "LinkUp",
+          "Health": "OK",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "192.168.1.10",
+        "Subnet": "255.255.255.0",
+        "Gateway": "192.168.1.1",
+        "IPv6 Address": "fe80::1c4d:86ff:fe01:2345",
+        "MAC Address": "00:e0:4c:68:59:02"
+      },
+      {
+        "Name": "eninterlink",
+        "Indicator Status": {
+          "Link Status": "LinkUp",
+          "Health": "OK",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "192.168.1.11",
+        "Subnet": "255.255.255.0",
+        "Gateway": "192.168.1.1",
+        "IPv6 Address": "fe80::1c4d:86ff:fe01:2346",
+        "MAC Address": "00:e0:4c:68:59:03"
+      },
+      {
+        "Name": "endevnet1",
+        "Indicator Status": {
+          "Link Status": "LinkUp",
+          "Health": "OK",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "192.168.1.12",
+        "Subnet": "255.255.255.0",
+        "Gateway": "192.168.1.1",
+        "IPv6 Address": "fe80::1c4d:86ff:fe01:2347",
+        "MAC Address": "00:e0:4c:68:59:04"
+      },
+      {
+        "Name": "bond0",
+        "Indicator Status": {
+          "Link Status": "LinkUp",
+          "Health": "OK",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "192.168.1.13",
+        "Subnet": "255.255.255.0",
+        "Gateway": "192.168.1.1",
+        "IPv6 Address": "fe80::1c4d:86ff:fe01:2348",
+        "MAC Address": "00:e0:4c:68:59:05"
+      },
+      {
+        "Name": "docker0",
+        "Indicator Status": {
+          "Link Status": "LinkDown",
+          "Health": "Warning",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "172.17.0.1",
+        "Subnet": "255.255.0.0",
+        "Gateway": "N/A",
+        "IPv6 Address": "fe80::1c4d:86ff:fe01:2349",
+        "MAC Address": "02:42:ac:11:00:01"
+      },
+      {
+        "Name": "br-b59699960a95",
+        "Indicator Status": {
+          "Link Status": "LinkUp",
+          "Health": "OK",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "192.168.1.14",
+        "Subnet": "255.255.255.0",
+        "Gateway": "192.168.1.1",
+        "IPv6 Address": "fe80::1c4d:86ff:fe01:234a",
+        "MAC Address": "00:e0:4c:68:59:06"
+      },
+      {
+        "Name": "veth6fd2d57",
+        "Indicator Status": {
+          "Link Status": "LinkUp",
+          "Health": "OK",
+          "Interface State": "Enabled"
+        },
+        "IPv4 Address": "192.168.1.15",
+        "Subnet": "255.255.255.0",
+        "Gateway": "192.168.1.1",
+        "IPv6 Address": "fe80::1c4d:86ff:fe01:234b",
+        "MAC Address": "00:e0:4c:68:59:07"
+      }
+    ],
+    "Memory": {
+      "Block Size (MB)": "134217728 MB",
+      "Spare Block (%)": "82.62 %"
+    },
+    "Processor": {
+      "Processor Temp (°C)": "45 °C",
+      "Kernel Usage (%)": "1.23 %",
+      "User Percent (%)": "3.41 %",
+      "Bandwidth (%)": "5 %",
+      "Av. Frequency MHz": "1900 MHz",
+      "Frequency Ratio": 1,
+      "Throttling Celsius (°C)": "110 °C"
+    }
+  }
+  
