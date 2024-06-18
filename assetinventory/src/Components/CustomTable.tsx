@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import assetData from "../Resources/Asset.json";
+import { CiLock } from "react-icons/ci";
+import { CiUnlock } from "react-icons/ci";
 import "../Resources/Index.css";
 import {
   createColumnHelper,
@@ -48,7 +50,6 @@ function CustomTable() {
   const columns = [
     columnHelper.accessor("assetName", {
       header: "Asset Name",
-      // cell: (info) => info.getValue().substring(0,10)
       cell: (info) =>
         info.row.original.subAsset && info.row.original.subAsset.length > 0 ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -86,11 +87,11 @@ function CustomTable() {
     }),
     columnHelper.accessor("assetHealthStatus", {
       header: "Health Status",
-      cell: (info) => (info.getValue() !== null ? info.getValue() : "N/A"),
+      cell: (info) => <div style={{ color: info.getValue() === 'Good' ? 'rgb(21, 203, 54)': 'red'}}>{info.getValue()}</div>,
     }),
     columnHelper.accessor("assetSecurityStatus", {
       header: "Security Status",
-      cell: (info) => (info.getValue() !== null ? info.getValue() : "N/A"),
+      cell: (info) => (info.getValue() === "Secured" ? <>{info.getValue()} <CiLock size={20}  /></> : <>{info.getValue()} <CiUnlock size={20} /></> ),
     }),
   ];
 
