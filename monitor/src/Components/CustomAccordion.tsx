@@ -60,7 +60,6 @@ function CustomAccordion({
   const geticoncolor = (id: string) => {
     return Icons.find((item) => item.alertType === id).color;
   };
-  console.log("content", content);
 
   return (
     <div>

@@ -114,7 +114,6 @@ function CustomTable() {
     },
     getSortedRowModel: getSortedRowModel(),
   });
-  console.log("table", table.getState().sorting);
 
   useEffect(() => {
     setTimeout(() => {
