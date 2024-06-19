@@ -28,11 +28,12 @@ function MonitorLayout() {
           alertType: `${diftypes[x].type.toString()}`,
           alertMessage:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          alertTime: "2024-05-27T11:18:00.000Z",
-          deviceId: "Amit",
+          alertTime: `${new Date().toISOString()}`,
+          deviceId: `${RandomDevceName()}`,
         },
         ...data,
       ];
+      console.log("new Data", newdata)
       setData(newdata);
       GetToast(newdata[0].alertType);
     }, 10000);
@@ -93,7 +94,12 @@ function MonitorLayout() {
       type: "OutOfSpecification",
     },
   ];
+  let deviceName = ['Mini-X','Mini-Y','Mini-W', 'Mini-D' ];
+  
 
+  function RandomDevceName(){
+    return deviceName[Math.floor(Math.random() * deviceName.length)];
+  }
   const renderMethods = () => {
     return (
       <>

@@ -35,7 +35,7 @@ const allColumns = [
   }),
   columnHelper.accessor("dateTime", {
     header: "Date Time",
-    cell: (info) => JSON.stringify(info.getValue()).substring(1, 25),
+    cell: (info) => new Date(info.getValue()).toLocaleString(),
   }),
   columnHelper.accessor("eventid", {
     header: "Event ID",
