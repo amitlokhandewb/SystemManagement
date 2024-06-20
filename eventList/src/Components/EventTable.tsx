@@ -16,12 +16,12 @@ function EventTable({ data, columns }) {
   });
 
   return (
-    <table>
+    <table className="table">
       <thead>
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <th key={header.id} style={{ textAlign: header.id === 'column-0' ? 'left' : undefined }}>
+              <th className="th" key={header.id} style={{ textAlign: header.id === 'column-0' ? 'left' : undefined }}>
                 {flexRender(
                   header.column.columnDef.header,
                   header.getContext()
@@ -36,7 +36,7 @@ function EventTable({ data, columns }) {
           table.getRowModel().rows.map((row) => (
             <tr key={row.id} style={{ backgroundColor: "#f7f7f7" }}>
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
+                <td className="td" key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}

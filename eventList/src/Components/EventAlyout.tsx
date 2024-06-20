@@ -9,9 +9,11 @@ import { IoMdClose } from "react-icons/io";
 import Dialog from "./Dialog";
 import { ClipLoader } from "react-spinners";
 import FilterDialog from "./FilterDialog";
+import 'rsuite/dist/rsuite.min.css';
+import { Button } from "rsuite";
 
 function EventLayout() {
-  const visibleColumnKeys = ["eventDescription", "priority", "dateTime", 'eventType'];
+  const visibleColumnKeys = ["eventDescription", "priority", "dateTime", 'eventType','plantName'];
   const initialVisibleColumns = allColumns.map((col, index) => ({
     ...col,
     id: `column-${index}`,
@@ -52,14 +54,14 @@ function EventLayout() {
 
   return (
     <div className="event-layout">
-      <h2>Event Table</h2>
+      <h4>Event Table</h4>
       <div style={{ display: "flex", justifyContent: "end" }}>
-        <div onClick={() => setIsModalOpen(true)} className="custmizebutton">
+        <Button onClick={() => setIsModalOpen(true)} appearance="primary"  >
           Customize Column
-        </div>
-        <div onClick={() => setisfilterOPen(true)} className="custmizebutton">
+        </Button>
+        <Button onClick={() => setisfilterOPen(true)} appearance="primary" color="red" style={{ marginLeft: 5}}>
           Filter
-        </div>
+        </Button>
       </div>
       <div className="table-layout">
         <EventTable data={filterData} columns={columns} />

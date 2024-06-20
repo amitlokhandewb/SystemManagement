@@ -1,7 +1,7 @@
 body {
   background-color: #f7f7f7;
 }
-table {
+.table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
@@ -9,15 +9,15 @@ table {
   text-align: left;
 }
 
-th,
-td {
+.th,
+.td {
   padding: 12px;
   border: 1px solid #ddd;
   justify-content: center;
   text-align: center;
 }
 
-th {
+.th {
   background-color: white;
   font-weight: bold;
 }
@@ -75,6 +75,6 @@ input[type="checkbox"] {
     justify-content: center;
 }
 .table-layout{
-    height: 612px;
+    height:680px;
     overflow-y: auto;
 }

@@ -90,14 +90,14 @@ const EventDescrition = [
   "Water leak detected",
   "Safety drill",
 ];
-const EventType = [
+export const EventType = [
   "Sensor Alert",
   "Maintenance",
   "Inspection",
   "Emergency",
   "Drill",
 ];
-const deviceType = [
+export const deviceType = [
   "Temperature Sensor",
   "System",
   "Pressure Sensor",

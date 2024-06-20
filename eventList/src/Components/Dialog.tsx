@@ -36,7 +36,7 @@ function Dialog({
           },
           content: {
             width: "20%",
-            height: "60%",
+            height: "55%",
             margin: "auto",
             borderRadius: '10px'
           },
@@ -47,13 +47,14 @@ function Dialog({
             display: "flex",
             justifyContent: "space-between",
             marginLeft: "20px",
+            marginBottom: '20px'
           }}
         >
-          <h3>Customize Columns</h3>
+          <h4>Customize Columns</h4>
           <IoMdClose
             onClick={() => setIsModalOpen(false)}
             size={20}
-            style={{ marginTop: "23px", marginRight: "20px" }}
+            style={{ marginTop: "10px", marginRight: "10px" }}
           />
         </div>
         <DragDropContext onDragEnd={onDragEnd}>
