@@ -8,21 +8,32 @@ import { RandomData, allColumns } from "./Util";
 import { IoMdClose } from "react-icons/io";
 import Dialog from "./Dialog";
 import { ClipLoader } from "react-spinners";
+import FilterDialog from "./FilterDialog";
 
 function EventLayout() {
-  const visibleColumnKeys = ["eventDescription", "priority", "dateTime",'eventType'];
+  const visibleColumnKeys = ["eventDescription", "priority", "dateTime", 'eventType'];
   const initialVisibleColumns = allColumns.map((col, index) => ({
     ...col,
-    id: `column-${index}`, // Ensure each column has a unique id
+    id: `column-${index}`,
     visible: visibleColumnKeys.includes(col.accessorKey),
   }));
-
-  const [data, setData] = useState([]);
+  
+  const [data, setData] = useState(Datafromjson); 
+  const [filterData, setFilterData] = useState([]);
+  const [isfilterOPen, setisfilterOPen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [visibleColumns, setVisibleColumns] = useState(initialVisibleColumns);
   const [tempVisibleColumns, setTempVisibleColumns] = useState([
     ...initialVisibleColumns,
   ]);
+
+  useEffect(() => {
+    RandomData(data, setData);
+  }, [data]);
+
+  useEffect(() => {
+    setFilterData(data);
+  }, [data]);
 
   const toggleTempColumnVisibility = (index) => {
     setTempVisibleColumns((prev) =>
@@ -38,14 +49,6 @@ function EventLayout() {
   };
 
   const columns = visibleColumns.filter((col) => col.visible);
-  useEffect(() => {
-    RandomData(data, setData);
-  }, [data]);
-  useEffect(() => {
-    setTimeout(() => {
-        setData(Datafromjson)
-    }, 3000);
-  }, []);
 
   return (
     <div className="event-layout">
@@ -54,9 +57,12 @@ function EventLayout() {
         <div onClick={() => setIsModalOpen(true)} className="custmizebutton">
           Customize Column
         </div>
+        <div onClick={() => setisfilterOPen(true)} className="custmizebutton">
+          Filter
+        </div>
       </div>
       <div className="table-layout">
-         <EventTable data={data} columns={columns} />
+        <EventTable data={filterData} columns={columns} />
       </div>
       <Dialog
         tempVisibleColumns={tempVisibleColumns}
@@ -65,6 +71,12 @@ function EventLayout() {
         handleSubmit={handleSubmit}
         setIsModalOpen={setIsModalOpen}
         isModalOpen={isModalOpen}
+      />
+      <FilterDialog
+        isfilterOPen={isfilterOPen}
+        setisfilterOPen={setisfilterOPen}
+        setFilterData={setFilterData}
+        data={data}
       />
     </div>
   );

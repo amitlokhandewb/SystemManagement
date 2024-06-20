@@ -154,6 +154,9 @@ function RandomPLantName() {
 }
 function RandomData(data, setData) {
   setTimeout(() => {
+    if (!Array.isArray(data)) {
+      data = [];
+    }
     setData([
       {
         eventDescription: RandomDescription(),
@@ -169,6 +172,7 @@ function RandomData(data, setData) {
     ]);
   }, 3000);
 }
+
 export {
   allColumns,
   RandomIndex,
