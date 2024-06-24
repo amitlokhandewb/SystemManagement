@@ -40,41 +40,87 @@ input[type="checkbox"] {
   color: white;
 }
 
-.buttons button{
-    padding: 10px;
-    margin-top: 10px;
-    width: 100px;
-    margin-left: 5px;
+.buttons button {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100px;
+  margin-left: 5px;
 }
-.submitcustomize{
-    background-color: #3dcd54;
-    color: white;
-    border: none;
-    border-radius: 20px;
+.submitcustomize {
+  background-color: #3dcd54;
+  color: white;
+  border: none;
+  border-radius: 20px;
 }
-.closecustomize{
-    background-color: #f4db4c;
-    color: black;
-    border: none;
-    border-radius: 20px;
+.closecustomize {
+  background-color: #f4db4c;
+  color: black;
+  border: none;
+  border-radius: 20px;
 }
-.buttons{
-    display: flex;
-    justify-content: end;
+.buttons {
+  display: flex;
+  justify-content: end;
 }
-.event-layout{
-    margin: 10px;
-    background-color: white;
-    padding: 20px;
-    width: 1770px;
-    height: 770px;
-    box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+.event-layout {
+  margin: 10px;
+  background-color: white;
+  padding: 20px;
+  width: 1770px;
+  height: 770px;
+  box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.item-x-center{
-    display: flex;
-    justify-content: center;
+.item-x-center {
+  display: flex;
+  justify-content: center;
 }
-.table-layout{
-    height:680px;
-    overflow-y: auto;
+.table-layout {
+  height: 640px;
+  overflow-y: auto;
+}
+
+.select-container select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: calc(100% - 30px); /* Adjust width as needed */
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Custom dropdown arrow */
+.select-container::after {
+  /* content: "\25BC"; */
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b6a6a;
+}
+
+.select-container:hover,
+.select-container select:focus {
+  border-color: #808283;
+}
+
+.select-container select:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+}
+.select-container select option:checked {
+  background-color: #acacac;
+  color: #fff;
+}
+.select-container select option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 16px;
 }

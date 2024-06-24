@@ -50,12 +50,13 @@ function EventTable({ data, columns }) {
               top: "50%",
             }}
           >
-            <ClipLoader
+            {/* <ClipLoader
               color={"#3dcd58"}
               size={50}
               aria-label="Loading Spinner"
               data-testid="loader"
-            />
+            /> */}
+            No Result Found
           </div>
         )}
       </tbody>
