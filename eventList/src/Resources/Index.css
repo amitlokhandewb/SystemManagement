@@ -124,3 +124,6 @@ input[type="checkbox"] {
   min-height: 1.2em;
   padding: 16px;
 }
+.row{
+  margin: 10px;
+}

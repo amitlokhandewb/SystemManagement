@@ -9,9 +9,8 @@ function Dialog({
   toggleTempColumnVisibility,
   handleSubmit,
   isModalOpen,
-  setIsModalOpen
+  setIsModalOpen,
 }) {
-
   const onDragEnd = (result) => {
     if (!result.destination) {
       return;
@@ -38,7 +37,7 @@ function Dialog({
             width: "20%",
             height: "55%",
             margin: "auto",
-            borderRadius: '10px'
+            borderRadius: "10px",
           },
         }}
       >
@@ -47,7 +46,7 @@ function Dialog({
             display: "flex",
             justifyContent: "space-between",
             marginLeft: "20px",
-            marginBottom: '20px'
+            marginBottom: "20px",
           }}
         >
           <h4>Customize Columns</h4>
@@ -74,7 +73,7 @@ function Dialog({
                           margin: "0 0 8px 0",
                           borderRadius: "4px",
                           background: "#fff",
-                          ...provided.draggableProps.style
+                          ...provided.draggableProps.style,
                         }}
                       >
                         <input

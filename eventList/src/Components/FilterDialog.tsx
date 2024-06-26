@@ -9,11 +9,10 @@ import {
   Radio,
   RadioGroup,
 } from "rsuite";
-import { Chips } from "primereact/chips";
-import { EventType, deviceType } from "./Util";
+import { EventType } from "./Util";
 import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
 import { IoMdClose } from "react-icons/io";
-import { Dropdown } from "primereact/dropdown";
+import { FilterUtility } from "../Utilities/FilterUtility";
 
 const priorityOptions = [
   { value: 0, label: "All" },
@@ -30,135 +29,24 @@ function FilterDialog({
   data,
   currentPageDeviceType,
 }) {
-  const [filter, setFilter] = useState({
-    priority: 0,
-    daterange: null,
-    eventId: 0,
-    deviceType: "",
-    eventType: "",
-  });
-  const [filteredData, setFilteredData] = useState([]);
-  const [value, setValue] = useState([]);
+  const FilterrUtility = FilterUtility(
+    setisfilterOPen,
+    setFilterData,
+    data,
+    currentPageDeviceType
+  );
 
-  let DeviceType = currentPageDeviceType.map((item) => ({
-    value: item,
-    label: item,
-  }));
-  let updateDeviceType = [{ value: "", label: "All" }, ...DeviceType];
-  useEffect(() => {
-    applyFilters();
-  }, [filter]);
+  const {
+    value,
+    handlesingleReset,
+    handleChange,
+    filter,
+    handleInputChange,
+    updateDeviceType,
+    handleApplyFilters,
+    handleReset,
+  } = FilterrUtility;
 
-  useEffect(() => {
-    setFilteredData(data);
-  }, []);
-
-  const handleReset = () => {
-    setFilter({
-      priority: 0,
-      daterange: null,
-      eventId: 0,
-      deviceType: "",
-      eventType: "", // Reset eventType to '' for All option
-    });
-    setValue([]);
-    setFilteredData(data);
-  };
-  const getUniqueDeviceTypes = () => {
-    // Step 1: Extract all device types from events
-    const allDeviceTypes = filteredData.map((event) => event.deviceType);
-
-    // Step 2: Filter out unique device types
-    const uniqueDeviceTypes = allDeviceTypes.filter(
-      (deviceType, index, array) => array.indexOf(deviceType) === index
-    );
-
-    return uniqueDeviceTypes;
-  };
-  // useEffect(() => {
-  //   setcurrentPageDeviceType(getUniqueDeviceTypes());
-  // },[filteredData])
-  const handlesingleReset = (e) => {
-    let id = e.target.id;
-    if (id === "deviceType" || id === "eventType") {
-      setFilter((prev) => ({ ...prev, [id]: "" }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "priority") {
-      setFilter((prev) => ({ ...prev, priority: 0 }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "daterange") {
-      setFilter((prev) => ({ ...prev, daterange: null }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "eventId") {
-      setFilter((prev) => ({ ...prev, eventId: 0 }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    }
-  };
-
-  const handleChange = (e, name) => {
-    var exist = value.find((item) => item === name);
-    if (!exist) {
-      setValue([...value, name]);
-    }
-    if (name === "eventType" && e === "") {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
-    }
-    if (name === "priority" && e === 0) {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
-    }
-    if (name === "deviceType" && e === '') {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
-    }
-    if (name === "eventId") {
-      const eventIdValue = parseInt(e);
-      setFilter({ ...filter, [name]: eventIdValue });
-    } else {
-      setFilter({ ...filter, [name]: e });
-    }
-  };
-
-  const applyFilters = () => {
-    let updatedData = data;
-
-    if (filter.priority !== 0) {
-      updatedData = updatedData.filter(
-        (item) => item.priority === filter.priority
-      );
-    }
-    if (filter.daterange) {
-      const [startDate, endDate] = filter.daterange;
-      updatedData = updatedData.filter(
-        (item) =>
-          new Date(item.dateTime) >= startDate &&
-          new Date(item.dateTime) <= endDate
-      );
-    }
-    if (filter.eventId) {
-      updatedData = updatedData.filter(
-        (item) => parseInt(item.eventid) === filter.eventId
-      );
-    }
-    if (filter.deviceType) {
-      updatedData = updatedData.filter(
-        (item) => item.deviceType === filter.deviceType
-      );
-    }
-    if (filter.eventType) {
-      updatedData = updatedData.filter(
-        (item) => item.eventType === filter.eventType
-      );
-    }
-
-    setFilteredData(updatedData);
-  };
-
-  const handleApplyFilters = () => {
-    applyFilters();
-    alert(JSON.stringify(filter));
-    setFilterData(filteredData);
-    setisfilterOPen(false);
-  };
-  console.log("filter", filter);
   return (
     <Modal
       isOpen={isfilterOPen}
@@ -169,7 +57,7 @@ function FilterDialog({
         },
         content: {
           width: "22%",
-          height: "72%",
+          height: "85%",
           margin: "auto",
           borderRadius: "10px",
         },
@@ -181,17 +69,22 @@ function FilterDialog({
           justifyContent: "space-between",
           marginBottom: "20px",
         }}
+        className="row"
       >
-        <div>Filter Column</div>
+        <h4>Filter Column</h4>
         <IoMdClose onClick={() => setisfilterOPen(false)} size={20} />
       </div>
-      <div>
-        <div>
+      <div >
+        <div className="row">
           <label>{value.length} Filters Applied</label>
         </div>
-        <div>
+        <div className="row">
           {value.map((item) => (
-            <Button key={item}>
+            <Button
+              key={item}
+              appearance="ghost"
+              style={{ margin: 3, borderRadius: "5em / 5em" }}
+            >
               {item}
               <CloseOutlineIcon
                 id={item}
@@ -201,7 +94,7 @@ function FilterDialog({
             </Button>
           ))}
         </div>
-        <div className="select-container">
+        <div className="select-container row">
           <label>Priority </label>
           <select
             style={{ width: "100%" }}
@@ -215,7 +108,7 @@ function FilterDialog({
             ))}
           </select>
         </div>
-        <div>
+        <div className="row">
           <label>Date range </label>
           <DateRangePicker
             format="MM/dd/yyyy hh:mm aa"
@@ -225,15 +118,18 @@ function FilterDialog({
             value={filter.daterange}
           />
         </div>
-        <div>
+        <div className="row">
           <label>Event Id </label>
           <InputNumber
             placeholder="Select some id"
-            onChange={(e) => handleChange(e, "eventId")}
+            onChange={handleInputChange}
             value={filter.eventId}
+            min={0}
+            max={999}
+            maxLength={3}
           />
         </div>
-        <div>
+        <div className="row">
           <label>Event Type </label>
           <RadioGroup
             name="radio-group-inline"
@@ -249,7 +145,7 @@ function FilterDialog({
             ))}
           </RadioGroup>
         </div>
-        <div>
+        <div className="row">
           <label>Device Type </label>
           <InputPicker
             data={updateDeviceType}
@@ -268,6 +164,7 @@ function FilterDialog({
           justifyContent: "end",
           marginTop: "20px",
         }}
+        className="row"
       >
         <Button appearance="primary" color="violet" onClick={handleReset}>
           Reset

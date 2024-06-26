@@ -80,7 +80,7 @@ function EventLayout() {
   }, [paginatedData]);
 
   useEffect(() => {
-    setCurrentPage(0); // Reset to first page whenever items per page changes
+    setCurrentPage(0); 
   }, [itemsperpage]);
 
   const columns = visibleColumns.filter((col) => col.visible);
