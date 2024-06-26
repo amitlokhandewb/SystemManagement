@@ -77,6 +77,12 @@ export const FilterUtility = (
     if (name === "deviceType" && e === "") {
       setValue((prevValue) => prevValue.filter((item) => item !== name));
     }
+    if (name === "eventId" && e === 0) {
+      setValue((prevValue) => prevValue.filter((item) => item !== name));
+    }
+    if(name === 'daterange' && e === null){
+      setValue((prevValue) => prevValue.filter((item) => item !== name));
+    }
     if (name === "eventId") {
       const eventIdValue = parseInt(e);
       setFilter({ ...filter, [name]: eventIdValue });
