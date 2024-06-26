@@ -44,6 +44,8 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={hanldefirst}
         disabled={currentPage === 0}
         style={{ marginLeft: 5 }}
+        appearance="subtle"
+        color="green"
       >
         First Page
       </Button>
@@ -51,6 +53,8 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={handlePrev}
         disabled={currentPage === 0}
         style={{ marginLeft: 5 }}
+        appearance="subtle"
+        color="green"
       >
         Previous
       </Button>
@@ -61,13 +65,17 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={handleNext}
         disabled={currentPage === totalPages - 1}
         style={{ marginLeft: 5 }}
+        appearance="subtle"
+        color="green"
       >
         Next
       </Button>
       <Button
         onClick={handleLast}
-        disabled={currentPage+1 === totalPages}
+        disabled={currentPage + 1 === totalPages}
         style={{ marginLeft: 5 }}
+        appearance="subtle"
+        color="green"
       >
         Last Page
       </Button>

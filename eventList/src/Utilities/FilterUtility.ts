@@ -4,7 +4,8 @@ export const FilterUtility = (
   setisfilterOPen,
   setFilterData,
   data,
-  currentPageDeviceType
+  currentPageDeviceType,
+  setFilterActive
 ) => {
   const [filter, setFilter] = useState({
     priority: 0,
@@ -21,8 +22,10 @@ export const FilterUtility = (
     label: item,
   }));
   let updateDeviceType = [{ value: "", label: "All" }, ...DeviceType];
+
   useEffect(() => {
     applyFilters();
+    checkFilterActive();
   }, [filter]);
 
   useEffect(() => {
@@ -39,7 +42,9 @@ export const FilterUtility = (
     });
     setValue([]);
     setFilteredData(data);
+    setFilterActive(false);
   };
+
   const handlesingleReset = (e) => {
     let id = e.target.id;
     if (id === "deviceType" || id === "eventType") {
@@ -55,6 +60,7 @@ export const FilterUtility = (
       setFilter((prev) => ({ ...prev, eventId: 0 }));
       setValue((prevValue) => prevValue.filter((item) => item !== id));
     }
+    checkFilterActive();
   };
 
   const handleChange = (e, name) => {
@@ -77,7 +83,9 @@ export const FilterUtility = (
     } else {
       setFilter({ ...filter, [name]: e });
     }
+    checkFilterActive();
   };
+
   const handleInputChange = (value) => {
     if (isNaN(value) || value === null || value === "") {
       handleChange(0, "eventId");
@@ -85,6 +93,7 @@ export const FilterUtility = (
       handleChange(value, "eventId");
     }
   };
+
   const applyFilters = () => {
     let updatedData = data;
 
@@ -120,10 +129,30 @@ export const FilterUtility = (
     setFilteredData(updatedData);
   };
 
+  const checkFilterActive = () => {
+    const isActive = Object.values(filter).some(
+      (value) =>
+        (typeof value === "number" && value !== 0) ||
+        (typeof value === "string" && value !== "") ||
+        (Array.isArray(value) && value !== null)
+    );
+    setFilterActive(isActive);
+  };
+
   const handleApplyFilters = () => {
     applyFilters();
     setFilterData(filteredData);
     setisfilterOPen(false);
   };
-  return {value,handlesingleReset,handleChange,filter,handleInputChange, updateDeviceType,handleReset,handleApplyFilters };
+
+  return {
+    value,
+    handlesingleReset,
+    handleChange,
+    filter,
+    handleInputChange,
+    updateDeviceType,
+    handleReset,
+    handleApplyFilters,
+  };
 };

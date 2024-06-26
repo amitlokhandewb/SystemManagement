@@ -28,12 +28,14 @@ function FilterDialog({
   setFilterData,
   data,
   currentPageDeviceType,
+  setFilterActive
 }) {
   const FilterrUtility = FilterUtility(
     setisfilterOPen,
     setFilterData,
     data,
-    currentPageDeviceType
+    currentPageDeviceType,
+    setFilterActive
   );
 
   const {

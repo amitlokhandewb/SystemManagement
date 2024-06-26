@@ -28,9 +28,10 @@ function EventLayout() {
     id: `column-${index}`,
     visible: visibleColumnKeys.includes(col.accessorKey),
   }));
+  const [filterActive, setFilterActive] = useState(false);
 
   const [data, setData] = useState(Datafromjson);
-  const [filterData, setFilterData] = useState(Datafromjson);
+  const [filterData, setFilterData] = useState(data);
   const [isfilterOPen, setisfilterOPen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [visibleColumns, setVisibleColumns] = useState(initialVisibleColumns);
@@ -46,6 +47,9 @@ function EventLayout() {
 
   useEffect(() => {
     RandomData(data, setData);
+    if (!filterActive) {
+      setFilterData(data);
+    }
   }, [data]);
 
   const toggleTempColumnVisibility = (index) => {
@@ -55,6 +59,7 @@ function EventLayout() {
       )
     );
   };
+
 
   const getUniqueDeviceTypes = () => {
     const allDeviceTypes = paginatedData.map((event) => event.deviceType);
@@ -122,6 +127,7 @@ function EventLayout() {
         setFilterData={setFilterData}
         data={data}
         currentPageDeviceType={currentPageDeviceType}
+        setFilterActive={setFilterActive}
       />
     </div>
   );
