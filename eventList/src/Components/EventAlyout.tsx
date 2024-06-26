@@ -87,7 +87,7 @@ function EventLayout() {
 
   return (
     <div className="event-layout">
-      <h4>Event Table</h4>
+      <h4>Event List</h4>
       <div style={{ display: "flex", justifyContent: "end", gap: 5 }}>
         <Button onClick={() => setIsModalOpen(true)} appearance="ghost">
           Customize Column
