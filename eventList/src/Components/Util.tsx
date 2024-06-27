@@ -170,7 +170,7 @@ function RandomData(data, setData) {
       },
       ...data,
     ]);
-  }, 3000);
+  }, 500);
 }
 
 export {

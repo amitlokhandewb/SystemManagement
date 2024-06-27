@@ -75,16 +75,16 @@ function PropertyPanel({ setshowPropertyPanel }) {
             </span>
           </div>
           <div>
-                <TbLayoutNavbarExpandFilled
-                  onClick={openAllAccordions}
-                  size={25}
-                  color="green"
-                />
-                <TbLayoutBottombarExpandFilled
-                  onClick={closeAllAccordions}
-                  size={25}
-                  color="green"
-                />
+            <TbLayoutNavbarExpandFilled
+              onClick={openAllAccordions}
+              size={25}
+              color="green"
+            />
+            <TbLayoutBottombarExpandFilled
+              onClick={closeAllAccordions}
+              size={25}
+              color="green"
+            />
           </div>
         </div>
         {tab === false ? (
@@ -92,7 +92,7 @@ function PropertyPanel({ setshowPropertyPanel }) {
             {Object.entries(data)
               .slice(2)
               .map(([key, value]) => (
-                <div key={key} style={{ width: "330px", }}>
+                <div key={key} style={{ width: "330px" }}>
                   <CustomAccordion
                     title={key}
                     data={value}
@@ -108,7 +108,7 @@ function PropertyPanel({ setshowPropertyPanel }) {
             {Object.entries(health)
               .slice(2)
               .map(([key, value]) => (
-                <div key={key} style={{ width: "330px"}}>
+                <div key={key} style={{ width: "330px" }}>
                   <CustomAccordion
                     title={key}
                     data={value}

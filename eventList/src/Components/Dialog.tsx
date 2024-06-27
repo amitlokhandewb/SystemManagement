@@ -2,7 +2,15 @@ import React from "react";
 import Modal from "react-modal";
 import { IoMdClose } from "react-icons/io";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-
+import { allColumns } from "./Util";
+const visibleColumnKeys = [
+  "eventDescription",
+  "priority",
+  "dateTime",
+  "eventType",
+  "eventid",
+  "deviceType",
+];
 function Dialog({
   tempVisibleColumns,
   setTempVisibleColumns,
@@ -11,6 +19,11 @@ function Dialog({
   isModalOpen,
   setIsModalOpen,
 }) {
+  const initialVisibleColumns = allColumns.map((col, index) => ({
+    ...col,
+    id: `column-${index}`,
+    visible: visibleColumnKeys.includes(col.accessorKey),
+  }));
   const onDragEnd = (result) => {
     if (!result.destination) {
       return;
@@ -22,6 +35,11 @@ function Dialog({
 
     setTempVisibleColumns(reorderedColumns);
   };
+  const handleclose = () => {
+    setIsModalOpen(false)
+    // alert(JSON.stringify([...tempVisibleColumns]))
+    setTempVisibleColumns([...initialVisibleColumns]);
+  }
 
   return (
     <div>
@@ -51,7 +69,7 @@ function Dialog({
         >
           <h4>Customize Columns</h4>
           <IoMdClose
-            onClick={() => setIsModalOpen(false)}
+            onClick={handleclose}
             size={20}
             style={{ marginTop: "10px", marginRight: "10px" }}
           />

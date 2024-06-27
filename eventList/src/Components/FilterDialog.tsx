@@ -28,14 +28,16 @@ function FilterDialog({
   setFilterData,
   data,
   currentPageDeviceType,
-  setFilterActive
+  setFilterActive,
+  setCurrentPage
 }) {
   const FilterrUtility = FilterUtility(
     setisfilterOPen,
     setFilterData,
     data,
     currentPageDeviceType,
-    setFilterActive
+    setFilterActive,
+    setCurrentPage
   );
 
   const {
@@ -47,6 +49,7 @@ function FilterDialog({
     updateDeviceType,
     handleApplyFilters,
     handleReset,
+    handleclose
   } = FilterrUtility;
 
   return (
@@ -74,7 +77,7 @@ function FilterDialog({
         className="row"
       >
         <h4>Filter Column</h4>
-        <IoMdClose onClick={() => setisfilterOPen(false)} size={20} />
+        <IoMdClose onClick={handleclose} size={20} />
       </div>
       <div >
         <div className="row">

@@ -6,7 +6,7 @@ interface CustomAccordionProps {
   data: any;
   isOpen: boolean;
   toggle: () => void;
-  parentKey?: string;  // Make parentKey optional
+  parentKey?: string;  
 }
 
 const CustomAccordion: React.FC<CustomAccordionProps> = ({ title, data, isOpen, toggle, parentKey }) => {

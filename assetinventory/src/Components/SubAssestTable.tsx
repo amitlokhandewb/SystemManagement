@@ -42,7 +42,7 @@ function SubAssestTable({ data, index }) {
     }),
     columnHelper.accessor("assetHealthStatus", {
       header: "Health Status",
-      cell: (info) => (info.getValue() !== null ? info.getValue() : "N/A"),
+      cell: (info) => <div style={{ color: info.getValue() === 'Good' ? 'rgb(21, 203, 54)': 'red'}}>{info.getValue()}</div>,
     }),
     columnHelper.accessor("assetSecurityStatus", {
       header: "Security Status",

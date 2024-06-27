@@ -3,16 +3,37 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import React from "react";
+import React, { useState } from "react";
 import { ClipLoader } from "react-spinners";
+type ColumnSort = {
+  id: string;
+  desc: boolean;
+};
 
+type SortingState = ColumnSort[];
 function EventTable({ data, columns }) {
+  const [sorting, setSorting] = useState<SortingState>([]);
   const table = useReactTable({
     data,
     columns,
+    enableSortingRemoval: false,
     getCoreRowModel: getCoreRowModel(),
+    state: {
+      sorting,
+    },
+    onSortingChange: setSorting,
+    initialState: {
+      sorting: [
+        {
+          id: "priority",
+          desc: false,
+        },
+      ],
+    },
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -21,11 +42,23 @@ function EventTable({ data, columns }) {
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <th className="th" key={header.id} style={{ textAlign: header.id === 'column-0' ? 'left' : undefined }}>
+              <th
+                onClick={header.column.getToggleSortingHandler()}
+                className="th"
+                key={header.id}
+                style={{
+                  textAlign: header.id === "column-0" ? "left" : undefined,
+                }}
+              >
                 {flexRender(
                   header.column.columnDef.header,
                   header.getContext()
                 )}
+                {header.column.getIsSorted() === false
+                  ? null
+                  : header.column.getIsSorted() === "asc"
+                  ? "▲"
+                  : "▼"}
               </th>
             ))}
           </tr>

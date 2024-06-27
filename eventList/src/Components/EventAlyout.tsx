@@ -29,7 +29,6 @@ function EventLayout() {
     visible: visibleColumnKeys.includes(col.accessorKey),
   }));
   const [filterActive, setFilterActive] = useState(false);
-
   const [data, setData] = useState(Datafromjson);
   const [filterData, setFilterData] = useState(data);
   const [isfilterOPen, setisfilterOPen] = useState(false);
@@ -60,7 +59,6 @@ function EventLayout() {
     );
   };
 
-
   const getUniqueDeviceTypes = () => {
     const allDeviceTypes = paginatedData.map((event) => event.deviceType);
     const uniqueDeviceTypes = allDeviceTypes.filter(
@@ -85,8 +83,14 @@ function EventLayout() {
   }, [paginatedData]);
 
   useEffect(() => {
-    setCurrentPage(0); 
-  }, [itemsperpage]);
+    setCurrentPage(0);
+  }, [itemsperpage, filterActive]);
+
+  useEffect(() => {
+    if (!filterActive) {
+      setFilterData(data);
+    }
+  }, [filterActive, data]);
 
   const columns = visibleColumns.filter((col) => col.visible);
 
@@ -128,6 +132,7 @@ function EventLayout() {
         data={data}
         currentPageDeviceType={currentPageDeviceType}
         setFilterActive={setFilterActive}
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );
