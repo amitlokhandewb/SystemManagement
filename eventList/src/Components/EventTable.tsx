@@ -6,7 +6,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 type ColumnSort = {
   id: string;
@@ -24,17 +24,21 @@ function EventTable({ data, columns }) {
     state: {
       sorting,
     },
+    enableSorting: true,
     onSortingChange: setSorting,
     initialState: {
       sorting: [
         {
-          id: "priority",
+          id: "dateTime",
           desc: false,
         },
       ],
     },
     getSortedRowModel: getSortedRowModel(),
   });
+  useEffect(() => {
+    console.log(table.getState().sorting)
+  },[])
 
   return (
     <table className="table">
@@ -54,6 +58,7 @@ function EventTable({ data, columns }) {
                   header.column.columnDef.header,
                   header.getContext()
                 )}
+                {JSON.stringify(header.column.getIsSorted())}
                 {header.column.getIsSorted() === false
                   ? null
                   : header.column.getIsSorted() === "asc"

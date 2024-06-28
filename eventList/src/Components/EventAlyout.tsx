@@ -37,6 +37,7 @@ function EventLayout() {
   const [tempVisibleColumns, setTempVisibleColumns] = useState([
     ...initialVisibleColumns,
   ]);
+  const [prevColumns, setprevcolumns] = useState(initialVisibleColumns);
   const [itemsperpage, setItemsperpage] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);
   const [paginatedData, setPaginatedData] = useState<any[]>([]);
@@ -69,6 +70,7 @@ function EventLayout() {
 
   const handleSubmit = () => {
     setVisibleColumns(tempVisibleColumns);
+    setprevcolumns(tempVisibleColumns);
     setIsModalOpen(false);
   };
 
@@ -124,6 +126,7 @@ function EventLayout() {
         handleSubmit={handleSubmit}
         setIsModalOpen={setIsModalOpen}
         isModalOpen={isModalOpen}
+        prevColumns={prevColumns}
       />
       <FilterDialog
         isfilterOPen={isfilterOPen}

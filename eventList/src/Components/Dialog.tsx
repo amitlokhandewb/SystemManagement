@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import { IoMdClose } from "react-icons/io";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -18,12 +18,14 @@ function Dialog({
   handleSubmit,
   isModalOpen,
   setIsModalOpen,
+  prevColumns
 }) {
   const initialVisibleColumns = allColumns.map((col, index) => ({
     ...col,
     id: `column-${index}`,
     visible: visibleColumnKeys.includes(col.accessorKey),
   }));
+
   const onDragEnd = (result) => {
     if (!result.destination) {
       return;
@@ -32,13 +34,15 @@ function Dialog({
     const reorderedColumns = Array.from(tempVisibleColumns);
     const [movedColumn] = reorderedColumns.splice(result.source.index, 1);
     reorderedColumns.splice(result.destination.index, 0, movedColumn);
-
+    
     setTempVisibleColumns(reorderedColumns);
+    // setprevcolumns()
   };
   const handleclose = () => {
     setIsModalOpen(false)
     // alert(JSON.stringify([...tempVisibleColumns]))
-    setTempVisibleColumns([...initialVisibleColumns]);
+    setTempVisibleColumns(prevColumns);
+    
   }
 
   return (

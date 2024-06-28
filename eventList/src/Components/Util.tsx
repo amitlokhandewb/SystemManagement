@@ -61,9 +61,9 @@ const allColumns = [
 const getColorByPriority = (priority: number) => {
     switch (priority) {
       case 1:
-        return '#808080';
-      case 2:
         return 'green';
+      case 2:
+        return '#808080';
       case 3:
         return '#FFA500';
       case 4:
