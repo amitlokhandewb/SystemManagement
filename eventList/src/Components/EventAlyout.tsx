@@ -13,7 +13,16 @@ import "rsuite/dist/rsuite.min.css";
 import { Button, IconButton } from "rsuite";
 import Pagination from "./Pagination"; // Import the Pagination component
 import FunnelIcon from "@rsuite/icons/Funnel";
-
+import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
+import FilterDrawer from "./FilterDrawer";
+import { FilterUtility } from "../Utilities/FilterUtility";
+const iniitalFilter = {
+  priority: 0,
+  daterange: null,
+  eventId: 0,
+  deviceType: "",
+  eventType: "",
+};
 function EventLayout() {
   const visibleColumnKeys = [
     "eventDescription",
@@ -37,14 +46,37 @@ function EventLayout() {
   const [tempVisibleColumns, setTempVisibleColumns] = useState([
     ...initialVisibleColumns,
   ]);
+  const [filter, setFilter] = useState(iniitalFilter);
+  const [chip, setChip] = useState([]);
   const [prevColumns, setprevcolumns] = useState(initialVisibleColumns);
   const [itemsperpage, setItemsperpage] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);
   const [paginatedData, setPaginatedData] = useState<any[]>([]);
   const [currentPageDeviceType, setcurrentPageDeviceType] = useState([]);
-
   const totalPages = Math.ceil(filterData.length / itemsperpage);
 
+  const FilterrUtility = FilterUtility(
+    setisfilterOPen,
+    setFilterData,
+    data,
+    currentPageDeviceType,
+    setFilterActive,
+    setCurrentPage,
+    setChip,
+    chip,
+    setFilter,
+    filter
+  );
+
+  const {
+    // handlesingleReset,
+    handleChange,
+    handleInputChange,
+    updateDeviceType,
+    handleApplyFilters,
+    handleReset,
+    handleclose,
+  } = FilterrUtility;
   useEffect(() => {
     RandomData(data, setData);
     if (!filterActive) {
@@ -95,7 +127,23 @@ function EventLayout() {
   }, [filterActive, data]);
 
   const columns = visibleColumns.filter((col) => col.visible);
-
+  const handlesingleReset = (e) => {
+    let id = e.target.id;
+    if (id === "deviceType" || id === "eventType") {
+      setFilter((prev) => ({ ...prev, [id]: "" }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    } else if (id === "priority") {
+      setFilter((prev) => ({ ...prev, priority: 0 }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    } else if (id === "daterange") {
+      setFilter((prev) => ({ ...prev, daterange: null }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    } else if (id === "eventId") {
+      setFilter((prev) => ({ ...prev, eventId: 0 }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    }
+    // setFilter(filter)    
+  };
   return (
     <div className="event-layout">
       <h4>Event List</h4>
@@ -110,6 +158,25 @@ function EventLayout() {
         />
       </div>
       <div className="table-layout">
+        <div className="row">
+          <label>{chip.length} Filters Applied</label>
+        </div>
+        <div className="row">
+          {chip.map((item) => (
+            <Button
+              key={item}
+              appearance="ghost"
+              style={{ margin: 3, borderRadius: "5em / 5em" }}
+            >
+              {item}
+              <CloseOutlineIcon
+                id={item}
+                onClick={handlesingleReset}
+                style={{ marginLeft: "10px" }}
+              />
+            </Button>
+          ))}
+        </div>
         <EventTable data={paginatedData} columns={columns} />
       </div>
       <Pagination
@@ -128,7 +195,7 @@ function EventLayout() {
         isModalOpen={isModalOpen}
         prevColumns={prevColumns}
       />
-      <FilterDialog
+      {/* <FilterDialog
         isfilterOPen={isfilterOPen}
         setisfilterOPen={setisfilterOPen}
         setFilterData={setFilterData}
@@ -136,6 +203,19 @@ function EventLayout() {
         currentPageDeviceType={currentPageDeviceType}
         setFilterActive={setFilterActive}
         setCurrentPage={setCurrentPage}
+        setChip={setChip}
+      /> */}
+      <FilterDrawer
+        handleChange={handleChange}
+        handleInputChange={handleInputChange}
+        updateDeviceType={updateDeviceType}
+        handleApplyFilters={handleApplyFilters}
+        handleReset={handleReset}
+        handleclose={handleclose}
+        isfilterOPen={isfilterOPen}
+        filter={filter}
+
+
       />
     </div>
   );

@@ -13,11 +13,15 @@ export const FilterUtility = (
   data,
   currentPageDeviceType,
   setFilterActive,
-  setCurrentPage
+  setCurrentPage,
+  setChip,
+  chip,
+  setFilter,
+  filter
 ) => {
-  const [filter, setFilter] = useState(iniitalFilter);
+  // const [filter, setFilter] = useState(iniitalFilter);
   const [previousfilter, setpreviousfilter] = useState(iniitalFilter);
-  const [value, setValue] = useState([]);
+  // const [value, setValue] = useState([]);
   const [prevalue, setpreValue] = useState([]);
 
   let DeviceType = currentPageDeviceType.map((item) => ({
@@ -29,7 +33,8 @@ export const FilterUtility = (
   const handleclose = () => {
     setisfilterOPen(false);
     setFilter(previousfilter)
-    setValue(prevalue);
+    // setValue(prevalue);
+    setChip(prevalue);
   }
 
 
@@ -41,50 +46,57 @@ export const FilterUtility = (
       deviceType: "",
       eventType: "",
     });
-    setValue([]);
+    // setValue([]);
+    setChip([]);
     // setFilteredData(data);
     setpreviousfilter(iniitalFilter)
     setFilterActive(false);
     setisfilterOPen(false);
   };
 
-  const handlesingleReset = (e) => {
-    let id = e.target.id;
-    if (id === "deviceType" || id === "eventType") {
-      setFilter((prev) => ({ ...prev, [id]: "" }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "priority") {
-      setFilter((prev) => ({ ...prev, priority: 0 }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "daterange") {
-      setFilter((prev) => ({ ...prev, daterange: null }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "eventId") {
-      setFilter((prev) => ({ ...prev, eventId: 0 }));
-      setValue((prevValue) => prevValue.filter((item) => item !== id));
-    }
-    // checkFilterActive();
-  };
+  // const handlesingleReset = (e) => {
+  //   let id = e.target.id;
+  //   if (id === "deviceType" || id === "eventType") {
+  //     setFilter((prev) => ({ ...prev, [id]: "" }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   } else if (id === "priority") {
+  //     setFilter((prev) => ({ ...prev, priority: 0 }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   } else if (id === "daterange") {
+  //     setFilter((prev) => ({ ...prev, daterange: null }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   } else if (id === "eventId") {
+  //     setFilter((prev) => ({ ...prev, eventId: 0 }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   }
+  //   // checkFilterActive();
+  // };
 
   const handleChange = (e, name) => {
-    var exist = value.find((item) => item === name);
+    var exist = chip.find((item) => item === name);
     if (!exist) {
-      setValue([...value, name]);
+      // setValue([...chip, name]);
+      setChip([...chip, name]);
     }
     if (name === "eventType" && e === "") {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
+      // setValue((prevValue) => prevValue.filter((item) => item !== name));
+      setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "priority" && e === 0) {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
+      // setValue((prevValue) => prevValue.filter((item) => item !== name));
+      setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "deviceType" && e === "") {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
+      // setValue((prevValue) => prevValue.filter((item) => item !== name));
+      setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "eventId" && e === 0) {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
+      // setValue((prevValue) => prevValue.filter((item) => item !== name));
+      setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "daterange" && e === null) {
-      setValue((prevValue) => prevValue.filter((item) => item !== name));
+      // setValue((prevValue) => prevValue.filter((item) => item !== name));
+      setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "eventId") {
       const eventIdValue = parseInt(e);
@@ -151,22 +163,20 @@ export const FilterUtility = (
   const handleApplyFilters = () => {
     setCurrentPage(0);
     setpreviousfilter(filter)
-    setpreValue(value);
+    setChip(chip);
     setisfilterOPen(false);
     applyFilters();
-    // alert(JSON.stringify(filteredData));
+    alert(JSON.stringify(filter));
     // setFilterData(filteredData);
   };
 
   return {
-    value,
-    handlesingleReset,
+    // handlesingleReset,
     handleChange,
-    filter,
     handleInputChange,
     updateDeviceType,
     handleReset,
     handleApplyFilters,
-    handleclose
+    handleclose,
   };
 };
