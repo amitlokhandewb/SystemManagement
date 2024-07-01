@@ -15,7 +15,10 @@ type ColumnSort = {
 
 type SortingState = ColumnSort[];
 function EventTable({ data, columns }) {
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [sorting, setSorting] = useState<SortingState>([{
+    id: "column-2",
+    desc: true,
+  }]);
   const table = useReactTable({
     data,
     columns,
@@ -24,22 +27,44 @@ function EventTable({ data, columns }) {
     state: {
       sorting,
     },
-    enableSorting: true,
+    // enableSorting: true,
     onSortingChange: setSorting,
-    initialState: {
-      sorting: [
-        {
-          id: "dateTime",
-          desc: false,
-        },
-      ],
-    },
+    // initialState: {
+    //   sorting: [
+    //     {
+    //       id: "column-2",
+    //       desc: true,
+    //     },
+    //   ],
+    // },
     getSortedRowModel: getSortedRowModel(),
   });
-  useEffect(() => {
-    console.log(table.getState().sorting)
-  },[])
-
+  // useEffect(() => {
+  //   console.log(table.getState().sorting);
+  // }, []);
+  // useEffect(() => {
+  //   table.setSorting((sortingState) => {
+  //     return [
+  //       ...sortingState,
+  //       {
+  //         id: "dateTime",
+  //         desc: true,
+  //       },
+  //     ];
+  //   });
+  //   console.log(table);
+  // }, []);
+  // React.useEffect(() => {
+  //   table.setSorting((sortingState) => {
+  //     return [
+  //       ...sortingState,
+  //       {
+  //         id: "dateTime",
+  //         desc: true,
+  //       },
+  //     ];
+  //   });
+  // }, [table]);
   return (
     <table className="table">
       <thead>
@@ -58,12 +83,19 @@ function EventTable({ data, columns }) {
                   header.column.columnDef.header,
                   header.getContext()
                 )}
-                {JSON.stringify(header.column.getIsSorted())}
+                {/* {JSON.stringify(header.column.getIsSorted())} */}
+                {/* {JSON.stringify(sorting)} */}
+                {/* {header.column.columnDef.header === 'Date Time' && header.column.getIsSorted() === false ? "▲": ''} */}
                 {header.column.getIsSorted() === false
                   ? null
                   : header.column.getIsSorted() === "asc"
                   ? "▲"
                   : "▼"}
+                {/* {header.column.getIsSorted()
+                  ? header.column.getIsSorted()
+                    ? " 🔽"
+                    : " 🔼"
+                  : ""} */}
               </th>
             ))}
           </tr>

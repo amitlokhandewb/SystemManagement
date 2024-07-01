@@ -21,6 +21,7 @@ const allColumns = [
   //   }),
   columnHelper.accessor("eventDescription", {
     header: "Event Description",
+    sortDescFirst: true,
     cell: (info) => <div style={{ textAlign: 'left'}}>{info.getValue()}</div>,
   }),
   columnHelper.accessor("priority", {
@@ -36,26 +37,32 @@ const allColumns = [
   columnHelper.accessor("dateTime", {
     header: "Date Time",
     cell: (info) => new Date(info.getValue()).toLocaleString(),
+    sortDescFirst: true,
   }),
   columnHelper.accessor("eventid", {
     header: "Event ID",
     cell: (info) => info.getValue(),
+    sortDescFirst: true,
   }),
   columnHelper.accessor("eventType", {
     header: "Event Type",
     cell: (info) => info.getValue(),
+    sortDescFirst: true,
   }),
   columnHelper.accessor("deviceType", {
     header: "Device Type",
     cell: (info) => info.getValue(),
+    sortDescFirst: true,
   }),
   columnHelper.accessor("actionBy", {
     header: "Action By",
     cell: (info) => info.getValue(),
+    sortDescFirst: true,
   }),
   columnHelper.accessor("plantName", {
     header: "Plant Name",
     cell: (info) => info.getValue(),
+    sortDescFirst: true,
   }),
 ];
 const getColorByPriority = (priority: number) => {
