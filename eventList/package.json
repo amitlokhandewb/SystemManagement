@@ -66,6 +66,7 @@
     "react-modal": "^3.16.1",
     "react-select": "^5.8.0",
     "react-spinners": "^0.13.8",
+    "react-tooltip": "^5.27.1",
     "rsuite": "^5.64.1",
     "single-spa": "^5.9.3",
     "single-spa-react": "^4.3.1"

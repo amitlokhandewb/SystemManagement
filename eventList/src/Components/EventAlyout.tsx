@@ -17,6 +17,7 @@ import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
 import FilterDrawer from "./FilterDrawer";
 import { FilterUtility } from "../Utilities/FilterUtility";
 import { Chip, Stack } from "@mui/material";
+import CustomChip from "./CustomChip";
 const iniitalFilter = {
   priority: 0,
   daterange: null,
@@ -63,7 +64,7 @@ function EventLayout() {
     setFilterActive,
     setCurrentPage,
     setChip,
-    chip,
+    chip
   );
 
   const {
@@ -74,7 +75,7 @@ function EventLayout() {
     handleApplyFilters,
     handleReset,
     handleclose,
-    filter
+    filter,
   } = FilterrUtility;
   useEffect(() => {
     RandomData(data, setData);
@@ -130,38 +131,19 @@ function EventLayout() {
     <div className="event-layout">
       <h4>Event List</h4>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 5 }}>
-      <div className="row">
-          <label>{chip.length} Filters Applied</label>
-          <Stack direction="row" spacing={1}>
-          {chip.map((item) => (
-            <Button
-              key={item}
-              appearance="ghost"
-              style={{ margin: 3, borderRadius: "5em / 5em" }}
-            >
-              {item}
-              <CloseOutlineIcon
-                id={item}
-                onClick={handlesingleReset}
-                style={{ marginLeft: "10px" }}
-              />
-            </Button>
-            // <Chip label={item} variant="outlined"  onDelete={handlesingleReset}  />
-          ))}
-             </Stack>
-        </div>
-        <div><Button onClick={() => setIsModalOpen(true)} appearance="ghost">
-          Customize Column
-        </Button>
-        <IconButton
-          onClick={() => setisfilterOPen(true)}
-          appearance="ghost"
-          icon={<FunnelIcon />}
-        />
+         <CustomChip chip={chip} handlesingleReset={handlesingleReset} filter={filter} />
+        <div>
+          <Button onClick={() => setIsModalOpen(true)} appearance="ghost">
+            Customize Column
+          </Button>
+          <IconButton
+            onClick={() => setisfilterOPen(true)}
+            appearance="ghost"
+            icon={<FunnelIcon />}
+          />
         </div>
       </div>
       <div className="table-layout">
-        
         <EventTable data={paginatedData} columns={columns} />
       </div>
       <Pagination
