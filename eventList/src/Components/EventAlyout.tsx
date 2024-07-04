@@ -69,7 +69,7 @@ function EventLayout() {
   );
 
   const {
-    // handlesingleReset,
+    handlesingleReset,
     handleChange,
     handleInputChange,
     updateDeviceType,
@@ -127,23 +127,23 @@ function EventLayout() {
   }, [filterActive, data]);
 
   const columns = visibleColumns.filter((col) => col.visible);
-  const handlesingleReset = (e) => {
-    let id = e.target.id;
-    if (id === "deviceType" || id === "eventType") {
-      setFilter((prev) => ({ ...prev, [id]: "" }));
-      setChip((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "priority") {
-      setFilter((prev) => ({ ...prev, priority: 0 }));
-      setChip((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "daterange") {
-      setFilter((prev) => ({ ...prev, daterange: null }));
-      setChip((prevValue) => prevValue.filter((item) => item !== id));
-    } else if (id === "eventId") {
-      setFilter((prev) => ({ ...prev, eventId: 0 }));
-      setChip((prevValue) => prevValue.filter((item) => item !== id));
-    }
-    // setFilter(filter)    
-  };
+  // const handlesingleReset = (e) => {
+  //   let id = e.target.id;
+  //   if (id === "deviceType" || id === "eventType") {
+  //     setFilter((prev) => ({ ...prev, [id]: "" }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   } else if (id === "priority") {
+  //     setFilter((prev) => ({ ...prev, priority: 0 }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   } else if (id === "daterange") {
+  //     setFilter((prev) => ({ ...prev, daterange: null }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   } else if (id === "eventId") {
+  //     setFilter((prev) => ({ ...prev, eventId: 0 }));
+  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
+  //   }
+  //   // setFilter(filter)    
+  // };
   return (
     <div className="event-layout">
       <h4>Event List</h4>

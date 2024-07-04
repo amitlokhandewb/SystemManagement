@@ -23,6 +23,8 @@ export const FilterUtility = (
   const [previousfilter, setpreviousfilter] = useState(iniitalFilter);
   // const [value, setValue] = useState([]);
   const [prevalue, setpreValue] = useState([]);
+  const [resetTrigger, setResetTrigger] = useState(false);
+
 
   let DeviceType = currentPageDeviceType.map((item) => ({
     value: item,
@@ -54,23 +56,24 @@ export const FilterUtility = (
     setisfilterOPen(false);
   };
 
-  // const handlesingleReset = (e) => {
-  //   let id = e.target.id;
-  //   if (id === "deviceType" || id === "eventType") {
-  //     setFilter((prev) => ({ ...prev, [id]: "" }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   } else if (id === "priority") {
-  //     setFilter((prev) => ({ ...prev, priority: 0 }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   } else if (id === "daterange") {
-  //     setFilter((prev) => ({ ...prev, daterange: null }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   } else if (id === "eventId") {
-  //     setFilter((prev) => ({ ...prev, eventId: 0 }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   }
-  //   // checkFilterActive();
-  // };
+  const handlesingleReset = (e) => {
+    let id = e.target.id;
+    if (id === "deviceType" || id === "eventType") {
+      setFilter((prev) => ({ ...prev, [id]: "" }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    } else if (id === "priority") {
+      setFilter((prev) => ({ ...prev, priority: 0 }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    } else if (id === "daterange") {
+      setFilter((prev) => ({ ...prev, daterange: null }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    } else if (id === "eventId") {
+      setFilter((prev) => ({ ...prev, eventId: 0 }));
+      setChip((prevValue) => prevValue.filter((item) => item !== id));
+    }
+    // checkFilterActive();
+    setResetTrigger((prev) => !prev);
+  };
 
   const handleChange = (e, name) => {
     var exist = chip.find((item) => item === name);
@@ -114,7 +117,9 @@ export const FilterUtility = (
       handleChange(value, "eventId");
     }
   };
-
+  useEffect(() => {
+    applyFilters();
+  }, [resetTrigger]);
   const applyFilters = () => {
     let updatedData = data;
 
@@ -166,12 +171,11 @@ export const FilterUtility = (
     setChip(chip);
     setisfilterOPen(false);
     applyFilters();
-    alert(JSON.stringify(filter));
     // setFilterData(filteredData);
   };
 
   return {
-    // handlesingleReset,
+    handlesingleReset,
     handleChange,
     handleInputChange,
     updateDeviceType,
