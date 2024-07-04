@@ -16,12 +16,9 @@ export const FilterUtility = (
   setCurrentPage,
   setChip,
   chip,
-  setFilter,
-  filter
 ) => {
-  // const [filter, setFilter] = useState(iniitalFilter);
+  const [filter, setFilter] = useState(iniitalFilter);
   const [previousfilter, setpreviousfilter] = useState(iniitalFilter);
-  // const [value, setValue] = useState([]);
   const [prevalue, setpreValue] = useState([]);
   const [resetTrigger, setResetTrigger] = useState(false);
 
@@ -171,6 +168,7 @@ export const FilterUtility = (
     setChip(chip);
     setisfilterOPen(false);
     applyFilters();
+    setpreValue(chip)
     // setFilterData(filteredData);
   };
 
@@ -182,5 +180,6 @@ export const FilterUtility = (
     handleReset,
     handleApplyFilters,
     handleclose,
+    filter
   };
 };

@@ -46,7 +46,6 @@ function EventLayout() {
   const [tempVisibleColumns, setTempVisibleColumns] = useState([
     ...initialVisibleColumns,
   ]);
-  const [filter, setFilter] = useState(iniitalFilter);
   const [chip, setChip] = useState([]);
   const [prevColumns, setprevcolumns] = useState(initialVisibleColumns);
   const [itemsperpage, setItemsperpage] = useState(10);
@@ -64,8 +63,6 @@ function EventLayout() {
     setCurrentPage,
     setChip,
     chip,
-    setFilter,
-    filter
   );
 
   const {
@@ -76,6 +73,7 @@ function EventLayout() {
     handleApplyFilters,
     handleReset,
     handleclose,
+    filter
   } = FilterrUtility;
   useEffect(() => {
     RandomData(data, setData);
@@ -127,41 +125,12 @@ function EventLayout() {
   }, [filterActive, data]);
 
   const columns = visibleColumns.filter((col) => col.visible);
-  // const handlesingleReset = (e) => {
-  //   let id = e.target.id;
-  //   if (id === "deviceType" || id === "eventType") {
-  //     setFilter((prev) => ({ ...prev, [id]: "" }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   } else if (id === "priority") {
-  //     setFilter((prev) => ({ ...prev, priority: 0 }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   } else if (id === "daterange") {
-  //     setFilter((prev) => ({ ...prev, daterange: null }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   } else if (id === "eventId") {
-  //     setFilter((prev) => ({ ...prev, eventId: 0 }));
-  //     setChip((prevValue) => prevValue.filter((item) => item !== id));
-  //   }
-  //   // setFilter(filter)    
-  // };
   return (
     <div className="event-layout">
       <h4>Event List</h4>
-      <div style={{ display: "flex", justifyContent: "end", gap: 5 }}>
-        <Button onClick={() => setIsModalOpen(true)} appearance="ghost">
-          Customize Column
-        </Button>
-        <IconButton
-          onClick={() => setisfilterOPen(true)}
-          appearance="ghost"
-          icon={<FunnelIcon />}
-        />
-      </div>
-      <div className="table-layout">
-        <div className="row">
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 5 }}>
+      <div className="row">
           <label>{chip.length} Filters Applied</label>
-        </div>
-        <div className="row">
           {chip.map((item) => (
             <Button
               key={item}
@@ -177,6 +146,18 @@ function EventLayout() {
             </Button>
           ))}
         </div>
+        <div><Button onClick={() => setIsModalOpen(true)} appearance="ghost">
+          Customize Column
+        </Button>
+        <IconButton
+          onClick={() => setisfilterOPen(true)}
+          appearance="ghost"
+          icon={<FunnelIcon />}
+        />
+        </div>
+      </div>
+      <div className="table-layout">
+        
         <EventTable data={paginatedData} columns={columns} />
       </div>
       <Pagination
@@ -195,16 +176,6 @@ function EventLayout() {
         isModalOpen={isModalOpen}
         prevColumns={prevColumns}
       />
-      {/* <FilterDialog
-        isfilterOPen={isfilterOPen}
-        setisfilterOPen={setisfilterOPen}
-        setFilterData={setFilterData}
-        data={data}
-        currentPageDeviceType={currentPageDeviceType}
-        setFilterActive={setFilterActive}
-        setCurrentPage={setCurrentPage}
-        setChip={setChip}
-      /> */}
       <FilterDrawer
         handleChange={handleChange}
         handleInputChange={handleInputChange}
@@ -214,8 +185,6 @@ function EventLayout() {
         handleclose={handleclose}
         isfilterOPen={isfilterOPen}
         filter={filter}
-
-
       />
     </div>
   );
