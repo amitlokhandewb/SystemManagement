@@ -16,6 +16,7 @@ import FunnelIcon from "@rsuite/icons/Funnel";
 import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
 import FilterDrawer from "./FilterDrawer";
 import { FilterUtility } from "../Utilities/FilterUtility";
+import { Chip, Stack } from "@mui/material";
 const iniitalFilter = {
   priority: 0,
   daterange: null,
@@ -131,6 +132,7 @@ function EventLayout() {
       <div style={{ display: "flex", justifyContent: "space-between", gap: 5 }}>
       <div className="row">
           <label>{chip.length} Filters Applied</label>
+          <Stack direction="row" spacing={1}>
           {chip.map((item) => (
             <Button
               key={item}
@@ -144,7 +146,9 @@ function EventLayout() {
                 style={{ marginLeft: "10px" }}
               />
             </Button>
+            // <Chip label={item} variant="outlined"  onDelete={handlesingleReset}  />
           ))}
+             </Stack>
         </div>
         <div><Button onClick={() => setIsModalOpen(true)} appearance="ghost">
           Customize Column
