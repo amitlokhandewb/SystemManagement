@@ -83,30 +83,8 @@ enum Priority {
   high,
   critical,
 }
-
-
-
-
 function RandomIndex(f, n) {
   return Math.floor(Math.random() * n) + f;
-}
-function RandomDescription() {
-  return EventDescrition[RandomIndex(0, 7)];
-}
-function RandomEventID() {
-  return Math.floor(Math.random() * 999) + 100;
-}
-function RandomEventType() {
-  return EventType[RandomIndex(0, 4)];
-}
-function RandomDeviceType() {
-  return deviceType[RandomIndex(0, 9)];
-}
-function RandomActionBy() {
-  return ActionBy[RandomIndex(0, 8)];
-}
-function RandomPLantName() {
-  return plantName[RandomIndex(0, 4)];
 }
 function RandomData(data, setData) {
   setTimeout(() => {
@@ -115,14 +93,14 @@ function RandomData(data, setData) {
     }
     setData([
       {
-        eventDescription: RandomDescription(),
+        eventDescription: EventDescrition[RandomIndex(0, 7)],
         priority: RandomIndex(1, 4),
         dateTime: `${new Date()}`,
-        eventid: RandomEventID(),
-        eventType: RandomEventType(),
-        deviceType: RandomDeviceType(),
-        actionBy: RandomActionBy(),
-        plantName: RandomPLantName(),
+        eventid: Math.floor(Math.random() * 999) + 100,
+        eventType: EventType[RandomIndex(0, 4)],
+        deviceType: deviceType[RandomIndex(0, 9)],
+        actionBy: ActionBy[RandomIndex(0, 8)],
+        plantName: plantName[RandomIndex(0, 4)],
       },
       ...data,
     ]);
@@ -132,8 +110,5 @@ function RandomData(data, setData) {
 export {
   allColumns,
   RandomIndex,
-  RandomDescription,
-  RandomEventID,
-  RandomEventType,
   RandomData,
 };
