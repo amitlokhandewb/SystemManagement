@@ -18,13 +18,7 @@ import FilterDrawer from "./FilterDrawer";
 import { FilterUtility } from "../Utilities/FilterUtility";
 import { Chip, Stack } from "@mui/material";
 import CustomChip from "./CustomChip";
-const iniitalFilter = {
-  priority: 0,
-  daterange: null,
-  eventId: 0,
-  deviceType: "",
-  eventType: "",
-};
+
 function EventLayout() {
   const visibleColumnKeys = [
     "eventDescription",

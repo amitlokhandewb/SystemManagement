@@ -9,7 +9,6 @@ import {
   Radio,
   RadioGroup,
 } from "rsuite";
-import { EventType } from "./Util";
 import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
 import { IoMdClose } from "react-icons/io";
 import { FilterUtility } from "../Utilities/FilterUtility";

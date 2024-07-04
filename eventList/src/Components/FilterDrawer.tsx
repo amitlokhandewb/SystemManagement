@@ -10,16 +10,10 @@ import {
   RadioGroup,
 } from "rsuite";
 import { FilterUtility } from "../Utilities/FilterUtility";
-import { EventType } from "./Util";
 import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
+import { EventType, priorityOptions } from "../Utilities/Data";
 
-const priorityOptions = [
-  { value: 0, label: "All" },
-  { value: 1, label: "Low" },
-  { value: 2, label: "Medium" },
-  { value: 3, label: "High" },
-  { value: 4, label: "Critical" },
-];
+
 function FilterDrawer({
   handleChange,
   handleInputChange,

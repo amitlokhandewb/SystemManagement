@@ -23,6 +23,7 @@ export const FilterUtility = (
   const [resetTrigger, setResetTrigger] = useState(false);
 
 
+
   let DeviceType = currentPageDeviceType.map((item) => ({
     value: item,
     label: item,

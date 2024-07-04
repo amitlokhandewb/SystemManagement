@@ -1,4 +1,5 @@
 import { createColumnHelper } from "@tanstack/react-table";
+import { ActionBy, EventDescrition, EventType, deviceType, plantName } from "../Utilities/Data";
 
 type Event = {
   eventDescription: string;
@@ -14,11 +15,6 @@ type Event = {
 const columnHelper = createColumnHelper<Event>();
 
 const allColumns = [
-  //   columnHelper.accessor("eventDescription", {
-  //     header: "Sr. No",
-  //     cell: (info) => JSON.stringify(info.row.index),
-  //     enableSorting: false,
-  //   }),
   columnHelper.accessor("eventDescription", {
     header: "Event Description",
     sortDescFirst: true,
@@ -46,7 +42,7 @@ const allColumns = [
   }),
   columnHelper.accessor("eventType", {
     header: "Event Type",
-    cell: (info) => info.getValue(),
+    cell: (info) => info.getValue() === '' ? 'N/A'  : info.getValue(),
     sortDescFirst: true,
   }),
   columnHelper.accessor("deviceType", {
@@ -87,54 +83,7 @@ enum Priority {
   high,
   critical,
 }
-const EventDescrition = [
-  "Temperature sensor triggered",
-  "Maintenance scheduled",
-  "Pressure sensor anomaly",
-  "Routine inspection",
-  "Fire alarm triggered",
-  "Power outage",
-  "Water leak detected",
-  "Safety drill",
-];
-export const EventType = [
-  "Sensor Alert",
-  "Maintenance",
-  "Inspection",
-  "Emergency",
-  "Drill",
-];
-export const deviceType = [
-  "Temperature Sensor",
-  "System",
-  "Pressure Sensor",
-  "Inspection Device",
-  "Fire Alarm",
-  "Power System",
-  "Water Sensor",
-  "Safety System",
-  "HVAC System",
-  "Security System",
-];
-const ActionBy = [
-  "John Doe",
-  "Jane Smith",
-  "Alice Johnson",
-  "Bob Lee",
-  "Charlie Kim",
-  "David Park",
-  "Eve Morgan",
-  "Frank White",
-  "Grace Brown",
-  "Henry Davis",
-];
-const plantName = [
-  "Main Plant",
-  "Secondary Plant",
-  "North Plant",
-  "East Plant",
-  "West Plant",
-];
+
 
 
 

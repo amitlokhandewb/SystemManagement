@@ -2,13 +2,8 @@ import React, { useEffect } from "react";
 import { Button } from "rsuite";
 import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
 import { Tooltip } from "@mui/material";
-const priorityOptions = [
-  { value: 0, label: "All" },
-  { value: 1, label: "Low" },
-  { value: 2, label: "Medium" },
-  { value: 3, label: "High" },
-  { value: 4, label: "Critical" },
-];
+import { priorityOptions } from "../Utilities/Data";
+
 
 function CustomChip({ chip, handlesingleReset, filter }) {
   useEffect(() => {
@@ -28,7 +23,7 @@ function CustomChip({ chip, handlesingleReset, filter }) {
   };
   return (
     <div className="row">
-      <label>{chip.length} Filters Applied</label>
+      <label >{chip.length} Filters Applied</label>
       {chip.map((item) => (
         <Tooltip title={fetchValue(item)}>
           <Button
