@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "br+k7y4IhGqHmBdpArWuVE1C94anNWc8wqi8QUpdUj4=",
+  "Source": "SystemManagementApp",
+  "BasePath": "_content/SystemManagementApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
