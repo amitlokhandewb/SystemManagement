@@ -9,5 +9,12 @@ namespace SystemManagementApp.Data
         {
         }
         public DbSet<Events> Events { get; set; }
+        public DbSet<Priority> Priorities { get; set; }
+        public DbSet<EventType> EventTypes { get; set; }
+        public DbSet<DeviceType> DeviceTypes { get; set; }
+        public DbSet<PlantName> PlantName { get; set; }
+        public DbSet<EventDescription> EventDescription { get; set; }
+        public DbSet<ActionBy> ActionBies { get; set; }
+
     }
 }
