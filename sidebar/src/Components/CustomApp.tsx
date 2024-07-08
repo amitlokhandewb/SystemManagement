@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
+import { navigateToUrl } from "single-spa";
 
 function CustomApp({ src, title, pathname }) {
   const handleNavigate = () => {
-    window.location.href = pathname;
+    navigateToUrl(pathname)
   };
   return (
     <div

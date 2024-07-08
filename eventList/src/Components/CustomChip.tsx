@@ -25,7 +25,7 @@ function CustomChip({ chip, handlesingleReset, filter }) {
     <div className="row">
       <label >{chip.length} Filters Applied</label>
       {chip.map((item) => (
-        <Tooltip title={fetchValue(item)}>
+        <Tooltip title={`${fetchValue(item)}`}>
           <Button
             key={item}
             appearance="ghost"
