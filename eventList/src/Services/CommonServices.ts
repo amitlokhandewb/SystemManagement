@@ -5,5 +5,10 @@ const fetchEventDescriptions = async () => {
     const data = await response.json();
     return data;
   };
+  const fetchDevices = async () => {
+    const response = await fetch(`${APIURL}Common/GetDeviceTypesAsync`);
+    const data = await response.json();
+    return data;
+  };
 
-  export { fetchEventDescriptions }
+  export { fetchEventDescriptions , fetchDevices}

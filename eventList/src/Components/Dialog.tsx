@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { IoMdClose } from "react-icons/io";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { allColumns } from "./Util";
 const visibleColumnKeys = [
   "eventDescription",
   "priority",
@@ -18,7 +17,8 @@ function Dialog({
   handleSubmit,
   isModalOpen,
   setIsModalOpen,
-  prevColumns
+  prevColumns,
+  allColumns
 }) {
   const initialVisibleColumns = allColumns.map((col, index) => ({
     ...col,

@@ -4,7 +4,6 @@ import Datafromjson from "../Resources/EventList.json";
 import Modal from "react-modal";
 import { createColumnHelper } from "@tanstack/react-table";
 import "../Resources/Index.css";
-import { RandomData, allColumns } from "./Util";
 import { IoMdClose } from "react-icons/io";
 import Dialog from "./Dialog";
 import { ClipLoader } from "react-spinners";
@@ -19,8 +18,12 @@ import { FilterUtility } from "../Utilities/FilterUtility";
 import { Chip, Stack } from "@mui/material";
 import CustomChip from "./CustomChip";
 import { CreateRandomEvent, fetchEventList } from "../Services/EventServices";
+import { Util } from "./Util";
+import { GenricINterval, getUniqueDeviceTypes } from "../Utilities/Generic";
 
 function EventLayout() {
+  const Uitl = Util();
+  const { allColumns } = Uitl;
   const visibleColumnKeys = [
     "eventDescription",
     "priority",
@@ -73,7 +76,6 @@ function EventLayout() {
     filter,
   } = FilterrUtility;
   useEffect(() => {
-    RandomData(data, setData);
     if (!filterActive) {
       setFilterData(data);
     }
@@ -87,13 +89,6 @@ function EventLayout() {
     );
   };
 
-  const getUniqueDeviceTypes = () => {
-    const allDeviceTypes = paginatedData.map((event) => event.deviceType);
-    const uniqueDeviceTypes = allDeviceTypes.filter(
-      (deviceType, index, array) => array.indexOf(deviceType) === index
-    );
-    return uniqueDeviceTypes;
-  };
 
   const handleSubmit = () => {
     setVisibleColumns(tempVisibleColumns);
@@ -104,12 +99,11 @@ function EventLayout() {
   useEffect(() => {
     const start = currentPage * itemsperpage;
     const end = start + itemsperpage;
-    // console.log("filterdata", filterData);
     setPaginatedData(filterData.slice(start, end));
   }, [filterData, currentPage, itemsperpage]);
 
   useEffect(() => {
-    setcurrentPageDeviceType(getUniqueDeviceTypes());
+    setcurrentPageDeviceType(getUniqueDeviceTypes(paginatedData));
   }, [paginatedData]);
 
   useEffect(() => {
@@ -124,33 +118,13 @@ function EventLayout() {
 
   const fetcheventList = async () => {
     const response = await fetchEventList();
-    // console.log("data order")
-    // setData([response, ...data]);
     setData(response);
   };
 
   useEffect(() => {
-    // fetcheventList();
-    fetchEventListINterval();
-    randominterval();
+    GenricINterval(fetcheventList);
+    GenricINterval(CreateRandomEvent);
   }, []);
-  const randominterval = () => {
-    const intervalcall = setInterval(() => {
-      CreateRandomEvent()
-      // fetcheventList();
-      // console.log("repeat");
-    },2000);
-    return () => clearInterval(intervalcall);
-  }
-  const fetchEventListINterval = () => {
-    const intervalcall = setInterval(() => {
-      // CreateRandomEvent()
-      fetcheventList();
-      // fetcheventList();
-      // console.log("repeat");
-    },2000);
-    return () => clearInterval(intervalcall);
-  }
   const columns = visibleColumns.filter((col) => col.visible);
   return (
     <div className="event-layout">
@@ -190,6 +164,7 @@ function EventLayout() {
         setIsModalOpen={setIsModalOpen}
         isModalOpen={isModalOpen}
         prevColumns={prevColumns}
+        allColumns={allColumns}
       />
       <FilterDrawer
         handleChange={handleChange}

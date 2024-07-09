@@ -79,6 +79,7 @@ function FilterDrawer({
             style={{ width: "auto" }}
             onChange={(e) => handleChange(e, "eventType")}
             value={filter.eventType}
+            
           >
             <Radio value={""}>All</Radio>
             {EventType.map((item) => (

@@ -51,14 +51,14 @@ namespace SystemManagementApp.Service
 
             var newEvent = new Events
             {
-                eventDescription = GetRandomItem(eventDescriptions)?.eventDescriptionId ?? 0,
+                eventDescription = GetRandomItem(eventDescriptions)?.eventDescription ?? "N/A",
                 priority = GetRandomItem(priorities)?.priorityId ?? 0,
                 dateTime = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
                 eventid = GenerateRandomId(),
-                eventType = GetRandomItem(eventTypes)?.eventTypeId ?? 0,
-                deviceType = GetRandomItem(deviceTypes)?.deviceTypeId ?? 0,
-                actionBy = GetRandomItem(actionBies)?.actionById ?? 0,
-                plantName = GetRandomItem(plantNames)?.plantId ?? 0
+                eventType = GetRandomItem(eventTypes)?.eventTypeName ?? "N/A",
+                deviceType = GetRandomItem(deviceTypes)?.deviceName ?? "N/A",
+                actionBy = GetRandomItem(actionBies)?.actionName ?? "N/A",
+                plantName = GetRandomItem(plantNames)?.plantName ?? "N/A"
             };
 
             return await CreateEvents(newEvent);
