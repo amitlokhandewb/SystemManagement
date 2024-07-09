@@ -14,7 +14,7 @@ namespace SystemManagementApp.Repository
         }
         public async Task<IEnumerable<Events>> GetEvents()
         {
-            return await _dbContext.Events.ToListAsync();
+            return await _dbContext.Events.OrderByDescending(x => x.dateTime).ToListAsync();
         }
         public async Task<Events> GetEventById(int id)
         {

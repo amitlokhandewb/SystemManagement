@@ -1,5 +1,12 @@
 import { createColumnHelper } from "@tanstack/react-table";
-import { ActionBy, EventDescrition, EventType, deviceType, plantName } from "../Utilities/Data";
+import {
+  ActionBy,
+  EventDescrition,
+  EventType,
+  deviceType,
+  plantName,
+} from "../Utilities/Data";
+import { CreateRandomEvent } from "../Services/EventServices";
 
 type Event = {
   eventDescription: string;
@@ -12,13 +19,14 @@ type Event = {
   plantName: string;
 };
 
+
 const columnHelper = createColumnHelper<Event>();
 
 const allColumns = [
   columnHelper.accessor("eventDescription", {
     header: "Event Description",
     sortDescFirst: true,
-    cell: (info) => <div style={{ textAlign: 'left'}}>{info.getValue()}</div>,
+    cell: (info) => <div style={{ textAlign: "left" }}>{info.getValue()}</div>,
   }),
   columnHelper.accessor("priority", {
     header: "Priority",
@@ -42,7 +50,7 @@ const allColumns = [
   }),
   columnHelper.accessor("eventType", {
     header: "Event Type",
-    cell: (info) => info.getValue() === '' ? 'N/A'  : info.getValue(),
+    cell: (info) => (info.getValue() === "" ? "N/A" : info.getValue()),
     sortDescFirst: true,
   }),
   columnHelper.accessor("deviceType", {
@@ -62,20 +70,19 @@ const allColumns = [
   }),
 ];
 const getColorByPriority = (priority: number) => {
-    switch (priority) {
-      case 1:
-        return 'green';
-      case 2:
-        return '#808080';
-      case 3:
-        return '#FFA500';
-      case 4:
-        return 'red';
-      default:
-        return 'black';
-    }
-  };
-
+  switch (priority) {
+    case 1:
+      return "green";
+    case 2:
+      return "#808080";
+    case 3:
+      return "#FFA500";
+    case 4:
+      return "red";
+    default:
+      return "black";
+  }
+};
 
 enum Priority {
   low,
@@ -86,29 +93,16 @@ enum Priority {
 function RandomIndex(f, n) {
   return Math.floor(Math.random() * n) + f;
 }
+const CreateTandomEvents = async (setData, data) => {
+  const response = await CreateRandomEvent();
+  setData([response,...data])
+};
+
 function RandomData(data, setData) {
   setTimeout(() => {
-    if (!Array.isArray(data)) {
-      data = [];
-    }
-    setData([
-      {
-        eventDescription: EventDescrition[RandomIndex(0, 7)],
-        priority: RandomIndex(1, 4),
-        dateTime: `${new Date()}`,
-        eventid: Math.floor(Math.random() * 999) + 100,
-        eventType: EventType[RandomIndex(0, 4)],
-        deviceType: deviceType[RandomIndex(0, 9)],
-        actionBy: ActionBy[RandomIndex(0, 8)],
-        plantName: plantName[RandomIndex(0, 4)],
-      },
-      ...data,
-    ]);
-  }, 500);
+    
+    // CreateTandomEvents(setData, data);
+  }, 1000);
 }
 
-export {
-  allColumns,
-  RandomIndex,
-  RandomData,
-};
+export { allColumns, RandomIndex, RandomData };

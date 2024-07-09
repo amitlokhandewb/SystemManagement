@@ -55,7 +55,7 @@ namespace SystemManagementApp.Controllers
             }
             return Ok(eventExist);
         }
-        [HttpPost("CreateRandomEventAsync")]
+        [HttpGet("CreateRandomEventAsync")]
         public async Task<ActionResult<Events>> CreateRandomEventAsync()
         {
             var createevent = await _eventService.CreateRandomEventAsync();

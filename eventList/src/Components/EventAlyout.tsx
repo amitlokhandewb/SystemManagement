@@ -18,6 +18,7 @@ import FilterDrawer from "./FilterDrawer";
 import { FilterUtility } from "../Utilities/FilterUtility";
 import { Chip, Stack } from "@mui/material";
 import CustomChip from "./CustomChip";
+import { CreateRandomEvent, fetchEventList } from "../Services/EventServices";
 
 function EventLayout() {
   const visibleColumnKeys = [
@@ -34,7 +35,7 @@ function EventLayout() {
     visible: visibleColumnKeys.includes(col.accessorKey),
   }));
   const [filterActive, setFilterActive] = useState(false);
-  const [data, setData] = useState(Datafromjson);
+  const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState(data);
   const [isfilterOPen, setisfilterOPen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -103,6 +104,7 @@ function EventLayout() {
   useEffect(() => {
     const start = currentPage * itemsperpage;
     const end = start + itemsperpage;
+    // console.log("filterdata", filterData);
     setPaginatedData(filterData.slice(start, end));
   }, [filterData, currentPage, itemsperpage]);
 
@@ -120,12 +122,45 @@ function EventLayout() {
     }
   }, [filterActive, data]);
 
+  const fetcheventList = async () => {
+    const response = await fetchEventList();
+    // console.log("data order")
+    // setData([response, ...data]);
+    setData(response);
+  };
+
+  useEffect(() => {
+    // fetcheventList();
+    fetchEventListINterval();
+    randominterval();
+  }, []);
+  const randominterval = () => {
+    const intervalcall = setInterval(() => {
+      CreateRandomEvent()
+      // fetcheventList();
+      // console.log("repeat");
+    },2000);
+    return () => clearInterval(intervalcall);
+  }
+  const fetchEventListINterval = () => {
+    const intervalcall = setInterval(() => {
+      // CreateRandomEvent()
+      fetcheventList();
+      // fetcheventList();
+      // console.log("repeat");
+    },2000);
+    return () => clearInterval(intervalcall);
+  }
   const columns = visibleColumns.filter((col) => col.visible);
   return (
     <div className="event-layout">
       <h4>Event List</h4>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 5 }}>
-         <CustomChip chip={chip} handlesingleReset={handlesingleReset} filter={filter} />
+        <CustomChip
+          chip={chip}
+          handlesingleReset={handlesingleReset}
+          filter={filter}
+        />
         <div>
           <Button onClick={() => setIsModalOpen(true)} appearance="ghost">
             Customize Column

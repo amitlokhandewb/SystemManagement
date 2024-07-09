@@ -53,3 +53,6 @@ export const plantName = [
   "East Plant",
   "West Plant",
 ];
+
+const APIURL = 'https://localhost:7105/api/';
+export { APIURL }

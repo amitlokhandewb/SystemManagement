@@ -149,7 +149,7 @@
     "ContainingType": "SystemManagementApp.Controllers.EventsController",
     "Method": "CreateRandomEventAsync",
     "RelativePath": "api/Events/CreateRandomEventAsync",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
