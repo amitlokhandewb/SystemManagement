@@ -14,14 +14,16 @@ builder.Services.AddScoped<EventService, EventService>();
 builder.Services.AddScoped<EventRepository,EventRepository>();
 builder.Services.AddScoped<CommonRepository,CommonRepository>();
 builder.Services.AddScoped<CommonService,CommonService>();
+builder.Services.AddScoped<EventFilterService, EventFilterService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:9000",
-                                              "http://www.contoso.com");
+                          policy.AllowAnyOrigin()
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
                       });
 });
 builder.Services.AddEndpointsApiExplorer();

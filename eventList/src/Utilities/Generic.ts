@@ -1,7 +1,7 @@
-const GenricINterval = (method) => {
+const GenricINterval = (method, time) => {
   const intervalcall = setInterval(() => {
     method();
-  }, 2000);
+  }, time);
   return () => clearInterval(intervalcall);
 };
 const getUniqueDeviceTypes = (paginatedData) => {

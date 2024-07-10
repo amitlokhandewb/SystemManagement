@@ -120,6 +120,32 @@
     ]
   },
   {
+    "ContainingType": "SystemManagementApp.Controllers.EventFilterController",
+    "Method": "Filter",
+    "RelativePath": "api/EventFilter/Filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filterDto",
+        "Type": "SystemManagementApp.Model.FilterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.Events, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "SystemManagementApp.Controllers.EventsController",
     "Method": "CreateEventAsync",
     "RelativePath": "api/Events/CreateEvents",

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { sendFilter } from "../Services/FilterService";
 
 const iniitalFilter = {
   priority: 0,
@@ -33,11 +34,8 @@ export const FilterUtility = (
   const handleclose = () => {
     setisfilterOPen(false);
     setFilter(previousfilter)
-    // setValue(prevalue);
     setChip(prevalue);
   }
-
-
   const handleReset = () => {
     setFilter({
       priority: 0,
@@ -46,9 +44,7 @@ export const FilterUtility = (
       deviceType: "",
       eventType: "",
     });
-    // setValue([]);
     setChip([]);
-    // setFilteredData(data);
     setpreviousfilter(iniitalFilter)
     setFilterActive(false);
     setisfilterOPen(false);
@@ -69,34 +65,27 @@ export const FilterUtility = (
       setFilter((prev) => ({ ...prev, eventId: 0 }));
       setChip((prevValue) => prevValue.filter((item) => item !== id));
     }
-    // checkFilterActive();
     setResetTrigger((prev) => !prev);
   };
 
   const handleChange = (e, name) => {
     var exist = chip.find((item) => item === name);
     if (!exist) {
-      // setValue([...chip, name]);
       setChip([...chip, name]);
     }
     if (name === "eventType" && e === "") {
-      // setValue((prevValue) => prevValue.filter((item) => item !== name));
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "priority" && e === 0) {
-      // setValue((prevValue) => prevValue.filter((item) => item !== name));
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "deviceType" && e === "") {
-      // setValue((prevValue) => prevValue.filter((item) => item !== name));
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "eventId" && e === 0) {
-      // setValue((prevValue) => prevValue.filter((item) => item !== name));
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "daterange" && e === null) {
-      // setValue((prevValue) => prevValue.filter((item) => item !== name));
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "eventId") {
@@ -118,40 +107,56 @@ export const FilterUtility = (
   useEffect(() => {
     applyFilters();
   }, [resetTrigger]);
-  const applyFilters = () => {
-    let updatedData = data;
 
-    if (filter.priority !== 0) {
-      updatedData = updatedData.filter(
-        (item) => item.priority === filter.priority
-      );
-    }
-    if (filter.daterange) {
-      const [startDate, endDate] = filter.daterange;
-      updatedData = updatedData.filter(
-        (item) =>
-          new Date(item.dateTime) >= startDate &&
-          new Date(item.dateTime) <= endDate
-      );
-    }
-    if (filter.eventId) {
-      updatedData = updatedData.filter(
-        (item) => parseInt(item.eventid) === filter.eventId
-      );
-    }
-    if (filter.deviceType) {
-      updatedData = updatedData.filter(
-        (item) => item.deviceType === filter.deviceType
-      );
-    }
-    if (filter.eventType) {
-      updatedData = updatedData.filter(
-        (item) => item.eventType === filter.eventType
-      );
-    }
-    setFilterData(updatedData);
+  const applyFilters = () => {
+    SendDataFilter();
     checkFilterActive();
   };
+
+  // async function SendDataFilter() {
+  //     if (filter.daterange && Array.isArray(filter.daterange) && filter.daterange.length === 2) {
+  //     const [startDate, endDate] = filter?.daterange;
+  
+  //     const sendData = {
+  //       priority: filter.priority,
+  //       deviceType: filter.deviceType,
+  //       eventType: filter.eventType,
+  //       eventId: filter.eventId,
+  //       startDate: startDate,
+  //       endDate: endDate
+  //     }
+  //     const response = await sendFilter(sendData);
+  //     setFilterData(response);
+  //   } else {
+  //     console.error('Invalid date range:', filter.daterange);
+  //   }
+  // }
+
+  async function SendDataFilter() {
+    let startDate = null;
+    let endDate = null;
+  
+    if (filter.daterange && Array.isArray(filter.daterange) && filter.daterange.length === 2) {
+      [startDate, endDate] = filter?.daterange;
+    }
+  
+    const sendData = {
+      priority: filter.priority,
+      deviceType: filter.deviceType,
+      eventType: filter.eventType,
+      eventId: filter.eventId,
+      startDate: startDate === null ? '' : startDate,
+      endDate: endDate === null ? '': endDate
+    };
+  
+    try {
+      const response = await sendFilter(sendData);
+      setFilterData(response);
+    } catch (error) {
+      console.error('Error sending filter data:', error);
+    }
+  }
+  
 
   const checkFilterActive = () => {
     const isActive = Object.values(filter).some(
@@ -170,7 +175,6 @@ export const FilterUtility = (
     setisfilterOPen(false);
     applyFilters();
     setpreValue(chip)
-    // setFilterData(filteredData);
   };
 
   return {

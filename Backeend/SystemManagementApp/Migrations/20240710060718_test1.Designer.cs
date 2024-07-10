@@ -11,7 +11,7 @@ using SystemManagementApp.Data;
 namespace SystemManagementApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240708101732_test1")]
+    [Migration("20240710060718_test1")]
     partial class test1
     {
         /// <inheritdoc />
@@ -100,27 +100,32 @@ namespace SystemManagementApp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
-                    b.Property<int>("actionBy")
-                        .HasColumnType("integer");
+                    b.Property<string>("actionBy")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("dateTime")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("deviceType")
-                        .HasColumnType("integer");
+                    b.Property<string>("deviceType")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<int>("eventDescription")
-                        .HasColumnType("integer");
+                    b.Property<string>("eventDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<int>("eventType")
-                        .HasColumnType("integer");
+                    b.Property<string>("eventType")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("eventid")
                         .HasColumnType("integer");
 
-                    b.Property<int>("plantName")
-                        .HasColumnType("integer");
+                    b.Property<string>("plantName")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("priority")
                         .HasColumnType("integer");

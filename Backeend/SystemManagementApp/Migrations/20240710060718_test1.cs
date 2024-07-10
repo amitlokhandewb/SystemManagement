@@ -56,14 +56,14 @@ namespace SystemManagementApp.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    eventDescription = table.Column<int>(type: "integer", nullable: false),
+                    eventDescription = table.Column<string>(type: "text", nullable: false),
                     priority = table.Column<int>(type: "integer", nullable: false),
                     dateTime = table.Column<string>(type: "text", nullable: false),
                     eventid = table.Column<int>(type: "integer", nullable: false),
-                    eventType = table.Column<int>(type: "integer", nullable: false),
-                    deviceType = table.Column<int>(type: "integer", nullable: false),
-                    actionBy = table.Column<int>(type: "integer", nullable: false),
-                    plantName = table.Column<int>(type: "integer", nullable: false)
+                    eventType = table.Column<string>(type: "text", nullable: false),
+                    deviceType = table.Column<string>(type: "text", nullable: false),
+                    actionBy = table.Column<string>(type: "text", nullable: false),
+                    plantName = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

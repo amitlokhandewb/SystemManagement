@@ -99,7 +99,7 @@ function EventLayout() {
   useEffect(() => {
     const start = currentPage * itemsperpage;
     const end = start + itemsperpage;
-    setPaginatedData(filterData.slice(start, end));
+    setPaginatedData(filterData?.slice(start, end));
   }, [filterData, currentPage, itemsperpage]);
 
   useEffect(() => {
@@ -122,8 +122,8 @@ function EventLayout() {
   };
 
   useEffect(() => {
-    GenricINterval(fetcheventList);
-    GenricINterval(CreateRandomEvent);
+    GenricINterval(fetcheventList, 2000);
+    GenricINterval(CreateRandomEvent, 10000);
   }, []);
   const columns = visibleColumns.filter((col) => col.visible);
   return (

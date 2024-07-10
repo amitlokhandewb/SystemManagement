@@ -15,6 +15,16 @@ type ColumnSort = {
 
 type SortingState = ColumnSort[];
 function EventTable({ data, columns }) {
+  const [showloader, setshowloeader] = useState(true);
+
+useEffect(() => {
+   
+setTimeout(() => {
+  setshowloeader(false);
+}, 2000);
+
+},[])
+
   const [sorting, setSorting] = useState<SortingState>([{
     id: "column-2",
     desc: true,
@@ -78,7 +88,7 @@ function EventTable({ data, columns }) {
               top: "50%",
             }}
           >
-            No Result Found
+           {showloader && showloader ? <ClipLoader />:  'No Result Found'}
           </div>
         )}
       </tbody>
