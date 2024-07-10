@@ -122,8 +122,9 @@ function EventLayout() {
   };
 
   useEffect(() => {
-    GenricINterval(fetcheventList, 2000);
     GenricINterval(CreateRandomEvent, 10000);
+    GenricINterval(fetcheventList, 10000);
+   
   }, []);
   const columns = visibleColumns.filter((col) => col.visible);
   return (

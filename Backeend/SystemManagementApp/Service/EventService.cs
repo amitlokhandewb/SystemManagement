@@ -20,10 +20,46 @@ namespace SystemManagementApp.Service
             _random = new Random();
         }
 
-        public async Task<IEnumerable<Events>> GetEventsAsync()
+        public async Task<object> GetEventsAsync(int page, int pageLimit)
         {
-            return await _eventRepository.GetEvents();
+            try
+            {
+                if (page == 0)
+                    page = 1;
+                if (pageLimit == 0)
+                    pageLimit = int.MaxValue;
+
+                var response = await _eventRepository.GetEvents();
+                var totalEvents = response.Count(); 
+
+                if (totalEvents == 0)
+                {
+                    throw new Exception("No Content Found");
+                }
+
+                var maxPageLimit = (int)Math.Ceiling((double)totalEvents / pageLimit);
+                if (page > maxPageLimit)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(page), $"Page number {page} exceeds maximum available pages ({maxPageLimit}).");
+                }
+
+                var skip = (page - 1) * pageLimit;
+                var paginated = response.Skip(skip).Take(pageLimit);
+                var paginatedwithpagelimit = new 
+                {
+                   count = maxPageLimit,
+                   pagonatedData = paginated
+                };
+
+
+                return paginatedwithpagelimit;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error retrieving events.", ex);
+            }
         }
+
 
         public async Task<Events> GetEventsById(int id)
         {
