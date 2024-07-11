@@ -1,8 +1,9 @@
+import axios from "axios";
 import { APIURL } from "../Utilities/Data";
 
-const fetchEventList = async () => {
-  const response = await fetch(`${APIURL}Events/GetAllEvents`);
-  const data = await response.json();
+const fetchEventList = async (page,pageLimit ) => {
+  const response = await axios.get(`${APIURL}Events/GetAllEvents/${page}/${pageLimit}`);
+  const data = await response.data;
   return data;
 };
 const CreateRandomEvent = async () => {

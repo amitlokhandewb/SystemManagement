@@ -17,6 +17,9 @@ export const FilterUtility = (
   setCurrentPage,
   setChip,
   chip,
+  currentPage,
+  itemsperpage,
+  settotalPages
 ) => {
   const [filter, setFilter] = useState(iniitalFilter);
   const [previousfilter, setpreviousfilter] = useState(iniitalFilter);
@@ -25,7 +28,7 @@ export const FilterUtility = (
 
 
 
-  let DeviceType = currentPageDeviceType.map((item) => ({
+  let DeviceType = currentPageDeviceType?.map((item) => ({
     value: item,
     label: item,
   }));
@@ -107,31 +110,14 @@ export const FilterUtility = (
   useEffect(() => {
     applyFilters();
   }, [resetTrigger]);
+  useEffect(() => {
+    SendDataFilter();
+  },[currentPage, itemsperpage])
 
   const applyFilters = () => {
     SendDataFilter();
     checkFilterActive();
   };
-
-  // async function SendDataFilter() {
-  //     if (filter.daterange && Array.isArray(filter.daterange) && filter.daterange.length === 2) {
-  //     const [startDate, endDate] = filter?.daterange;
-  
-  //     const sendData = {
-  //       priority: filter.priority,
-  //       deviceType: filter.deviceType,
-  //       eventType: filter.eventType,
-  //       eventId: filter.eventId,
-  //       startDate: startDate,
-  //       endDate: endDate
-  //     }
-  //     const response = await sendFilter(sendData);
-  //     setFilterData(response);
-  //   } else {
-  //     console.error('Invalid date range:', filter.daterange);
-  //   }
-  // }
-
   async function SendDataFilter() {
     let startDate = null;
     let endDate = null;
@@ -150,8 +136,9 @@ export const FilterUtility = (
     };
   
     try {
-      const response = await sendFilter(sendData);
-      setFilterData(response);
+      const response = await sendFilter(sendData,currentPage, itemsperpage);
+      settotalPages(response.count)
+      setFilterData(response.pagonatedData);
     } catch (error) {
       console.error('Error sending filter data:', error);
     }
@@ -168,8 +155,9 @@ export const FilterUtility = (
     setFilterActive(isActive);
   };
 
+
   const handleApplyFilters = () => {
-    setCurrentPage(0);
+    setCurrentPage(1);
     setpreviousfilter(filter)
     setChip(chip);
     setisfilterOPen(false);

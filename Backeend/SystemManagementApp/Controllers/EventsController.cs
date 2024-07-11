@@ -15,7 +15,7 @@ namespace SystemManagementApp.Controllers
         {
             _eventService = eventService;
         }
-        [HttpGet("GetAllEvents")]
+        [HttpGet("GetAllEvents/{page}/{pageLimit}")]
         public async Task<ActionResult<IEnumerable<Events>>> GetEventsAsync(int page, int pageLimit)
         {
             var eventList = await _eventService.GetEventsAsync(page, pageLimit);

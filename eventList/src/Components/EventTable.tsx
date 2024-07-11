@@ -70,7 +70,7 @@ setTimeout(() => {
         ))}
       </thead>
       <tbody>
-        {data.length > 0 ? (
+        {data?.length > 0 ? (
           table.getRowModel().rows.map((row) => (
             <tr key={row.id} style={{ backgroundColor: "#f7f7f7" }}>
               {row.getVisibleCells().map((cell) => (

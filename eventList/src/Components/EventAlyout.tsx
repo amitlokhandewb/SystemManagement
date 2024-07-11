@@ -49,10 +49,11 @@ function EventLayout() {
   const [chip, setChip] = useState([]);
   const [prevColumns, setprevcolumns] = useState(initialVisibleColumns);
   const [itemsperpage, setItemsperpage] = useState(10);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [paginatedData, setPaginatedData] = useState<any[]>([]);
   const [currentPageDeviceType, setcurrentPageDeviceType] = useState([]);
-  const totalPages = Math.ceil(filterData.length / itemsperpage);
+  const [totalPages, settotalPages] = useState(0);
+  // const totalPages = Math.ceil(filterData.length / itemsperpage);
 
   const FilterrUtility = FilterUtility(
     setisfilterOPen,
@@ -62,7 +63,10 @@ function EventLayout() {
     setFilterActive,
     setCurrentPage,
     setChip,
-    chip
+    chip,
+    currentPage,
+    itemsperpage,
+    settotalPages
   );
 
   const {
@@ -97,9 +101,7 @@ function EventLayout() {
   };
 
   useEffect(() => {
-    const start = currentPage * itemsperpage;
-    const end = start + itemsperpage;
-    setPaginatedData(filterData?.slice(start, end));
+    setPaginatedData(filterData);
   }, [filterData, currentPage, itemsperpage]);
 
   useEffect(() => {
@@ -107,7 +109,7 @@ function EventLayout() {
   }, [paginatedData]);
 
   useEffect(() => {
-    setCurrentPage(0);
+    setCurrentPage(1);
   }, [itemsperpage, filterActive]);
 
   useEffect(() => {
@@ -117,8 +119,8 @@ function EventLayout() {
   }, [filterActive, data]);
 
   const fetcheventList = async () => {
-    const response = await fetchEventList();
-    setData(response);
+    const response = await fetchEventList(currentPage,itemsperpage);
+    setData(response.pagonatedData);
   };
 
   useEffect(() => {

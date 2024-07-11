@@ -15,10 +15,10 @@ namespace SystemManagementApp.Controllers
         {
             _eventFilterService = eventFilterService;
         }
-        [HttpPost("Filter")]
-        public async Task<ActionResult<IEnumerable<Events>>> Filter(FilterDto filterDto)
+        [HttpPost("Filter/{page}/{pageLimit}")]
+        public async Task<ActionResult<IEnumerable<Events>>> Filter(FilterDto filterDto,int page, int pageLimit)
         {
-            var filter = await _eventFilterService.GetFilterData(filterDto);
+            var filter = await _eventFilterService.GetFilterData(filterDto, page, pageLimit);
             if(filter == null)
             {
                 return NotFound();

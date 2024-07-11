@@ -17,18 +17,18 @@ const Pagination: React.FC<PaginationProps> = ({
   itemsperpage,
 }) => {
   const handlePrev = () => {
-    if (currentPage > 0) {
+    if (currentPage > 1) {
       onPageChange(currentPage - 1);
     }
   };
   const hanldefirst = () => {
-    if (currentPage > 0) {
-      onPageChange(0);
+    if (currentPage > 1) {
+      onPageChange(1);
     }
   };
   const handleLast = () => {
     if (currentPage < totalPages - 1) {
-      onPageChange(totalPages - 1);
+      onPageChange(totalPages);
     }
   };
 
@@ -59,11 +59,11 @@ const Pagination: React.FC<PaginationProps> = ({
         Previous
       </Button>
       <span style={{ marginLeft: 5 }}>{` Page ${
-        currentPage + 1
+        currentPage
       } of ${totalPages} `}</span>
       <Button
         onClick={handleNext}
-        disabled={currentPage === totalPages - 1}
+        disabled={currentPage === totalPages}
         style={{ marginLeft: 5 }}
         appearance="subtle"
         color="green"

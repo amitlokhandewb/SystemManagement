@@ -122,7 +122,7 @@
   {
     "ContainingType": "SystemManagementApp.Controllers.EventFilterController",
     "Method": "Filter",
-    "RelativePath": "api/EventFilter/Filter",
+    "RelativePath": "api/EventFilter/Filter/{page}/{pageLimit}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -130,6 +130,16 @@
       {
         "Name": "filterDto",
         "Type": "SystemManagementApp.Model.FilterDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageLimit",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -220,7 +230,7 @@
   {
     "ContainingType": "SystemManagementApp.Controllers.EventsController",
     "Method": "GetEventsAsync",
-    "RelativePath": "api/Events/GetAllEvents",
+    "RelativePath": "api/Events/GetAllEvents/{page}/{pageLimit}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -228,12 +238,12 @@
       {
         "Name": "page",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "pageLimit",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [

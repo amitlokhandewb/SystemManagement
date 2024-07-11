@@ -1,4 +1,5 @@
-﻿using SystemManagementApp.Model;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
@@ -11,11 +12,19 @@ namespace SystemManagementApp.Service
         {
             _eventRepository = eventRepository;
         }
-        public async Task<IEnumerable<Events>> GetFilterData(FilterDto filterDTO)
+        public async Task<object> GetFilterData(FilterDto filterDTO, int page, int pageLimit)
         {
-            var events = await _eventRepository.GetEvents();
+            if (page == 0)
+                page = 1;
+            if (pageLimit == 0)
+                pageLimit = int.MaxValue;
 
-            if(filterDTO.priority > 0)
+            var events = await _eventRepository.GetEvents();
+            
+
+           
+
+            if (filterDTO.priority > 0)
             {
                 events = events.Where(x => x.priority ==  filterDTO.priority);
             }
@@ -37,7 +46,26 @@ namespace SystemManagementApp.Service
                 DateTime endDate = DateTime.Parse(filterDTO.endDate);
                 events = events.Where(x => DateTime.TryParse(x.dateTime, out var eventDate) && eventDate >= startDate && eventDate <= endDate);
             }
-            return events;
+
+            var totalEvents = events.Count();
+            if (totalEvents == 0)
+            {
+                throw new Exception("No Content Found");
+            }
+            var maxPageLimit = (int)Math.Ceiling((double)totalEvents / pageLimit);
+            var skip = (page - 1) * pageLimit;
+            var paginated = events.Skip(skip).Take(pageLimit);
+            var paginatedwithpagelimit = new
+            {
+                count = maxPageLimit,
+                pagonatedData = paginated
+            };
+
+            if (page > maxPageLimit)
+            {
+                throw new ArgumentOutOfRangeException(nameof(page), $"Page number {page} exceeds maximum available pages ({maxPageLimit}).");
+            }
+            return paginatedwithpagelimit;
 
         }
     }
