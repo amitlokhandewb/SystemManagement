@@ -1,15 +1,21 @@
 [
   {
-    "ContainingType": "SystemManagementApp.Controllers.CommonController",
-    "Method": "GetActionBiesAsync",
-    "RelativePath": "api/Common/GetActionBiesAsync",
-    "HttpMethod": "GET",
+    "ContainingType": "SystemManagementApp.Controllers.DeviceTypeController",
+    "Method": "CreateDeviceTypeAsync",
+    "RelativePath": "api/DeviceType/CreateDeviceTypeAsync",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "deviceType",
+        "Type": "SystemManagementApp.Model.DeviceType",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.ActionBy, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "SystemManagementApp.Model.DeviceType",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -20,9 +26,35 @@
     ]
   },
   {
-    "ContainingType": "SystemManagementApp.Controllers.CommonController",
-    "Method": "GetDeviceTypesAsync",
-    "RelativePath": "api/Common/GetDeviceTypesAsync",
+    "ContainingType": "SystemManagementApp.Controllers.DeviceTypeController",
+    "Method": "DeleteDeviceTypeAsync",
+    "RelativePath": "api/DeviceType/DeleteDeviceTypeAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.DeviceTypeController",
+    "Method": "GetAllDeviceTypeAsync",
+    "RelativePath": "api/DeviceType/GetAllDeviceTypeAsync",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -40,16 +72,27 @@
     ]
   },
   {
-    "ContainingType": "SystemManagementApp.Controllers.CommonController",
-    "Method": "GetEventDescriptionsAsync",
-    "RelativePath": "api/Common/GetEventDescriptionsAsync",
-    "HttpMethod": "GET",
+    "ContainingType": "SystemManagementApp.Controllers.DeviceTypeController",
+    "Method": "UpdateDeviceTypeAsync",
+    "RelativePath": "api/DeviceType/UpdateDeviceTypeAsync/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "deviceType",
+        "Type": "SystemManagementApp.Model.DeviceType",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.PlantName, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "SystemManagementApp.Model.DeviceType",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -60,16 +103,22 @@
     ]
   },
   {
-    "ContainingType": "SystemManagementApp.Controllers.CommonController",
-    "Method": "GetEventTypesAsync",
-    "RelativePath": "api/Common/GetEventTypesAsync",
-    "HttpMethod": "GET",
+    "ContainingType": "SystemManagementApp.Controllers.EventDescriptionController",
+    "Method": "CreateEventDescriptionAsync",
+    "RelativePath": "api/EventDescription/CreateEventDescriptionAsync",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "eventDescription",
+        "Type": "SystemManagementApp.Model.EventDescription",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.EventType, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "SystemManagementApp.Model.EventDescription",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -80,16 +129,22 @@
     ]
   },
   {
-    "ContainingType": "SystemManagementApp.Controllers.CommonController",
-    "Method": "GetPlantNamesAsync",
-    "RelativePath": "api/Common/GetPlantNamesAsync",
-    "HttpMethod": "GET",
+    "ContainingType": "SystemManagementApp.Controllers.EventDescriptionController",
+    "Method": "DeleteEvenetDescriptionAsync",
+    "RelativePath": "api/EventDescription/DeleteEvenetDescriptionAsync/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.PlantName, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Boolean",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -100,16 +155,47 @@
     ]
   },
   {
-    "ContainingType": "SystemManagementApp.Controllers.CommonController",
-    "Method": "GetPrioritiesAsync",
-    "RelativePath": "api/Common/GetPrioritiesAsync",
+    "ContainingType": "SystemManagementApp.Controllers.EventDescriptionController",
+    "Method": "GetEventDescriptipnAsync",
+    "RelativePath": "api/EventDescription/GetEventDescriptipnAsync",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.Priority, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.EventDescription, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EventDescriptionController",
+    "Method": "UpdateEventDescriptionAsync",
+    "RelativePath": "api/EventDescription/UpdateEventDescriptionAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventDescription",
+        "Type": "SystemManagementApp.Model.EventDescription",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.EventDescription",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -275,6 +361,418 @@
     "ReturnTypes": [
       {
         "Type": "SystemManagementApp.Model.Events",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EventTypeController",
+    "Method": "CreateEventTypeAsync",
+    "RelativePath": "api/EventType/CreateEventTypeAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventType",
+        "Type": "SystemManagementApp.Model.EventType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.EventType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EventTypeController",
+    "Method": "DeleteEventTypeAsync",
+    "RelativePath": "api/EventType/DeleteEventTypeAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EventTypeController",
+    "Method": "GetEventTypeAsync",
+    "RelativePath": "api/EventType/GetEventTypeAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.EventType, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EventTypeController",
+    "Method": "UpdateEventTypeAsync",
+    "RelativePath": "api/EventType/UpdateEventTypeAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventType",
+        "Type": "SystemManagementApp.Model.EventType",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.EventType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PlantNameConrroller",
+    "Method": "CreatePlantNameAsycn",
+    "RelativePath": "api/PlantNameConrroller/CreatePlantNameAsycn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "plantName",
+        "Type": "SystemManagementApp.Model.PlantName",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.PlantName",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PlantNameConrroller",
+    "Method": "DeletePlantNameAsync",
+    "RelativePath": "api/PlantNameConrroller/DeletePlantNameAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PlantNameConrroller",
+    "Method": "GetPLantNamesAsync",
+    "RelativePath": "api/PlantNameConrroller/GetPLantNamesAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.PlantName, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PlantNameConrroller",
+    "Method": "UpdatePlantNameAsync",
+    "RelativePath": "api/PlantNameConrroller/UpdatePlantNameAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "plantName",
+        "Type": "SystemManagementApp.Model.PlantName",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.PlantName",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PriorityController",
+    "Method": "CreatePriorityAsync",
+    "RelativePath": "api/Priority/CreatePriorityAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "priority",
+        "Type": "SystemManagementApp.Model.Priority",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.Priority",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PriorityController",
+    "Method": "DeletePriorityAsync",
+    "RelativePath": "api/Priority/DeletePriorityAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PriorityController",
+    "Method": "GetPrioritiesAsync",
+    "RelativePath": "api/Priority/GetPrioritiesAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.Priority, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.PriorityController",
+    "Method": "UpdatePriorityAsync",
+    "RelativePath": "api/Priority/UpdatePriorityAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "priority",
+        "Type": "SystemManagementApp.Model.Priority",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.Priority",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.UserController",
+    "Method": "CreateUserAsync",
+    "RelativePath": "api/User/CreateUserAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "actionBy",
+        "Type": "SystemManagementApp.Model.ActionBy",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.ActionBy",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.UserController",
+    "Method": "DeleteUserAsync",
+    "RelativePath": "api/User/DeleteUserAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.UserController",
+    "Method": "GetUsersAsync",
+    "RelativePath": "api/User/GetUsersAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.ActionBy, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.UserController",
+    "Method": "UpdateUserAsync",
+    "RelativePath": "api/User/UpdateUserAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "actionBy",
+        "Type": "SystemManagementApp.Model.ActionBy",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.ActionBy",
         "MediaTypes": [
           "text/plain",
           "application/json",

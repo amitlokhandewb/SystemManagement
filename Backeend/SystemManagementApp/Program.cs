@@ -15,6 +15,18 @@ builder.Services.AddScoped<EventRepository,EventRepository>();
 builder.Services.AddScoped<CommonRepository,CommonRepository>();
 builder.Services.AddScoped<CommonService,CommonService>();
 builder.Services.AddScoped<EventFilterService, EventFilterService>();
+builder.Services.AddScoped<DeviceTypeRepository,DeviceTypeRepository>();
+builder.Services.AddScoped<DeviceTypeService,DeviceTypeService>();
+builder.Services.AddScoped<EventDescriptionRepository,EventDescriptionRepository>();
+builder.Services.AddScoped<EventDescriptionService, EventDescriptionService>();
+builder.Services.AddScoped<EvenTypeRepository,EvenTypeRepository>();
+builder.Services.AddScoped<EventTypeService, EventTypeService>();
+builder.Services.AddScoped<PriorityRepository, PriorityRepository>();
+builder.Services.AddScoped<PriorityService, PriorityService>();
+builder.Services.AddScoped<PlantNameRepository,PlantNameRepository>();
+builder.Services.AddScoped<PlantNameService, PlantNameService>();
+builder.Services.AddScoped<UserRepository, UserRepository>();
+builder.Services.AddScoped<UserService, UserService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddCors(options =>
 {

@@ -120,7 +120,7 @@ function EventLayout() {
 
   const fetcheventList = async () => {
     const response = await fetchEventList(currentPage,itemsperpage);
-    setData(response.pagonatedData);
+    setData(response?.pagonatedData);
   };
 
   useEffect(() => {

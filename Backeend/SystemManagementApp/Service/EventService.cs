@@ -10,13 +10,23 @@ namespace SystemManagementApp.Service
     public class EventService
     {
         private readonly EventRepository _eventRepository;
-        private readonly CommonService _commonService;
         private readonly Random _random;
+        private readonly DeviceTypeService _deviceTypeService;
+        private readonly EventDescriptionService _eventDescriptionService;
+        private readonly EventTypeService _eventTypeService;
+        private readonly PriorityService _priorityService;
+        private readonly PlantNameService _plantNameService;
+        private readonly UserService _userService;
 
-        public EventService(EventRepository eventRepository, CommonService commonService)
+        public EventService(EventRepository eventRepository,DeviceTypeService deviceTypeService, EventDescriptionService eventDescriptionService, EventTypeService eventTypeService, PriorityService priorityService, PlantNameService plantNameService, UserService userService)
         {
             _eventRepository = eventRepository ?? throw new ArgumentNullException(nameof(eventRepository));
-            _commonService = commonService ?? throw new ArgumentNullException(nameof(commonService));
+            _deviceTypeService = deviceTypeService;
+            _eventDescriptionService = eventDescriptionService;
+            _eventTypeService = eventTypeService;
+            _priorityService = priorityService;
+            _plantNameService = plantNameService;
+            _userService = userService;
             _random = new Random();
         }
 
@@ -78,12 +88,17 @@ namespace SystemManagementApp.Service
 
         public async Task<Events> CreateRandomEventAsync()
         {
-            var eventDescriptions = await _commonService.GetEventDescriptions();
-            var priorities = await _commonService.GetPrioritiesAsync();
-            var eventTypes = await _commonService.GetEventTypes();
-            var deviceTypes = await _commonService.GetDeviceTypes();
-            var actionBies = await _commonService.GetActionBies();
-            var plantNames = await _commonService.GetPlantNames();
+            var eventDescriptions = await _eventDescriptionService.GetEventDescriptionsAsync();
+            var priorities = await _priorityService.GetPrioritiesAsync();
+            var eventTypes = await _eventTypeService.GetEventTypesAsync();
+            var deviceTypes = await _deviceTypeService.GetDeviceTypesAsync();
+            var actionBies = await _userService.GetUsersAsync();
+            var plantNames = await _plantNameService.GetPlantNameAsync();
+
+            if (eventDescriptions == null || priorities == null || eventTypes == null || deviceTypes == null || actionBies == null || plantNames == null)
+            {
+                throw new NullReferenceException("One of the service calls returned null");
+            }
 
             var newEvent = new Events
             {
