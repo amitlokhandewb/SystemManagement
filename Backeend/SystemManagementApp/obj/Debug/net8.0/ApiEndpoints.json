@@ -251,13 +251,13 @@
     "Parameters": [
       {
         "Name": "events",
-        "Type": "SystemManagementApp.Model.Events",
+        "Type": "SystemManagementApp.DTOs.CreateEventDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "SystemManagementApp.Model.Events",
+        "Type": "SystemManagementApp.DTOs.CreateEventDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -277,7 +277,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "SystemManagementApp.Model.Events",
+        "Type": "SystemManagementApp.DTOs.CreateEventDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

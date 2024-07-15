@@ -15,6 +15,15 @@ namespace SystemManagementApp.Repository
         public async Task<IEnumerable<DeviceType>> GetDeviceTypesAsync()
         {
             return await _context.DeviceTypes.ToListAsync();
+        } 
+        public async Task<DeviceType> GetDeviceTypeByIDAsync(int id)
+        {
+            var response = await _context.DeviceTypes.FirstOrDefaultAsync(x => x.deviceTypeId == id);
+            if(response == null)
+            {
+                return null;
+            }
+            return response;
         }
         public async Task<DeviceType> CreateDeviceType(DeviceType deviceType)
         {

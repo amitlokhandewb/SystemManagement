@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SystemManagementApp.Data;
+using SystemManagementApp.DTOs;
 using SystemManagementApp.Model;
 
 namespace SystemManagementApp.Repository
@@ -25,11 +26,22 @@ namespace SystemManagementApp.Repository
             }
             return null;
         }
-        public async Task<Events> CreateEvent(Events events)
+        public async Task<Events> CreateEvent(CreateEventDTO events)
         {
-              _dbContext.Events.Add(events);
+            var newEvent = new Events
+            {
+                eventDescriptionId = events.eventDescription,
+                eventTypeId = events.eventType,
+                eventid = events.eventid,
+                priorityId = events.priority,
+                dateTime = events.dateTime,
+                plantId = events.plantId,
+                deviceTypeId = events.deviceTypeId,
+                actionById = events.actionBy,
+            };
+              _dbContext.Events.Add(newEvent);
               await _dbContext.SaveChangesAsync();
-              return events;
+              return newEvent;
         }
         public async Task<Boolean> DeleteEvent(int id)
         {

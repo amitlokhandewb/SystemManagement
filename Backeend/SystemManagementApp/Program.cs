@@ -12,8 +12,6 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connect
 builder.Services.AddControllers();
 builder.Services.AddScoped<EventService, EventService>();
 builder.Services.AddScoped<EventRepository,EventRepository>();
-builder.Services.AddScoped<CommonRepository,CommonRepository>();
-builder.Services.AddScoped<CommonService,CommonService>();
 builder.Services.AddScoped<EventFilterService, EventFilterService>();
 builder.Services.AddScoped<DeviceTypeRepository,DeviceTypeRepository>();
 builder.Services.AddScoped<DeviceTypeService,DeviceTypeService>();

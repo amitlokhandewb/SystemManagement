@@ -16,6 +16,10 @@ namespace SystemManagementApp.Repository
         {
             return await _context.EventTypes.ToListAsync();
         }
+        public async Task<EventType> GetEventTypeByIdAsync(int id)
+        {
+            return await _context.EventTypes.FirstOrDefaultAsync(x => x.eventTypeId == id);
+        }
         public async Task<EventType> CreateEventType(EventType eventType)
         {
             var existingEventType = await _context.EventTypes.FindAsync(eventType.eventTypeId);

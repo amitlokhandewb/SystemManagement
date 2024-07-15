@@ -15,6 +15,10 @@ namespace SystemManagementApp.Service
         {
             return await _typeRepository.GetEventTypesAsync();
         }
+        public async Task<EventType> GetEventTypeByIdAsync(int id)
+        {
+            return await _typeRepository.GetEventTypeByIdAsync(id);
+        }
         public async Task<EventType> CreateEventTypeAsync(EventType eventType)
         {
             return await _typeRepository.CreateEventType(eventType);

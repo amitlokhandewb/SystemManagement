@@ -119,6 +119,7 @@ function EventLayout() {
 
   const fetcheventList = async () => {
     const response = await fetchEventList(currentPage, itemsperpage);
+    // alert(JSON.stringify(response.pagonatedData))
     setData(response?.pagonatedData);
   };
 

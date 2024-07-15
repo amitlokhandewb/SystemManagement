@@ -16,6 +16,10 @@ namespace SystemManagementApp.Repository
         {
             return await _context.PlantName.ToListAsync();
         }
+        public async Task<PlantName> GetPlantNameByIDAsync(int id)
+        {
+            return await _context.PlantName.FirstOrDefaultAsync(x => x.plantId == id);
+        }
         public async Task<PlantName> CreatePlantName(PlantName plantName)
         {
             var existingPlantNamee = await _context.PlantName.FindAsync(plantName.plantId);

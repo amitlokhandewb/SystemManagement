@@ -15,6 +15,10 @@ namespace SystemManagementApp.Repository
         public async Task<IEnumerable<Priority>> GetPrioritiesAsync()
         {
             return await _context.Priorities.ToListAsync();
+        } 
+        public async Task<Priority> GetPriorityByIdAsync(int id)
+        {
+            return await _context.Priorities.FirstOrDefaultAsync(x => x.priorityId == id);
         }
         public async Task<Priority> CreatePriority(Priority priority)
         {

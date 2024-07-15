@@ -14,6 +14,10 @@ namespace SystemManagementApp.Service
         public async Task<IEnumerable<EventDescription>> GetEventDescriptionsAsync()
         {
             return await _repository.GetEventDescriptionAsync();
+        } 
+        public async Task<EventDescription> GetEventDescriptionByIdAsync(int id)
+        {
+            return await _repository.GetEventDescriptionByIdAsync(id);
         }
         public async Task<EventDescription> CreateEventDescriptionAsync(EventDescription eventDescription)
         {

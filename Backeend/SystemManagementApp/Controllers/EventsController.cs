@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.DTOs;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -36,7 +37,7 @@ namespace SystemManagementApp.Controllers
             return Ok(eventExist);
         }
         [HttpPost("CreateEvents")]
-        public async Task<ActionResult<Events>> CreateEventAsync(Events events)
+        public async Task<ActionResult<CreateEventDTO>> CreateEventAsync(CreateEventDTO events)
         {
             var createevent = await _eventService.CreateEvents(events);
             if(createevent == null)
@@ -56,7 +57,7 @@ namespace SystemManagementApp.Controllers
             return Ok(eventExist);
         }
         [HttpGet("CreateRandomEventAsync")]
-        public async Task<ActionResult<Events>> CreateRandomEventAsync()
+        public async Task<ActionResult<CreateEventDTO>> CreateRandomEventAsync()
         {
             var createevent = await _eventService.CreateRandomEventAsync();
             if (createevent == null)

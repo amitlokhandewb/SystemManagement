@@ -3,96 +3,136 @@
   "WorkspaceRootPath": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\filterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\filterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventfilterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventfilterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\eventfiltercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\eventfiltercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\plantname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\plantname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\eventdescriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\eventdescriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\eventyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\eventyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\plantnamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\plantnamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\priorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\priorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\dtos\\geteventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:dtos\\geteventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\priorityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\priorityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\plantnameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\plantnameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\priorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\priorityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\plantnamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\plantnamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\eventyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\eventyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\eventdescriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\eventdescriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715104713_test17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240715104713_test17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\dtos\\createeventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:dtos\\createeventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715103933_test16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240715103933_test16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715103836_test15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240715103836_test15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\actionby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\actionby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventdescriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventdescriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\commonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\commonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\commonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\commonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\devicetypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\devicetypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715085605_amit3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240715085605_amit3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\devicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\devicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715085334_amit3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240715085334_amit3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\plantname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\plantname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\devicetypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -115,18 +155,6 @@
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\eventdescriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\priorityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\priorityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\plantnameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\plantnameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\eventtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\eventtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -139,16 +167,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240708101507_test5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\actionby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\actionby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240708094623_test4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240708094623_test4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\devicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\devicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -157,10 +177,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\systemmanagementapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:systemmanagementapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\migrations\\20240710060718_test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:migrations\\20240710060718_test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -170,11 +186,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 35,
+          "SelectedChildIndex": 27,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 16,
+              "Title": "20240715104713_test17.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715104713_test17.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240715104713_test17.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715104713_test17.cs",
+              "RelativeToolTip": "Migrations\\20240715104713_test17.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T10:47:14.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20240715103933_test16.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715103933_test16.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240715103933_test16.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715103933_test16.cs",
+              "RelativeToolTip": "Migrations\\20240715103933_test16.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T10:39:33.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20240715103836_test15.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715103836_test15.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240715103836_test15.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715103836_test15.cs",
+              "RelativeToolTip": "Migrations\\20240715103836_test15.cs",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAowBAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T10:38:36.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetEventDTO.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\DTOs\\GetEventDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\GetEventDTO.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\DTOs\\GetEventDTO.cs",
+              "RelativeToolTip": "DTOs\\GetEventDTO.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA0AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T09:38:19.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateEventDTO.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\DTOs\\CreateEventDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateEventDTO.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\DTOs\\CreateEventDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateEventDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T09:00:04.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20240715085605_amit3.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715085605_amit3.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240715085605_amit3.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715085605_amit3.cs",
+              "RelativeToolTip": "Migrations\\20240715085605_amit3.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T08:56:05.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "20240715085334_amit3.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715085334_amit3.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240715085334_amit3.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240715085334_amit3.cs",
+              "RelativeToolTip": "Migrations\\20240715085334_amit3.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAgwDgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T08:53:34.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Events.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\Events.cs",
+              "RelativeDocumentMoniker": "Model\\Events.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\Events.cs",
+              "RelativeToolTip": "Model\\Events.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T08:49:11.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -182,11 +302,12 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAAAB4AAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T12:06:29.225Z"
+              "WhenOpened": "2024-07-11T12:06:29.225Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 34,
               "Title": "PriorityController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\PriorityController.cs",
               "RelativeDocumentMoniker": "Controllers\\PriorityController.cs",
@@ -198,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 35,
               "Title": "PlantNameConrroller.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\PlantNameConrroller.cs",
               "RelativeDocumentMoniker": "Controllers\\PlantNameConrroller.cs",
@@ -210,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 36,
               "Title": "EventTypeController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EventTypeController.cs",
               "RelativeDocumentMoniker": "Controllers\\EventTypeController.cs",
@@ -222,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 37,
               "Title": "EventDescriptionController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EventDescriptionController.cs",
               "RelativeDocumentMoniker": "Controllers\\EventDescriptionController.cs",
@@ -234,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 33,
               "Title": "DeviceTypeController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\DeviceTypeController.cs",
               "RelativeDocumentMoniker": "Controllers\\DeviceTypeController.cs",
@@ -246,215 +367,215 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 6,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\UserService.cs",
               "RelativeDocumentMoniker": "Service\\UserService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\UserService.cs",
               "RelativeToolTip": "Service\\UserService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAArwBMAAAAtAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAArwBEAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T09:15:39.881Z"
+              "WhenOpened": "2024-07-11T09:15:39.881Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 8,
               "Title": "PriorityService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PriorityService.cs",
               "RelativeDocumentMoniker": "Service\\PriorityService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PriorityService.cs",
               "RelativeToolTip": "Service\\PriorityService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBgAAAAJAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T09:10:55.239Z"
+              "WhenOpened": "2024-07-11T09:10:55.239Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 9,
               "Title": "PlantNameService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PlantNameService.cs",
               "RelativeDocumentMoniker": "Service\\PlantNameService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PlantNameService.cs",
               "RelativeToolTip": "Service\\PlantNameService.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAcwBsAAAA5AAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAcwBIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T09:07:25.225Z"
+              "WhenOpened": "2024-07-11T09:07:25.225Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 12,
               "Title": "EventTypeService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventTypeService.cs",
               "RelativeDocumentMoniker": "Service\\EventTypeService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventTypeService.cs",
               "RelativeToolTip": "Service\\EventTypeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T08:57:22.183Z"
+              "WhenOpened": "2024-07-11T08:57:22.183Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "EventDescriptionService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventDescriptionService.cs",
               "RelativeDocumentMoniker": "Service\\EventDescriptionService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventDescriptionService.cs",
               "RelativeToolTip": "Service\\EventDescriptionService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA8AAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T08:51:43.401Z"
+              "WhenOpened": "2024-07-11T08:51:43.401Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "DeviceTypeService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\DeviceTypeService.cs",
               "RelativeDocumentMoniker": "Service\\DeviceTypeService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\DeviceTypeService.cs",
               "RelativeToolTip": "Service\\DeviceTypeService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAArwBMAAAAyAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAtwBIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T08:46:56.835Z"
+              "WhenOpened": "2024-07-11T08:46:56.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "PlantNameRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\PlantNameRepository.cs",
               "RelativeDocumentMoniker": "Repository\\PlantNameRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\PlantNameRepository.cs",
               "RelativeToolTip": "Repository\\PlantNameRepository.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAwwBQAAAAMAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAQwBIAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:24:00.086Z"
+              "WhenOpened": "2024-07-11T07:24:00.086Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "EvenTypeRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EvenTypeRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EvenTypeRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EvenTypeRepository.cs",
               "RelativeToolTip": "Repository\\EvenTypeRepository.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABQAAAAMAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvxEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:18:24.95Z"
+              "WhenOpened": "2024-07-11T07:18:24.95Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "EventDescriptionRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EventDescriptionRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EventDescriptionRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EventDescriptionRepository.cs",
               "RelativeToolTip": "Repository\\EventDescriptionRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAowCMAAAAkAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:12:12.812Z"
+              "WhenOpened": "2024-07-11T07:12:12.812Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "DeviceTypeRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\DeviceTypeRepository.cs",
               "RelativeDocumentMoniker": "Repository\\DeviceTypeRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\DeviceTypeRepository.cs",
               "RelativeToolTip": "Repository\\DeviceTypeRepository.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAwwBUAAAALAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAtwBIAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:05:54.133Z"
+              "WhenOpened": "2024-07-11T07:05:54.133Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\UserRepository.cs",
               "RelativeToolTip": "Repository\\UserRepository.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAwwCMAAAAYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:01:15.984Z"
+              "WhenOpened": "2024-07-11T07:01:15.984Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "PriorityRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\PriorityRepository.cs",
               "RelativeDocumentMoniker": "Repository\\PriorityRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\PriorityRepository.cs",
               "RelativeToolTip": "Repository\\PriorityRepository.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAwwBQAAAAMAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAQwBIAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T06:52:29.123Z"
+              "WhenOpened": "2024-07-11T06:52:29.123Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "EventFilterController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EventFilterController.cs",
               "RelativeDocumentMoniker": "Controllers\\EventFilterController.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EventFilterController.cs",
               "RelativeToolTip": "Controllers\\EventFilterController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAA9AAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T06:32:25.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "FilterDto.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\FilterDto.cs",
               "RelativeDocumentMoniker": "Model\\FilterDto.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\FilterDto.cs",
               "RelativeToolTip": "Model\\FilterDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T06:24:13.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "EventFilterService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventFilterService.cs",
               "RelativeDocumentMoniker": "Service\\EventFilterService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventFilterService.cs",
               "RelativeToolTip": "Service\\EventFilterService.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowDAAAAAAAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAAwFcAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T06:22:26.616Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "20240710060718_test1.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240710060718_test1.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240710060718_test1.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240710060718_test1.cs",
-              "RelativeToolTip": "Migrations\\20240710060718_test1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T06:07:19.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 26,
               "Title": "EventDto.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\EventDto.cs",
               "RelativeDocumentMoniker": "Model\\EventDto.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\EventDto.cs",
               "RelativeToolTip": "Model\\EventDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T10:38:22.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "20240708101507_test5.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240708101507_test5.cs",
               "RelativeDocumentMoniker": "Migrations\\20240708101507_test5.cs",
@@ -466,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 22,
               "Title": "ActionBy.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\ActionBy.cs",
               "RelativeDocumentMoniker": "Model\\ActionBy.cs",
@@ -474,11 +595,12 @@
               "RelativeToolTip": "Model\\ActionBy.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T10:10:31.9Z"
+              "WhenOpened": "2024-07-08T10:10:31.9Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "EventDescription.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\EventDescription.cs",
               "RelativeDocumentMoniker": "Model\\EventDescription.cs",
@@ -490,7 +612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "20240708094623_test4.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240708094623_test4.cs",
               "RelativeDocumentMoniker": "Migrations\\20240708094623_test4.cs",
@@ -502,31 +624,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CommonService.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\CommonService.cs",
-              "RelativeDocumentMoniker": "Service\\CommonService.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\CommonService.cs",
-              "RelativeToolTip": "Service\\CommonService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T09:31:12.009Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CommonRepository.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\CommonRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\CommonRepository.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\CommonRepository.cs",
-              "RelativeToolTip": "Repository\\CommonRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA0AAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T09:27:55.133Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 32,
               "Title": "PlantName.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\PlantName.cs",
               "RelativeDocumentMoniker": "Model\\PlantName.cs",
@@ -534,24 +632,24 @@
               "RelativeToolTip": "Model\\PlantName.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T09:23:36.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T09:23:36.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 29,
               "Title": "DeviceType.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\DeviceType.cs",
               "RelativeDocumentMoniker": "Model\\DeviceType.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\DeviceType.cs",
               "RelativeToolTip": "Model\\DeviceType.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T09:22:50.664Z"
+              "WhenOpened": "2024-07-08T09:22:50.664Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "EventType.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\EventType.cs",
               "RelativeDocumentMoniker": "Model\\EventType.cs",
@@ -563,83 +661,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "EventsController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "Controllers\\EventsController.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EventsController.cs",
               "RelativeToolTip": "Controllers\\EventsController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAWwDwAAAAMAAAA",
+              "ViewState": "AQIAADoAAAAAAAAAAAAcwBUAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T08:48:48.853Z"
+              "WhenOpened": "2024-07-08T08:48:48.853Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 2,
               "Title": "EventService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventService.cs",
               "RelativeDocumentMoniker": "Service\\EventService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventService.cs",
               "RelativeToolTip": "Service\\EventService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAiwAwAAAAAAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowFYAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T06:46:34.382Z"
+              "WhenOpened": "2024-07-08T06:46:34.382Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "EventRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EventRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EventRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EventRepository.cs",
               "RelativeToolTip": "Repository\\EventRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA4AAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAawCYAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T06:37:44.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Events.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\Events.cs",
-              "RelativeDocumentMoniker": "Model\\Events.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\Events.cs*",
-              "RelativeToolTip": "Model\\Events.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T06:14:33.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 21,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T06:10:57.74Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 27,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAIwBgAAAA/AAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAIwA0AAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T06:07:42.699Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 42,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -651,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 43,
               "Title": "SystemManagementApp.csproj",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\SystemManagementApp.csproj",
               "RelativeDocumentMoniker": "SystemManagementApp.csproj",

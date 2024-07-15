@@ -16,6 +16,10 @@ namespace SystemManagementApp.Repository
         {
             return await _context.EventDescription.ToListAsync();
         }
+        public async Task<EventDescription> GetEventDescriptionByIdAsync(int id)
+        {
+            return await _context.EventDescription.FirstOrDefaultAsync(x => x.eventDescriptionId == id);
+        }
         public async Task<EventDescription> CreateEventDescription(EventDescription eventDescription)
         {
             var existingeventDescription = await _context.EventDescription.FindAsync(eventDescription.eventDescriptionId);

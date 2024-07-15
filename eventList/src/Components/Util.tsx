@@ -15,10 +15,10 @@ type Event = {
   priority: number;
   dateTime: Date | null;
   eventid: number;
-  eventType: string;
-  deviceType: string;
-  actionBy: string;
-  plantName: string;
+  eventType: number;
+  deviceTypeName: string;
+  actionByName: string;
+  plantNames: string;
 };
 
 export const Util = () => {
@@ -54,20 +54,20 @@ export const Util = () => {
     }),
     columnHelper.accessor("eventType", {
       header: "Event Type",
-      cell: (info) => (info.getValue() === "" ? "N/A" : info.getValue()),
+      cell: (info) => (info.getValue() === 0 ? "N/A" : info.getValue()),
       sortDescFirst: true,
     }),
-    columnHelper.accessor("deviceType", {
+    columnHelper.accessor("deviceTypeName", {
       header: "Device Type",
       cell: (info) => info.getValue(),
       sortDescFirst: true,
     }),
-    columnHelper.accessor("actionBy", {
+    columnHelper.accessor("actionByName", {
       header: "Action By",
       cell: (info) => info.getValue(),
       sortDescFirst: true,
     }),
-    columnHelper.accessor("plantName", {
+    columnHelper.accessor("plantNames", {
       header: "Plant Name",
       cell: (info) => info.getValue(),
       sortDescFirst: true,

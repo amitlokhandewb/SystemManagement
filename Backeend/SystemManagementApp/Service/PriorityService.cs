@@ -15,6 +15,10 @@ namespace SystemManagementApp.Service
         {
             return await _repository.GetPrioritiesAsync();
         }
+        public async Task<Priority> GetPriorityByIdAsync(int id)
+        {
+            return await _repository.GetPriorityByIdAsync(id);
+        }
         public async Task<Priority> CreatePriorityAsync(Priority priority)
         {
             return await _repository.CreatePriority(priority);

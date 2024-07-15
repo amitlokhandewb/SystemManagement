@@ -11,8 +11,8 @@ using SystemManagementApp.Data;
 namespace SystemManagementApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240710060718_test1")]
-    partial class test1
+    [Migration("20240715104713_test17")]
+    partial class test17
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,37 +100,44 @@ namespace SystemManagementApp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
-                    b.Property<string>("actionBy")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("actionById")
+                        .HasColumnType("integer");
 
                     b.Property<string>("dateTime")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("deviceType")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("deviceTypeId")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("eventDescription")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("eventDescriptionId")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("eventType")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("eventTypeId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("eventid")
                         .HasColumnType("integer");
 
-                    b.Property<string>("plantName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("plantId")
+                        .HasColumnType("integer");
 
-                    b.Property<int>("priority")
+                    b.Property<int>("priorityId")
                         .HasColumnType("integer");
 
                     b.HasKey("id");
+
+                    b.HasIndex("actionById");
+
+                    b.HasIndex("deviceTypeId");
+
+                    b.HasIndex("eventDescriptionId");
+
+                    b.HasIndex("eventTypeId");
+
+                    b.HasIndex("plantId");
+
+                    b.HasIndex("priorityId");
 
                     b.ToTable("Events");
                 });
@@ -167,6 +174,57 @@ namespace SystemManagementApp.Migrations
                     b.HasKey("priorityId");
 
                     b.ToTable("Priorities");
+                });
+
+            modelBuilder.Entity("SystemManagementApp.Model.Events", b =>
+                {
+                    b.HasOne("SystemManagementApp.Model.ActionBy", "ActionBy")
+                        .WithMany()
+                        .HasForeignKey("actionById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SystemManagementApp.Model.DeviceType", "DeviceType")
+                        .WithMany()
+                        .HasForeignKey("deviceTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SystemManagementApp.Model.EventDescription", "EventDescription")
+                        .WithMany()
+                        .HasForeignKey("eventDescriptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SystemManagementApp.Model.EventType", "eventType")
+                        .WithMany()
+                        .HasForeignKey("eventTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SystemManagementApp.Model.PlantName", "PlantName")
+                        .WithMany()
+                        .HasForeignKey("plantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SystemManagementApp.Model.Priority", "priority")
+                        .WithMany()
+                        .HasForeignKey("priorityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ActionBy");
+
+                    b.Navigation("DeviceType");
+
+                    b.Navigation("EventDescription");
+
+                    b.Navigation("PlantName");
+
+                    b.Navigation("eventType");
+
+                    b.Navigation("priority");
                 });
 #pragma warning restore 612, 618
         }

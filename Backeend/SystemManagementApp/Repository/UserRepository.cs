@@ -15,6 +15,10 @@ namespace SystemManagementApp.Repository
         public async Task<IEnumerable<ActionBy>> GetUsersAsync()
         {
             return await _context.ActionBies.ToListAsync();
+        } 
+        public async Task<ActionBy> GetUsersByIdAsync(int id)
+        {
+            return await _context.ActionBies.FirstOrDefaultAsync(x => x.actionById == id);
         }
         public async Task<ActionBy> CreateUser(ActionBy users)
         {

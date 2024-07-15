@@ -5,8 +5,8 @@ const iniitalFilter = {
   priority: 0,
   daterange: null,
   eventId: 0,
-  deviceType: "",
-  eventType: "",
+  deviceType: 0,
+  eventType: 0,
 }
 export const FilterUtility = (
   setisfilterOPen,
@@ -44,8 +44,8 @@ export const FilterUtility = (
       priority: 0,
       daterange: null,
       eventId: 0,
-      deviceType: "",
-      eventType: "",
+      deviceType: 0,
+      eventType: 0,
     });
     setChip([]);
     setpreviousfilter(iniitalFilter)
@@ -56,7 +56,7 @@ export const FilterUtility = (
   const handlesingleReset = (e) => {
     let id = e.target.id;
     if (id === "deviceType" || id === "eventType") {
-      setFilter((prev) => ({ ...prev, [id]: "" }));
+      setFilter((prev) => ({ ...prev, [id]: 0 }));
       setChip((prevValue) => prevValue.filter((item) => item !== id));
     } else if (id === "priority") {
       setFilter((prev) => ({ ...prev, priority: 0 }));
@@ -76,13 +76,13 @@ export const FilterUtility = (
     if (!exist) {
       setChip([...chip, name]);
     }
-    if (name === "eventType" && e === "") {
+    if (name === "eventType" && e === 0) {
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "priority" && e === 0) {
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
-    if (name === "deviceType" && e === "") {
+    if (name === "deviceType" && e === 0) {
       setChip((prevValue) => prevValue.filter((item) => item !== name));
     }
     if (name === "eventId" && e === 0) {

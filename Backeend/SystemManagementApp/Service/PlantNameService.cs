@@ -14,6 +14,10 @@ namespace SystemManagementApp.Service
         public async Task<IEnumerable<PlantName>> GetPlantNameAsync()
         {
             return await _repository.GetPlantNameAsync();
+        } 
+        public async Task<PlantName> GetPlantNameByIDAsync(int id)
+        {
+            return await _repository.GetPlantNameByIDAsync(id);
         }
         public async Task<PlantName> CreatePlantNameAsync(PlantName plantName)
         {
