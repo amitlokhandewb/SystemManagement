@@ -3,7 +3,7 @@ import { navigateToUrl } from "single-spa";
 
 function CustomApp({ src, title, pathname }) {
   const handleNavigate = () => {
-    navigateToUrl(pathname)
+    window.location.href = pathname;
   };
   return (
     <div

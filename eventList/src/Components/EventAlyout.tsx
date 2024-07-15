@@ -93,7 +93,6 @@ function EventLayout() {
     );
   };
 
-
   const handleSubmit = () => {
     setVisibleColumns(tempVisibleColumns);
     setprevcolumns(tempVisibleColumns);
@@ -119,14 +118,13 @@ function EventLayout() {
   }, [filterActive, data]);
 
   const fetcheventList = async () => {
-    const response = await fetchEventList(currentPage,itemsperpage);
+    const response = await fetchEventList(currentPage, itemsperpage);
     setData(response?.pagonatedData);
   };
 
   useEffect(() => {
     GenricINterval(CreateRandomEvent, 10000);
-    GenricINterval(fetcheventList, 10000);
-   
+    GenricINterval(fetcheventList, 11000);
   }, []);
   const columns = visibleColumns.filter((col) => col.visible);
   return (
@@ -139,13 +137,18 @@ function EventLayout() {
           filter={filter}
         />
         <div>
-          <Button onClick={() => setIsModalOpen(true)} appearance="ghost">
+          <Button
+            onClick={() => setIsModalOpen(true)}
+            appearance="ghost"
+            style={{ position: "inherit" }}
+          >
             Customize Column
           </Button>
           <IconButton
             onClick={() => setisfilterOPen(true)}
             appearance="ghost"
             icon={<FunnelIcon />}
+            style={{ position: "inherit" }}
           />
         </div>
       </div>
