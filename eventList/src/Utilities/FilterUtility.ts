@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { sendFilter } from "../Services/FilterService";
+import { fetchDeviceTypes, fetchEventTypes, fetchPriorities } from "../Services/CommonServices";
 
 const iniitalFilter = {
   priority: 0,
@@ -7,7 +8,7 @@ const iniitalFilter = {
   eventId: 0,
   deviceType: 0,
   eventType: 0,
-}
+};
 export const FilterUtility = (
   setisfilterOPen,
   setFilterData,
@@ -25,20 +26,21 @@ export const FilterUtility = (
   const [previousfilter, setpreviousfilter] = useState(iniitalFilter);
   const [prevalue, setpreValue] = useState([]);
   const [resetTrigger, setResetTrigger] = useState(false);
+  const [evenTypes, setEventTYpes] = useState([]);
+  const [deviceTYpes, setDeviceTYpes] = useState([]);
+  const [priorities, setpriorities] = useState([]);
 
-
-
-  let DeviceType = currentPageDeviceType?.map((item) => ({
-    value: item,
-    label: item,
+  let DeviceType = deviceTYpes?.map((item) => ({
+    value: item.deviceTypeId,
+    label: item.deviceName,
   }));
   let updateDeviceType = [{ value: "", label: "All" }, ...DeviceType];
 
   const handleclose = () => {
     setisfilterOPen(false);
-    setFilter(previousfilter)
+    setFilter(previousfilter);
     setChip(prevalue);
-  }
+  };
   const handleReset = () => {
     setFilter({
       priority: 0,
@@ -48,7 +50,7 @@ export const FilterUtility = (
       eventType: 0,
     });
     setChip([]);
-    setpreviousfilter(iniitalFilter)
+    setpreviousfilter(iniitalFilter);
     setFilterActive(false);
     setisfilterOPen(false);
   };
@@ -112,38 +114,58 @@ export const FilterUtility = (
   }, [resetTrigger]);
   useEffect(() => {
     SendDataFilter();
-  },[currentPage, itemsperpage])
-
+  }, [currentPage, itemsperpage]);
+  const fetchEventTYpes = async () => {
+    const response = await fetchEventTypes();
+    setEventTYpes(response);
+  };
+  const fetchDevices = async () => {
+    const response = await fetchDeviceTypes();
+    setDeviceTYpes(response);
+  };
+  const fetchPriority = async () => {
+    const response = await fetchPriorities();
+    setpriorities(response);
+  };
   const applyFilters = () => {
     SendDataFilter();
     checkFilterActive();
+    fetchEventTYpes();
+    fetchDevices();
+    fetchPriority();
   };
+  useEffect(() => {
+    fetchEventTYpes();
+  }, []);
   async function SendDataFilter() {
     let startDate = null;
     let endDate = null;
-  
-    if (filter.daterange && Array.isArray(filter.daterange) && filter.daterange.length === 2) {
+
+    if (
+      filter.daterange &&
+      Array.isArray(filter.daterange) &&
+      filter.daterange.length === 2
+    ) {
       [startDate, endDate] = filter?.daterange;
     }
-  
+
     const sendData = {
       priority: filter.priority,
       deviceType: filter.deviceType,
       eventType: filter.eventType,
       eventId: filter.eventId,
-      startDate: startDate === null ? '' : startDate,
-      endDate: endDate === null ? '': endDate
+      startDate: startDate === null ? "" : startDate,
+      endDate: endDate === null ? "" : endDate,
     };
-  
+
     try {
-      const response = await sendFilter(sendData,currentPage, itemsperpage);
-      settotalPages(response.count)
+      const response = await sendFilter(sendData, currentPage, itemsperpage);
+      settotalPages(response.count);
       setFilterData(response.pagonatedData);
     } catch (error) {
-      console.error('Error sending filter data:', error);
+      console.error("Error sending filter data:", error);
     }
   }
-  
 
   const checkFilterActive = () => {
     const isActive = Object.values(filter).some(
@@ -155,14 +177,13 @@ export const FilterUtility = (
     setFilterActive(isActive);
   };
 
-
   const handleApplyFilters = () => {
     setCurrentPage(1);
-    setpreviousfilter(filter)
+    setpreviousfilter(filter);
     setChip(chip);
     setisfilterOPen(false);
     applyFilters();
-    setpreValue(chip)
+    setpreValue(chip);
   };
 
   return {
@@ -173,6 +194,8 @@ export const FilterUtility = (
     handleReset,
     handleApplyFilters,
     handleclose,
-    filter
+    filter,
+    evenTypes,
+    priorities
   };
 };

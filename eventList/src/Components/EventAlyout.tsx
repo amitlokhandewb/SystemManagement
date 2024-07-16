@@ -28,9 +28,9 @@ function EventLayout() {
     "eventDescription",
     "priority",
     "dateTime",
-    "eventType",
+    "eventTypeName",
     "eventid",
-    "deviceType",
+    "deviceTypeName",
   ];
   const initialVisibleColumns = allColumns.map((col, index) => ({
     ...col,
@@ -78,6 +78,8 @@ function EventLayout() {
     handleReset,
     handleclose,
     filter,
+    evenTypes,
+    priorities,
   } = FilterrUtility;
   useEffect(() => {
     if (!filterActive) {
@@ -120,7 +122,8 @@ function EventLayout() {
   const fetcheventList = async () => {
     const response = await fetchEventList(currentPage, itemsperpage);
     // alert(JSON.stringify(response.pagonatedData))
-    setData(response?.pagonatedData);
+    // console.log("Paginated data: ", response?.paginatedData)
+    setData(response?.paginatedData);
   };
 
   useEffect(() => {
@@ -182,6 +185,8 @@ function EventLayout() {
         handleclose={handleclose}
         isfilterOPen={isfilterOPen}
         filter={filter}
+        evenTypes={evenTypes}
+        priorities={priorities}
       />
     </div>
   );

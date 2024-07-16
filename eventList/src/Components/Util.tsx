@@ -15,10 +15,11 @@ type Event = {
   priority: number;
   dateTime: Date | null;
   eventid: number;
-  eventType: number;
+  eventTypeName: string,
   deviceTypeName: string;
   actionByName: string;
   plantNames: string;
+
 };
 
 export const Util = () => {
@@ -52,9 +53,9 @@ export const Util = () => {
       cell: (info) => info.getValue(),
       sortDescFirst: true,
     }),
-    columnHelper.accessor("eventType", {
+    columnHelper.accessor("eventTypeName", {
       header: "Event Type",
-      cell: (info) => (info.getValue() === 0 ? "N/A" : info.getValue()),
+      cell: (info) => info.getValue(),
       sortDescFirst: true,
     }),
     columnHelper.accessor("deviceTypeName", {

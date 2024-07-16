@@ -23,6 +23,8 @@ function FilterDrawer({
   handleclose,
   isfilterOPen,
   filter,
+  evenTypes,
+  priorities
 }) {
   return (
     <Drawer
@@ -43,9 +45,9 @@ function FilterDrawer({
             onChange={(e) => handleChange(parseInt(e.target.value), "priority")}
             value={filter.priority}
           >
-            {priorityOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
+            {priorities.map((option) => (
+              <option key={option.value} value={option.priorityId}>
+                {option.priorityName}
               </option>
             ))}
           </select>
@@ -79,12 +81,12 @@ function FilterDrawer({
             style={{ width: "auto" }}
             onChange={(e) => handleChange(e, "eventType")}
             value={filter.eventType}
-            
+
           >
             <Radio value={""}>All</Radio>
-            {EventType.map((item) => (
-              <Radio key={item} value={item}>
-                {item}
+            {evenTypes?.map((item) => (
+              <Radio key={item.eventTypeId} value={item.eventTypeId}>
+                {item.eventTypeName}
               </Radio>
             ))}
           </RadioGroup>
