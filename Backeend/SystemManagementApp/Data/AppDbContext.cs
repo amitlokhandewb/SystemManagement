@@ -15,6 +15,8 @@ namespace SystemManagementApp.Data
         public DbSet<PlantName> PlantName { get; set; }
         public DbSet<EventDescription> EventDescription { get; set; }
         public DbSet<ActionBy> ActionBies { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<EndUser> EndUsers { get; set; }
 
     }
 }

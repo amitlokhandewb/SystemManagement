@@ -25,6 +25,10 @@ builder.Services.AddScoped<PlantNameRepository,PlantNameRepository>();
 builder.Services.AddScoped<PlantNameService, PlantNameService>();
 builder.Services.AddScoped<UserRepository, UserRepository>();
 builder.Services.AddScoped<UserService, UserService>();
+builder.Services.AddScoped<RoleRepository, RoleRepository>();
+builder.Services.AddScoped<RoleService, RoleService>();
+builder.Services.AddScoped<EndUserRepository, EndUserRepository>();
+builder.Services.AddScoped<EndUserService, EndUserService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddCors(options =>
 {

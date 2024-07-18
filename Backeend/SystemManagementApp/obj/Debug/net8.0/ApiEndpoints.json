@@ -103,6 +103,135 @@
     ]
   },
   {
+    "ContainingType": "SystemManagementApp.Controllers.EndUserController",
+    "Method": "CreateEndUserAsync",
+    "RelativePath": "api/EndUser/CreateEndUserAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createEndUser",
+        "Type": "SystemManagementApp.DTOs.CreateEndUser",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.EndUser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EndUserController",
+    "Method": "DeleteEndUserAsync",
+    "RelativePath": "api/EndUser/DeleteEndUserAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EndUserController",
+    "Method": "GetEndUserByIdAsync",
+    "RelativePath": "api/EndUser/GetEndUserByIdAsync/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.EndUser, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EndUserController",
+    "Method": "GetEndUsersAsync",
+    "RelativePath": "api/EndUser/GetEndUsersAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.EndUser, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.EndUserController",
+    "Method": "UpdateEndUserAsync",
+    "RelativePath": "api/EndUser/UpdateEndUserAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createEndUser",
+        "Type": "SystemManagementApp.DTOs.CreateEndUser",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.EndUser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "SystemManagementApp.Controllers.EventDescriptionController",
     "Method": "CreateEventDescriptionAsync",
     "RelativePath": "api/EventDescription/CreateEventDescriptionAsync",
@@ -773,6 +902,52 @@
     "ReturnTypes": [
       {
         "Type": "SystemManagementApp.Model.ActionBy",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.UserRoleController",
+    "Method": "GetUserRoleById",
+    "RelativePath": "api/UserRole/GetUserRoleById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.UserRole",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.UserRoleController",
+    "Method": "GetUserRolesAsync",
+    "RelativePath": "api/UserRole/GetUserRolesAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.UserRole, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

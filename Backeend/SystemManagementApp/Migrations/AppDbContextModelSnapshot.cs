@@ -55,6 +55,39 @@ namespace SystemManagementApp.Migrations
                     b.ToTable("DeviceTypes");
                 });
 
+            modelBuilder.Entity("SystemManagementApp.Model.EndUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("EndUsers");
+                });
+
             modelBuilder.Entity("SystemManagementApp.Model.EventDescription", b =>
                 {
                     b.Property<int>("eventDescriptionId")
@@ -171,6 +204,34 @@ namespace SystemManagementApp.Migrations
                     b.HasKey("priorityId");
 
                     b.ToTable("Priorities");
+                });
+
+            modelBuilder.Entity("SystemManagementApp.Model.UserRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("RoleName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserRoles");
+                });
+
+            modelBuilder.Entity("SystemManagementApp.Model.EndUser", b =>
+                {
+                    b.HasOne("SystemManagementApp.Model.UserRole", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("SystemManagementApp.Model.Events", b =>
