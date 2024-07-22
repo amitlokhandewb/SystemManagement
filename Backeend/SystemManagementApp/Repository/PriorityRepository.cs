@@ -22,10 +22,10 @@ namespace SystemManagementApp.Repository
         }
         public async Task<Priority> CreatePriority(Priority priority)
         {
-            var existingPriority = await _context.Priorities.FindAsync(priority.priorityId);
+            var existingPriority = await _context.Priorities.FirstOrDefaultAsync(x => x.priorityName == priority.priorityName);
             if (existingPriority != null)
             {
-                throw new InvalidOperationException($"A device type with ID {priority.priorityId} already exists.");
+                throw new InvalidOperationException($"A device type with ID {priority.priorityName} Already exists.");
             }
             _context.Priorities.Add(priority);
             try

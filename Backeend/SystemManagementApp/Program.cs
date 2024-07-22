@@ -29,6 +29,16 @@ builder.Services.AddScoped<RoleRepository, RoleRepository>();
 builder.Services.AddScoped<RoleService, RoleService>();
 builder.Services.AddScoped<EndUserRepository, EndUserRepository>();
 builder.Services.AddScoped<EndUserService, EndUserService>();
+builder.Services.AddScoped<AuthorizeTokenAttribute, AuthorizeTokenAttribute>();
+var brancakey = builder.Configuration["Branca:Key"];
+if (brancakey == null || brancakey.Length < 32)
+{
+    var keylength = brancakey.Length;
+    throw new ArgumentException("The Branca key must be 32 bytes long.");
+}
+//builder.Services.AddSingleton(new BrancaService(brancakey));
+builder.Services.AddSingleton(new BrancaService(brancakey));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddCors(options =>
 {

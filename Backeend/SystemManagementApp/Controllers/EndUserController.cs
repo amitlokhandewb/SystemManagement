@@ -8,6 +8,7 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class EndUserController : ControllerBase
     {
         private readonly EndUserService _endUserService;
@@ -36,16 +37,22 @@ namespace SystemManagementApp.Controllers
             }
             return Ok(response);
         }
-        [HttpPost("CreateEndUserAsync")]
-        public async Task<ActionResult<EndUser>> CreateEndUserAsync(CreateEndUser createEndUser)
-        {
-            var response = await _endUserService.CreateEndUserAsync(createEndUser);
-            if (response == null)
-            {
-                return BadRequest();
-            }
-            return Ok("User Added Successfully"+ response);
-        }
+        //[HttpPost("CreateEndUserAsync")]
+        //public async Task<ActionResult<EndUser>> CreateEndUserAsync(CreateEndUser createEndUser)
+        //{
+        //    var enduserexist = await _endUserService.GetEndUserByUserNameAsync(createEndUser.UserName);
+        //    if (enduserexist != null)
+        //    {
+        //        return NotFound("Username already exist");
+
+        //    }
+        //    var response = await _endUserService.CreateEndUserAsync(createEndUser);
+        //    if (response == null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    return Ok("User Added Successfully"+ response);
+        //}
         [HttpPut("UpdateEndUserAsync/{id}")]
         public async Task<ActionResult<EndUser>> UpdateEndUserAsync(CreateEndUser createEndUser, int id)
         {

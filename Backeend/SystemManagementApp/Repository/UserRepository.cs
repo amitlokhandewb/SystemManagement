@@ -22,10 +22,10 @@ namespace SystemManagementApp.Repository
         }
         public async Task<ActionBy> CreateUser(ActionBy users)
         {
-            var existingusers = await _context.ActionBies.FindAsync(users.actionById);
+            var existingusers = await _context.ActionBies.FirstOrDefaultAsync(x => x.actionName ==  users.actionName);
             if (existingusers != null)
             {
-                throw new InvalidOperationException($"A device type with ID {users.actionById} already exists.");
+                throw new InvalidOperationException($"A device type with ID {users.actionName} already exists.");
             }
             _context.ActionBies.Add(users);
             try

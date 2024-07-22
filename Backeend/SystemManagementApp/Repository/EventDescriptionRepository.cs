@@ -22,10 +22,10 @@ namespace SystemManagementApp.Repository
         }
         public async Task<EventDescription> CreateEventDescription(EventDescription eventDescription)
         {
-            var existingeventDescription = await _context.EventDescription.FindAsync(eventDescription.eventDescriptionId);
+            var existingeventDescription = await _context.EventDescription.FirstOrDefaultAsync(x => x.eventDescription == eventDescription.eventDescription);
             if (existingeventDescription != null)
             {
-                throw new InvalidOperationException($"A device type with ID {eventDescription.eventDescriptionId} already exists.");
+                throw new InvalidOperationException($"A device type with  {eventDescription.eventDescription} already exists.");
             }
             _context.EventDescription.Add(eventDescription);
             try

@@ -8,6 +8,7 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class EventsController : ControllerBase
     {
         private readonly EventService _eventService;

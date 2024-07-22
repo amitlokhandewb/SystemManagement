@@ -44,7 +44,7 @@ namespace SystemManagementApp.Repository
             var NewUser = new EndUser
             {
                 Email = createEndUser.Email,
-                PasswordHash = passwordHash,
+                PasswordHash = passwordHash,    
                 UserName = createEndUser.UserName,
                 RoleId = createEndUser.RoleId,
                 IsActive = true

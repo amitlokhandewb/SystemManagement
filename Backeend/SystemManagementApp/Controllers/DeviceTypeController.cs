@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
@@ -7,6 +8,8 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ServiceFilter(typeof(AuthorizeTokenAttribute))]
+
     public class DeviceTypeController : ControllerBase
     {
         private readonly DeviceTypeService _deviceTypeService;

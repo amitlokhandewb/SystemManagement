@@ -22,7 +22,7 @@ namespace SystemManagementApp.Repository
         }
         public async Task<PlantName> CreatePlantName(PlantName plantName)
         {
-            var existingPlantNamee = await _context.PlantName.FindAsync(plantName.plantId);
+            var existingPlantNamee = await _context.PlantName.FirstOrDefaultAsync(x => x.plantName == plantName.plantName);
             if (existingPlantNamee != null)
             {
                 throw new InvalidOperationException($"A device type with ID {plantName.plantId} already exists.");

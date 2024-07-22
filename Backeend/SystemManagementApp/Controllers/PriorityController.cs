@@ -7,6 +7,7 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class PriorityController : ControllerBase
     {
         private readonly PriorityService _priorityService;

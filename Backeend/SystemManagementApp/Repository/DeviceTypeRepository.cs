@@ -28,10 +28,10 @@ namespace SystemManagementApp.Repository
         public async Task<DeviceType> CreateDeviceType(DeviceType deviceType)
         {
   
-            var existingDeviceType = await _context.DeviceTypes.FindAsync(deviceType.deviceTypeId);
+            var existingDeviceType = await _context.DeviceTypes.FirstOrDefaultAsync(x => x.deviceName == deviceType.deviceName);
             if (existingDeviceType != null)
             {
-                throw new InvalidOperationException($"A device type with ID {deviceType.deviceTypeId} already exists.");
+                throw new InvalidOperationException($"A device type with ID {deviceType.deviceName} already exists.");
             }
             _context.DeviceTypes.Add(deviceType);
             try

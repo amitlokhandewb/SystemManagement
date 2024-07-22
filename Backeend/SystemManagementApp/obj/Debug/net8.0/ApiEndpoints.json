@@ -1,5 +1,62 @@
 [
   {
+    "ContainingType": "SystemManagementApp.Controllers.AuthController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.EndUser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.AuthController",
+    "Method": "CreateEndUserAsync",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createEndUser",
+        "Type": "SystemManagementApp.DTOs.CreateEndUser",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.EndUser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "SystemManagementApp.Controllers.DeviceTypeController",
     "Method": "CreateDeviceTypeAsync",
     "RelativePath": "api/DeviceType/CreateDeviceTypeAsync",
@@ -93,32 +150,6 @@
     "ReturnTypes": [
       {
         "Type": "SystemManagementApp.Model.DeviceType",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "SystemManagementApp.Controllers.EndUserController",
-    "Method": "CreateEndUserAsync",
-    "RelativePath": "api/EndUser/CreateEndUserAsync",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createEndUser",
-        "Type": "SystemManagementApp.DTOs.CreateEndUser",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "SystemManagementApp.Model.EndUser",
         "MediaTypes": [
           "text/plain",
           "application/json",

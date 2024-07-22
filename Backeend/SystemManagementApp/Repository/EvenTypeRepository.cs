@@ -22,7 +22,7 @@ namespace SystemManagementApp.Repository
         }
         public async Task<EventType> CreateEventType(EventType eventType)
         {
-            var existingEventType = await _context.EventTypes.FindAsync(eventType.eventTypeId);
+            var existingEventType = await _context.EventTypes.FirstOrDefaultAsync(x => x.eventTypeName == eventType.eventTypeName);
             if (existingEventType != null)
             {
                 throw new InvalidOperationException($"A device type with ID {eventType.eventTypeId} already exists.");
