@@ -24,6 +24,10 @@ namespace SystemManagementApp.Service
         {
             return await _endUserRepository.GetEndUserByUserNameAsync(username);
         }
+        public async Task<EndUser> GetEndUserByEmailAsync(string username)
+        {
+            return await _endUserRepository.GetEndUserByEmailAsync(username);
+        }
         public async Task<EndUser> CreateEndUserAsync(CreateEndUser createEndUser)
         {
             return await _endUserRepository.CreateEndUserAsync(createEndUser);

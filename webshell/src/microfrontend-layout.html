@@ -16,22 +16,35 @@
   </route>
 
   -->
-  <application name="@SET/appbar"></application>
 
-  <div style="display: flex">
-    <application  name="@SET/sidebar"></application>
-    <main>
-      <route default>
-        <div style="display: flex;">
+  <!-- <div style="display: flex"> -->
+
+  <main>
+    <route default>
+      <application name="@SET/appbar"></application>
+      <div style="display: flex">
+        <application name="@SET/sidebar"></application>
+        <div style="display: flex">
           <application name="@SET/monitor"></application>
           <application name="@SET/assetinventory"></application>
         </div>
-      </route>
-      <route path="maintainance-event">
-        <div style="display: flex;">
+      </div>
+    </route>
+    <route path="maintainance-event">
+      <application name="@SET/appbar"></application>
+      <div style="display: flex">
+        <application name="@SET/sidebar"></application>
+        <div style="display: flex">
           <application name="@SET/eventList"></application>
         </div>
-      </route>
-    </main>
-  </div>
+      </div>
+    </route>
+    <route path="login">
+      <application name="@SET/login"></application>
+    </route>
+    <route path="register">
+      <application name="@SET/register"></application>
+    </route>
+  </main>
+  <!-- </div> -->
 </single-spa-router>

@@ -37,6 +37,16 @@ namespace SystemManagementApp.Repository
             }
             return response;
 
+        } 
+        public async Task<EndUser> GetEndUserByEmailAsync(string  email)
+        {
+            var response = await _context.EndUsers.FirstOrDefaultAsync(x => x.Email == email);
+            if (response == null)
+            {
+                return null;
+            }
+            return response;
+
         }
         public async Task<EndUser> CreateEndUserAsync(CreateEndUser createEndUser)
         {

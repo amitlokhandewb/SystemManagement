@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Resources/Style.css";
 import logo from "../Resources/SE_logotype_white.svg";
 import { CgProfile } from "react-icons/cg";
+import { navigateToUrl } from "single-spa";
 
 function Appbar() {
   const [open, setOpen] = useState<Boolean>(false);
+  const [username, setusername] = useState("");
+
+  useEffect(() => {
+    setusername(localStorage.getItem("username"));
+  },[]);
+
+  const handleSignout = (e: any) => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("Token");
+    navigateToUrl('/login')
+  }
   return (
     <div
       style={{
@@ -68,9 +80,9 @@ function Appbar() {
         >
           <div style={{ width: "300px", height: "60px", display: "flex", justifyContent: 'space-between', padding: '10px', alignItems: 'center', marginTop: '10px' }}>
             <CgProfile size={70} />
-            <p>Maintainenance Engineeer</p>
+            <p>{username}</p>
           </div>
-            <div style={{ width: '100%', borderStyle: 'none', height: '50px', color: '#3dcd58', backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}} >Sign out</div>
+            <div style={{ cursor: 'pointer' ,width: '100%', borderStyle: 'none', height: '50px', color: '#3dcd58', backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}} onClick={handleSignout} >Sign out</div>
         </div>
       )}
     </div>

@@ -21,9 +21,9 @@ namespace SystemManagementApp.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<EndUser>> LoginAsync(string username, string password)
+        public async Task<ActionResult<EndUser>> LoginAsync(string email, string password)
         {
-            var user = await _endUserService.GetEndUserByUserNameAsync(username);
+            var user = await _endUserService.GetEndUserByEmailAsync(email);
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
             {
                 return Unauthorized("Username or password is incorrect");
@@ -31,7 +31,7 @@ namespace SystemManagementApp.Controllers
 
             var payload = new BrancaTokenPayload
             {
-                Username = username,
+                Email = email,
                 IssuedAt = DateTime.UtcNow,
 
             };
@@ -41,7 +41,8 @@ namespace SystemManagementApp.Controllers
             {
                 Token = token,
                 roleid = user.RoleId,
-                userid = user.Id
+                userid = user.Id,
+                fullname = user.UserName
 
             }) ;
     
@@ -49,7 +50,7 @@ namespace SystemManagementApp.Controllers
         [HttpPost("Register")]
         public async Task<ActionResult<EndUser>> CreateEndUserAsync(CreateEndUser createEndUser)
         {
-            var enduserexist = await _endUserService.GetEndUserByUserNameAsync(createEndUser.UserName);
+            var enduserexist = await _endUserService.GetEndUserByEmailAsync(createEndUser.Email);
             if (enduserexist != null)
             {
                 return NotFound("Username already exist");

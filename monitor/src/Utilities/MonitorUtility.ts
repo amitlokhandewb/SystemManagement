@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import CustomAccordion from "../Components/CustomAccordion";
 import Status from "../Resources/Status.json";
 
 
