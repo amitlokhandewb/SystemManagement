@@ -258,8 +258,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAAgwCwAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T12:01:37.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T12:01:37.32Z"
             },
             {
               "$type": "Document",
@@ -271,8 +270,7 @@
               "RelativeToolTip": "Service\\BrancaService.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAQwAsAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T06:32:37.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T06:32:37.203Z"
             },
             {
               "$type": "Document",
@@ -284,8 +282,7 @@
               "RelativeToolTip": "Service\\AuthorizeTokenAttribute.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T09:13:41.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T09:13:41.889Z"
             },
             {
               "$type": "Document",
@@ -297,8 +294,7 @@
               "RelativeToolTip": "Controllers\\EventDescriptionController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T09:26:36.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T09:26:36.726Z"
             },
             {
               "$type": "Document",
@@ -310,8 +306,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAowB8AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T12:06:29.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T12:06:29.225Z"
             },
             {
               "$type": "Document",
@@ -323,8 +318,7 @@
               "RelativeToolTip": "Service\\EventFilterService.cs",
               "ViewState": "AQIAADsAAAAAAAAAAAAAwEkAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T06:22:26.616Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T06:22:26.616Z"
             },
             {
               "$type": "Document",
@@ -336,8 +330,7 @@
               "RelativeToolTip": "Service\\DeviceTypeService.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAgwBMAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T08:46:56.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T08:46:56.835Z"
             },
             {
               "$type": "Document",
@@ -347,7 +340,7 @@
               "RelativeDocumentMoniker": "Repository\\DeviceTypeRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\DeviceTypeRepository.cs",
               "RelativeToolTip": "Repository\\DeviceTypeRepository.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAgwAgAAAAvAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-11T07:05:54.133Z",
               "EditorCaption": ""
@@ -362,8 +355,7 @@
               "RelativeToolTip": "Controllers\\EndUserController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T10:26:11.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T10:26:11.999Z"
             },
             {
               "$type": "Document",
@@ -375,8 +367,7 @@
               "RelativeToolTip": "Model\\BrancaTokenPayload.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T06:40:10.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T06:40:10.51Z"
             },
             {
               "$type": "Document",
@@ -388,8 +379,7 @@
               "RelativeToolTip": "Repository\\EndUserRepository.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAmwDEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T09:23:39.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T09:23:39.302Z"
             },
             {
               "$type": "Document",
@@ -401,8 +391,7 @@
               "RelativeToolTip": "Service\\EndUserService.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAjwBwAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T10:21:05.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T10:21:05.639Z"
             },
             {
               "$type": "Document",
