@@ -6,12 +6,14 @@ import {
 } from "single-spa-layout";
 import microfrontendLayout from "./microfrontend-layout.html";
 
-const userToken = localStorage.getItem('Token');
+const userToken = localStorage.getItem("Token");
 
 const routesConfig = `
 <single-spa-router>
   <main>
-    ${userToken ? `
+    ${
+      userToken
+        ? `
     <route default>
       <application name="@SET/appbar"></application>
       <div style="display: flex">
@@ -19,6 +21,15 @@ const routesConfig = `
         <div style="display: flex">
           <application name="@SET/monitor"></application>
           <application name="@SET/assetinventory"></application>
+        </div>
+      </div>
+    </route>
+    <route path="admin">
+    <application name="@SET/appbar"></application>
+      <div style="display: flex">
+        <application name="@SET/sidebar"></application>
+        <div style="display: flex">
+          <application name="@SET/admin"></application>
         </div>
       </div>
     </route>
@@ -30,7 +41,9 @@ const routesConfig = `
           <application name="@SET/eventList"></application>
         </div>
       </div>
-    </route>` : ''}
+    </route>`
+        : ""
+    }
     <route path="login">
       <application name="@SET/login"></application>
     </route>

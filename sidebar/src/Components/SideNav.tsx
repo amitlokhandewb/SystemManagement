@@ -2,6 +2,7 @@ import React from "react";
 import CustomApp from "./CustomApp";
 import { RiAlarmWarningLine } from "react-icons/ri";
 import { GrHostMaintenance } from "react-icons/gr";
+import { RiAdminFill } from "react-icons/ri";
 
 function SideNav() {
   const Data = [
@@ -15,6 +16,11 @@ function SideNav() {
       title: "Maintainence Events",
       pathname : '/maintainance-event'
     },
+    {
+      src: <RiAdminFill size={32} />,
+      title: "Admin",
+      pathname : '/admin'
+    }
   ];
   return (
     <div
