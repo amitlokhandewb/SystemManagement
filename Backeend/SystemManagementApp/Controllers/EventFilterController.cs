@@ -19,7 +19,7 @@ namespace SystemManagementApp.Controllers
         [HttpPost("Filter/{page}/{pageLimit}")]
         public async Task<ActionResult<IEnumerable<Events>>> Filter(FilterDto filterDto,int page, int pageLimit)
         {
-            var filter = await _eventFilterService.GetFilterData(filterDto, page, pageLimit);
+            var filter = await _eventFilterService.GetFilterDataBySP(filterDto, page, pageLimit);
             if(filter == null)
             {
                 return NotFound();

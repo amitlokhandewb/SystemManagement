@@ -130,6 +130,32 @@
   },
   {
     "ContainingType": "SystemManagementApp.Controllers.DeviceTypeController",
+    "Method": "GetDeviceTypeById",
+    "RelativePath": "api/DeviceType/GetDeviceTypeById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SystemManagementApp.Model.DeviceType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.DeviceTypeController",
     "Method": "UpdateDeviceTypeAsync",
     "RelativePath": "api/DeviceType/UpdateDeviceTypeAsync/{id}",
     "HttpMethod": "PUT",

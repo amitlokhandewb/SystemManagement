@@ -58,5 +58,15 @@ namespace SystemManagementApp.Controllers
             }
             return NotFound();
         }
+        [HttpGet("GetDeviceTypeById/{id}")]
+        public async Task<ActionResult<DeviceType>> GetDeviceTypeById(int id)
+        {
+            var response = await _deviceTypeService.GetDeviceTypeByIdAsync(id);
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
     }
 }

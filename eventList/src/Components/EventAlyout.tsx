@@ -152,7 +152,7 @@ function EventLayout() {
             onClick={() => setisfilterOPen(true)}
             appearance="ghost"
             icon={<FunnelIcon />}
-            style={{ position: "inherit" }}
+            style={{ position: "inherit", marginLeft: 5 }}
           />
         </div>
       </div>

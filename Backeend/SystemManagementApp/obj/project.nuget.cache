@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wLr8WsyaiS6mj0CilnHfJrBkawIecMbfP/dfxpdoCpHSvppLjebTMkqva5beEjey7q88Cw3lLF+fqymBULq2pw==",
+  "dgSpecHash": "J80GXvBkAGfQugciWq5mO/xCP4LGnPIluP5UN3HzFStlcyaOIrDT4XSwSFbI33qxMSz2xNuX3ryoRl7CQon0bQ==",
   "success": true,
   "projectFilePath": "D:\\Amit Lokhande\\Revise\\practice'\\System_management\\Backeend\\SystemManagementApp\\SystemManagementApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amitl\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\amitl\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\amitl\\.nuget\\packages\\dpm-libsodium-net\\0.13.0\\dpm-libsodium-net.0.13.0.nupkg.sha512",
     "C:\\Users\\amitl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\amitl\\.nuget\\packages\\libsodium\\1.0.16\\libsodium.1.0.16.nupkg.sha512",

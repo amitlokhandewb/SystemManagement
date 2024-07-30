@@ -3,6 +3,7 @@ import { Button } from "rsuite";
 import CloseOutlineIcon from "@rsuite/icons/CloseOutline";
 import { Tooltip } from "@mui/material";
 import { priorityOptions } from "../Utilities/Data";
+import CloseIcon from '@rsuite/icons/Close';
 
 
 function CustomChip({ chip, handlesingleReset, filter }) {
@@ -25,14 +26,14 @@ function CustomChip({ chip, handlesingleReset, filter }) {
     <div className="row">
       <label >{chip.length} Filters Applied</label>
       {chip.map((item) => (
-        <Tooltip title={`${fetchValue(item)}`}>
+        <Tooltip title={`${fetchValue(item)}`} sx={{ marginLeft: 5}}>
           <Button
             key={item}
             appearance="ghost"
             style={{ margin: 3, borderRadius: "5em / 5em" }}
           >
             {item}
-            <CloseOutlineIcon
+            <CloseIcon
               id={item}
               onClick={handlesingleReset}
               style={{ marginLeft: "10px" }}

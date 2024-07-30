@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
+using Microsoft.OpenApi.Any;
+using Newtonsoft.Json;
+using Npgsql;
+using System.Data;
 using SystemManagementApp.DTOs;
 using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
@@ -14,7 +20,8 @@ namespace SystemManagementApp.Service
         private readonly PriorityService _priorityService;
         private readonly PlantNameService _plantNameService;
         private readonly UserService _userService;
-        public EventFilterService(EventRepository eventRepository, DeviceTypeService deviceTypeService, EventDescriptionService eventDescriptionService, EventTypeService eventTypeService, PriorityService priorityService, PlantNameService plantNameService, UserService userService)
+        private readonly IConfiguration _configuration;
+        public EventFilterService(EventRepository eventRepository, DeviceTypeService deviceTypeService, EventDescriptionService eventDescriptionService, EventTypeService eventTypeService, PriorityService priorityService, PlantNameService plantNameService, UserService userService, IConfiguration configuration)
         {
             _eventRepository = eventRepository;
             _deviceTypeService = deviceTypeService;
@@ -23,7 +30,11 @@ namespace SystemManagementApp.Service
             _priorityService = priorityService;
             _plantNameService = plantNameService;
             _userService = userService;
-
+            _configuration = configuration;
+        }
+        private IDbConnection CreateConnection()
+        {
+            return new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
         }
         public async Task<object> GetFilterData(FilterDto filterDTO, int page, int pageLimit)
         {
@@ -112,5 +123,68 @@ namespace SystemManagementApp.Service
             return paginatedwithpagelimit;
 
         }
+        public async Task<object> GetFilterDataBySP(FilterDto filterDTO, int page, int pageLimit)
+        {
+            if (filterDTO == null)
+                throw new ArgumentNullException(nameof(filterDTO));
+
+            if (page <= 0)
+                page = 1;
+            if (pageLimit <= 0)
+                pageLimit = int.MaxValue;
+
+            var parameters = new
+            {
+                p_priority = filterDTO.priority == 0 ? (int?)null : filterDTO.priority,
+                p_eventId = filterDTO.eventId == 0 ? (int?)null : filterDTO.eventId,
+                p_deviceType = filterDTO.deviceType == 0 ? (int?)null : filterDTO.deviceType,
+                p_eventType = filterDTO.eventType == 0 ? (int?)null : filterDTO.eventType,
+                p_startDate = string.IsNullOrWhiteSpace(filterDTO.startDate) ? null : filterDTO.startDate,
+                p_endDate = string.IsNullOrWhiteSpace(filterDTO.endDate) ? null : filterDTO.endDate,
+                p_page = page,
+                p_pageLimit = pageLimit
+            };
+
+            using (var connection = CreateConnection())
+            {
+                var sql = "SELECT * FROM GetFilteredAndEnrichedEvents(@p_priority, @p_eventId, @p_deviceType, @p_eventType, @p_startDate, @p_endDate, @p_page, @p_pageLimit)";
+                var response = await connection.QueryAsync<EventFromSP>(sql, parameters);
+
+                var hasResults = response.Any();
+                var totalcount = hasResults ? response.First().exact_count : 0;
+                var maxPageLimit = (int)Math.Ceiling((double)totalcount / pageLimit);
+                var mappingdata = response.Select(res => new GetEventDTO
+                {
+                    id = res.id,
+                    eventDescription = res.eventDescription,
+                    eventDescriptionId = res.eventdescriptionid,
+                    priority = res.priority,
+                    priorityName = res.priorityname,
+                    dateTime = res.datetime,
+                    eventid = res.eventId,
+                    eventType = res.eventtype,
+                    eventTypeName = res.eventtypename,
+                    deviceTypeId = res.devicetypeid,
+                    deviceTypeName = res.devicetypename,
+                    actionId = res.actionid,
+                    actionByName = res.actionbyname,
+                    plantId = res.plantid,
+                    plantNames = res.plantname
+
+                }).ToList();
+
+                var Output = new
+                {
+                    count = maxPageLimit,
+                    pagonatedData = mappingdata
+                };
+
+
+                return Output;
+            }
+        }
+
+
+
     }
 }

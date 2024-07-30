@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Npgsql;
+using System.Data;
 using SystemManagementApp.Data;
 using SystemManagementApp.Model;
 
@@ -7,23 +11,29 @@ namespace SystemManagementApp.Repository
     public class DeviceTypeRepository
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public DeviceTypeRepository(AppDbContext context)
+        public DeviceTypeRepository(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
+        }
+        private IDbConnection CreateConnection()
+        {
+            return new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
         }
         public async Task<IEnumerable<DeviceType>> GetDeviceTypesAsync()
         {
             return await _context.DeviceTypes.ToListAsync();
-        } 
+        }
         public async Task<DeviceType> GetDeviceTypeByIDAsync(int id)
         {
-            var response = await _context.DeviceTypes.FirstOrDefaultAsync(x => x.deviceTypeId == id);
-            if(response == null)
+            var parameters = new { p_id = id };
+            using (var connection = CreateConnection())
             {
-                return null;
+                var sql = "SELECT * FROM GetDeviceTypeByID(@p_id)";
+                return await connection.QueryFirstOrDefaultAsync<DeviceType>(sql, parameters);
             }
-            return response;
         }
         public async Task<DeviceType> CreateDeviceType(DeviceType deviceType)
         {

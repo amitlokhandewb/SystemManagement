@@ -45,6 +45,7 @@ function FilterDrawer({
             onChange={(e) => handleChange(parseInt(e.target.value), "priority")}
             value={filter.priority}
           >
+            <option value={0}>All</option>
             {priorities.map((option) => (
               <option key={option.value} value={option.priorityId}>
                 {option.priorityName}
@@ -83,7 +84,7 @@ function FilterDrawer({
             value={filter.eventType}
 
           >
-            <Radio value={""}>All</Radio>
+            <Radio value={0}>All</Radio>
             {evenTypes?.map((item) => (
               <Radio key={item.eventTypeId} value={item.eventTypeId}>
                 {item.eventTypeName}

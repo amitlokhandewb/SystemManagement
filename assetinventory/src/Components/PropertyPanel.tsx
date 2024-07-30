@@ -51,7 +51,6 @@ function PropertyPanel({ setshowPropertyPanel }) {
         <h3>ASRock_DCN2</h3>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
-            {/* <FaKey size={"15"} /> */}
             <span
               className="tab-row"
               onClick={() => settab(false)}

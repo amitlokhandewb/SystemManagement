@@ -27,13 +27,13 @@ const Pagination: React.FC<PaginationProps> = ({
     }
   };
   const handleLast = () => {
-    if (currentPage < totalPages - 1) {
+    if (currentPage < totalPages) {
       onPageChange(totalPages);
     }
   };
 
   const handleNext = () => {
-    if (currentPage < totalPages - 1) {
+    if (currentPage < totalPages) {
       onPageChange(currentPage + 1);
     }
   };
@@ -72,7 +72,7 @@ const Pagination: React.FC<PaginationProps> = ({
       </Button>
       <Button
         onClick={handleLast}
-        disabled={currentPage + 1 === totalPages}
+        disabled={currentPage  === totalPages}
         style={{ marginLeft: 5 }}
         appearance="subtle"
         color="green"
