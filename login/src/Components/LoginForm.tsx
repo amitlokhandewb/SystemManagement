@@ -66,9 +66,7 @@ function LoginForm() {
       const response = await LoginAsync(formData);
       console.log(response)
       if (response?.status === 200) {
-        // alert(JSON.stringify(response));
-        console.log("data", response);
-        toast.success(`Welcoem ${response?.data.fullname}`, {
+        toast.success(`Welcome ${response?.data.fullname}`, {
           position: "top-right",
         });
         setFormData({

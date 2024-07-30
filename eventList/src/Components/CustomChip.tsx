@@ -7,9 +7,6 @@ import CloseIcon from '@rsuite/icons/Close';
 
 
 function CustomChip({ chip, handlesingleReset, filter }) {
-  useEffect(() => {
-    console.log("filterstate", filter);
-  }, [filter]);
 
   const getPriorityLabel = (value) => {
     const option = priorityOptions.find((opt) => opt.value === value);

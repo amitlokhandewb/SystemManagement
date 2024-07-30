@@ -1,6 +1,10 @@
 const GenricINterval = (method, time) => {
   const intervalcall = setInterval(() => {
-    method();
+    try {
+      method();
+    } catch (error) {
+      console.error(error)
+    }
   }, time);
   return () => clearInterval(intervalcall);
 };

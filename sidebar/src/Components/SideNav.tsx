@@ -26,8 +26,8 @@ function SideNav() {
         backgroundColor: 'white'
       }}
     >
-      {Data.map((item) => {
-        return <CustomApp src={item.src} title={item.title} pathname={item.pathname} />;
+      {Data.map((item, key) => {
+        return <div key={key}><CustomApp src={item.src} title={item.title} pathname={item.pathname} /></div>;
       })}
     </div>
   );

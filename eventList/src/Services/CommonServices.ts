@@ -1,3 +1,4 @@
+import axios from "axios";
 import { APIURL } from "../Utilities/Data";
 
 export const GetToken = () => {
@@ -11,31 +12,46 @@ export const GetToken = () => {
 };
 
 const fetchEventDescriptions = async () => {
-  const response = await fetch(`${APIURL}Common/GetEventDescriptionsAsync`,GetToken());
-  const data = await response.json();
-  return data;
+  try {
+    const response = axios.get(`${APIURL}Common/GetEventDescriptionsAsync`,GetToken());
+    return response;
+  } catch (error) {
+    console.error(`error for fetcing event description`);
+  }
 };
 
 const fetchEventTypes = async () => {
-  const response = await fetch(`${APIURL}EventType/GetEventTypeAsync`,GetToken());
-  const data = await response.json();
-  return data;
+  try {
+    const response =await axios.get(`${APIURL}EventType/GetEventTypeAsync`,GetToken());
+    return response;
+  } catch (error) {
+    console.log("failes to fetch eventtypes", error.message);
+  }
 };
 const fetchDeviceTypes = async () => {
-  const response = await fetch(`${APIURL}DeviceType/GetAllDeviceTypeAsync`,GetToken());
-  const data = await response.json();
-  return data;
+  try {
+    const response = await axios.get(`${APIURL}DeviceType/GetAllDeviceTypeAsync`,GetToken());
+    return response;
+  } catch (error) {
+    console.log("failes to fetch eventype", error.message);
+  }
 };
 const fetchPriorities = async () => {
-  const response = await fetch(`${APIURL}Priority/GetPrioritiesAsync`,GetToken());
-  const data = await response.json();
-  return data;
+  try {
+    const response = await axios.get(`${APIURL}Priority/GetPrioritiesAsync`,GetToken());
+    return response;
+  } catch (error) {
+    console.log("failes to fetch priorities", error.message);
+  }
 };
 
 const fetchDevices = async () => {
-  const response = await fetch(`${APIURL}Common/GetDeviceTypesAsync`,GetToken());
-  const data = await response.json();
-  return data;
+  try {
+    const response = await axios.get(`${APIURL}Common/GetDeviceTypesAsync`,GetToken());
+    return response;
+  } catch (error) {
+    console.log("failes to fetch devices", error.message);
+  }
 };
 
 export {

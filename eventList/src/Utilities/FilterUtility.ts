@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { sendFilter } from "../Services/FilterService";
-import { fetchDeviceTypes, fetchEventTypes, fetchPriorities } from "../Services/CommonServices";
+import {
+  fetchDeviceTypes,
+  fetchEventTypes,
+  fetchPriorities,
+} from "../Services/CommonServices";
 
 const iniitalFilter = {
   priority: 0,
@@ -116,16 +120,28 @@ export const FilterUtility = (
     SendDataFilter();
   }, [currentPage, itemsperpage]);
   const fetchEventTYpes = async () => {
-    const response = await fetchEventTypes();
-    setEventTYpes(response);
+    try {
+      const response = await fetchEventTypes();
+      setEventTYpes(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
   const fetchDevices = async () => {
-    const response = await fetchDeviceTypes();
-    setDeviceTYpes(response);
+    try {
+      const response = await fetchDeviceTypes();
+      setDeviceTYpes(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
   const fetchPriority = async () => {
-    const response = await fetchPriorities();
-    setpriorities(response);
+    try {
+      const response = await fetchPriorities();
+      setpriorities(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
   const applyFilters = () => {
     SendDataFilter();
@@ -196,6 +212,6 @@ export const FilterUtility = (
     handleclose,
     filter,
     evenTypes,
-    priorities
+    priorities,
   };
 };

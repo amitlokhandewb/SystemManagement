@@ -46,8 +46,8 @@ function FilterDrawer({
             value={filter.priority}
           >
             <option value={0}>All</option>
-            {priorities.map((option) => (
-              <option key={option.value} value={option.priorityId}>
+            {priorities.map((option, key) => (
+              <option key={key} value={option.priorityId}>
                 {option.priorityName}
               </option>
             ))}

@@ -120,10 +120,12 @@ function EventLayout() {
   }, [filterActive, data]);
 
   const fetcheventList = async () => {
-    const response = await fetchEventList(currentPage, itemsperpage);
-    // alert(JSON.stringify(response.pagonatedData))
-    // console.log("Paginated data: ", response?.paginatedData)
+    try {
+      const response = await fetchEventList(currentPage, itemsperpage);
     setData(response?.paginatedData);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
