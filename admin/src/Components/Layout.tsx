@@ -1,5 +1,5 @@
 import React from "react";
-import "../Resources/Index.css";
+import "../Resources/Index.scss";
 import { Box, Grid } from "@mui/material";
 import BasicTabs from "./BasicTabs";
 
