@@ -1,3 +1,5 @@
+@use "../Resources/variable.scss" as v;
+
 body {
   background-color: #f7f7f7;
 }
@@ -11,25 +13,26 @@ body {
 
 .th,
 .td {
-  padding: 12px;
+  padding: v.$padding-10;
   border: 1px solid #ddd;
   justify-content: center;
   text-align: center;
 }
 
 .th {
-  background-color: white;
+  background-color: v.$color;
   font-weight: bold;
 }
 .custmizebutton {
   border: 1px solid black;
-  padding: 5px;
+  padding: v.$padding-10 -5;
   border-radius: 10px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: v.$padding-10*2;
 }
 .custmizebutton:hover {
-  box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+  // @include varianle.box-shadow;
+  // box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -37,12 +40,12 @@ input[type="checkbox"] {
   width: 50px;
   height: 20px;
   accent-color: forestgreen;
-  color: white;
+  color: v.$color;
 }
 
 .buttons button {
-  padding: 10px;
-  margin-top: 10px;
+  padding: v.$padding-10;
+  margin-top: v.$margin-10;
   width: 100px;
   margin-left: 5px;
 }
@@ -65,10 +68,11 @@ input[type="checkbox"] {
 .event-layout {
   margin: 10px;
   background-color: white;
-  padding: 20px;
+  padding: v.$padding-10*2;
   width: 1770px;
   height: 770px;
-  box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+  @include v.box-shadow;
+  // box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .item-x-center {
   display: flex;
@@ -89,13 +93,11 @@ input[type="checkbox"] {
   padding: 8px 12px;
   font-size: 14px;
   width: calc(100% - 30px); /* Adjust width as needed */
-  background-color: #fff;
+  background-color: v.$color;
   cursor: pointer;
 }
 
-/* Custom dropdown arrow */
 .select-container::after {
-  /* content: "\25BC"; */
   position: absolute;
   top: 70%;
   right: 10px;
@@ -122,8 +124,14 @@ input[type="checkbox"] {
   display: block;
   white-space: nowrap;
   min-height: 1.2em;
-  padding: 16px;
+  padding: v.$padding-10*2-4;
 }
-.row{
+.row {
   margin: 10px;
+}
+
+@each $key, $value in v.$priority-enums {
+  .conditon-#{$key} {
+    color: $value;
+  }
 }

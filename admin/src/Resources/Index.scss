@@ -1,29 +1,37 @@
+@use '../Resources/variable.scss' as variable;
+
 .adminlayout {
-  margin: 10px;
-  background-color: white;
-  padding: 20px;
-  width: 1770px;
-  height: 770px;
-  box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+  margin: variable.$margin-10;
+  @include variable.bg-white;
+  padding: variable.$padding-10 * 2;
+  width: variable.$admin-width;
+  height: variable.$admin-height;
+  @include variable.box-shadow;
 }
 
 .table {
-  width: 1450px;
+  width: variable.$table-width;
   border-collapse: collapse;
-  font-size: 18px;
+  font-size: variable.$font-10*2-2;
   text-align: left;
-  margin: 10px;
+  margin: variable.$margin-10;
 }
 
 .th,
 .td {
-  padding: 10px;
+  padding: variable.$padding-10;
   border: 1px solid #ddd;
   justify-content: center;
   text-align: center;
 }
 
 .th {
-  background-color: white;
+  @include variable.bg-white;
   font-weight: bold;
+}
+
+@each $key, $value in variable.$priority-enums{
+    .conditon-#{$key} {
+      color: $value;
+    }
 }

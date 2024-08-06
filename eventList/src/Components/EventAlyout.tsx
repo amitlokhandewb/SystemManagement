@@ -3,7 +3,7 @@ import EventTable from "./EventTable";
 import Datafromjson from "../Resources/EventList.json";
 import Modal from "react-modal";
 import { createColumnHelper } from "@tanstack/react-table";
-import "../Resources/Index.css";
+import "../Resources/Index.scss";
 import { IoMdClose } from "react-icons/io";
 import Dialog from "./Dialog";
 import { ClipLoader } from "react-spinners";

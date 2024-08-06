@@ -1,0 +1,19 @@
+$margin-10: 10px;
+$padding-10: 10px;
+$font-10: 10px;
+$admin-width: 1770px;
+$admin-height: 770px;
+$white: white;
+$table-width: 1450px;
+
+$priority-enums: (
+  "low": green,
+  "medium": orange,
+  "high": red,
+);
+@mixin bg-white{
+    background-color: white
+}
+@mixin box-shadow{
+    box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+}

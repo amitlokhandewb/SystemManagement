@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Resources/Style.css";
+import "../Resources/Style.scss";
 import logo from "../Resources/SE_logotype_white.svg";
 import { CgProfile } from "react-icons/cg";
 import { navigateToUrl } from "single-spa";

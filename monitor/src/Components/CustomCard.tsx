@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Resources/Index.css";
+import "../Resources/Index.scss";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 function CustomCard({ deviceId, alertTime, alertMessage, geticonbytypeid }) {

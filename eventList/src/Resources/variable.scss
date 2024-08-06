@@ -1,0 +1,15 @@
+$bg-color: #f7f7f7;
+$color: white;
+$margin-10: 10px;
+$padding-10: 10px;
+
+$priority-enums: (
+  "low": green,
+  "medium": #808080,
+  "high": #FFA500,
+  "critical":red,
+);
+
+@mixin box-shadow{
+  box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2);
+}
