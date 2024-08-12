@@ -12,7 +12,7 @@ function UserAccountComponent() {
     {
       id: 1,
       label: "Create New User",
-      Component: <CreateNewUser />,
+      Component: <CreateNewUser userId={0} />,
     },
     {
       id: 2,

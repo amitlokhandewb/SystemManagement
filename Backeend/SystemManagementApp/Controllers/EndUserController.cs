@@ -37,22 +37,22 @@ namespace SystemManagementApp.Controllers
             }
             return Ok(response);
         }
-        //[HttpPost("CreateEndUserAsync")]
-        //public async Task<ActionResult<EndUser>> CreateEndUserAsync(CreateEndUser createEndUser)
-        //{
-        //    var enduserexist = await _endUserService.GetEndUserByUserNameAsync(createEndUser.UserName);
-        //    if (enduserexist != null)
-        //    {
-        //        return NotFound("Username already exist");
+        [HttpPost("CreateEndUserAsync")]
+        public async Task<ActionResult<EndUser>> CreateEndUserAsync(CreateEndUser createEndUser)
+        {
+            var enduserexist = await _endUserService.GetEndUserByUserNameAsync(createEndUser.UserName);
+            if (enduserexist != null)
+            {
+                return NotFound("Username already exist");
 
-        //    }
-        //    var response = await _endUserService.CreateEndUserAsync(createEndUser);
-        //    if (response == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    return Ok("User Added Successfully"+ response);
-        //}
+            }
+            var response = await _endUserService.CreateEndUserAsync(createEndUser);
+            if (response == null)
+            {
+                return BadRequest();
+            }
+            return Ok("User Added Successfully" + response);
+        }
         [HttpPut("UpdateEndUserAsync/{id}")]
         public async Task<ActionResult<EndUser>> UpdateEndUserAsync(CreateEndUser createEndUser, int id)
         {

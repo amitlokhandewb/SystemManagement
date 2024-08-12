@@ -40,12 +40,24 @@ function DeviceSettingCOmponent() {
           deletebyid={DeletectionByIdAsync}
           fetchbyid={FetchActionByIdAsync}
         />
+        // <DeviceTypeComponent />
       ),
     },
     {
       id: 2,
       label: "Device Type",
-      Component: <DeviceTypeComponent />,
+      Component: (
+        <MajorDeviceGeneric
+          label={"Devcie Type"}
+          fieldname={"deviceName"}
+          fieldidname={"deviceTypeId"}
+          fetchAll={FetchDeviceTypes}
+          create={CreateDeviceTypeAsync}
+          update={UpdateDeviceTypes}
+          deletebyid={DeleteDeviceTypeAsync}
+          fetchbyid={FetchDeviceTypeByIdAsync}
+        />
+      ),
     },
     {
       id: 3,

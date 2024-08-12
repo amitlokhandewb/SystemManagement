@@ -44,9 +44,6 @@ namespace SystemManagementApp.Service
                 pageLimit = int.MaxValue;
 
             var events = await _eventRepository.GetEvents();
-            
-
-           
 
             if (filterDTO.priority > 0)
             {

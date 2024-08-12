@@ -30,6 +30,8 @@ builder.Services.AddScoped<RoleService, RoleService>();
 builder.Services.AddScoped<EndUserRepository, EndUserRepository>();
 builder.Services.AddScoped<EndUserService, EndUserService>();
 builder.Services.AddScoped<AuthorizeTokenAttribute, AuthorizeTokenAttribute>();
+builder.Services.AddScoped<RoleMappingRepository, RoleMappingRepository>();
+builder.Services.AddScoped<RoleMappingService, RoleMappingService>();
 var brancakey = builder.Configuration["Branca:Key"];
 if (brancakey == null || brancakey.Length < 32)
 {

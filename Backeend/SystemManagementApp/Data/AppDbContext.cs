@@ -17,6 +17,7 @@ namespace SystemManagementApp.Data
         public DbSet<ActionBy> ActionBies { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<EndUser> EndUsers { get; set; }
+        public DbSet<RoleMapping> RoleMappings { get; set; }
 
     }
 }

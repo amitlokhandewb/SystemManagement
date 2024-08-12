@@ -64,7 +64,7 @@ function LoginForm() {
   const SendLogins = async () => {
     try {
       const response = await LoginAsync(formData);
-      console.log(response)
+      console.log(response);
       if (response?.status === 200) {
         toast.success(`Welcome ${response?.data.fullname}`, {
           position: "top-right",
@@ -77,22 +77,22 @@ function LoginForm() {
         localStorage.setItem("username", response.data.fullname);
         localStorage.setItem("roleId", response.data.roleid);
         setLoading(false);
-         setTimeout(() => {
-           window.location.href = '/'
-         }, 1000);
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1000);
       }
     } catch (error) {
       //console.error(error.response.data);
-      if(error?.response?.status === 401){
+      if (error?.response?.status === 401) {
         toast.error(error.response.data, {
-            position: "top-right",
-            });
-      }else{
+          position: "top-right",
+        });
+      } else {
         toast.error(`${error?.message}`, {
-            position: "top-right",
-          });
+          position: "top-right",
+        });
       }
-    
+
       setLoading(false);
     }
   };
