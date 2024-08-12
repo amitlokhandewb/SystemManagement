@@ -26,6 +26,16 @@ namespace SystemManagementApp.Controllers
             }
             return NotFound();
         }
+        [HttpGet("GetEventTypeByIdAsync/{id}")]
+        public async Task<ActionResult<IEnumerable<EventType>>> GetEventTypeByIdAsync(int id)
+        {
+            var response = await _eventTypeService.GetEventTypeByIdAsync(id);
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
         [HttpPost("CreateEventTypeAsync")]
         public async Task<ActionResult<EventType>> CreateEventTypeAsync(EventType eventType)
         {

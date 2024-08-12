@@ -7,8 +7,9 @@ import {
 import microfrontendLayout from "./microfrontend-layout.html";
 
 const userToken = localStorage.getItem("Token");
+const roleId = parseInt(localStorage.getItem("roleId"), 10);
 
-const routesConfig = `
+let routesConfig = `
 <single-spa-router>
   <main>
     ${
@@ -24,6 +25,9 @@ const routesConfig = `
         </div>
       </div>
     </route>
+    ${
+      roleId === 1
+        ? `
     <route path="admin">
     <application name="@SET/appbar"></application>
       <div style="display: flex">
@@ -32,7 +36,9 @@ const routesConfig = `
           <application name="@SET/admin"></application>
         </div>
       </div>
-    </route>
+    </route>`
+        : ""
+    }
     <route path="maintainance-event">
       <application name="@SET/appbar"></application>
       <div style="display: flex">

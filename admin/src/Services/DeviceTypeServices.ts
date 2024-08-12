@@ -2,10 +2,10 @@ import axios from "axios";
 import { GetToken } from "../Utils/GenricMethod";
 import { API_URL } from "../Utils/Util";
 
-export const FetchActionBies = async () => {
+export const FetchDeviceTypes = async () => {
   try {
     const response = await axios.get(
-      `${API_URL}User/GetUsersAsync`,
+      `${API_URL}DeviceType/GetAllDeviceTypeAsync`,
       GetToken()
     );
     return response.data;
@@ -13,10 +13,10 @@ export const FetchActionBies = async () => {
     console.error(error);
   }
 };
-export const FetchActionByIdAsync = async (id) => {
+export const FetchDeviceTypeByIdAsync = async (id) => {
   try {
     const response = await axios.get(
-      `${API_URL}User/GetUsersByIdAsync/${id}`,
+      `${API_URL}DeviceType/GetDeviceTypeById/${id}`,
       GetToken()
     );
     return response.data;
@@ -24,22 +24,10 @@ export const FetchActionByIdAsync = async (id) => {
     console.error(error);
   }
 };
-export const UpdateActionBies = async (data, id) => {
-  try {
-    const response = await axios.put(
-      `${API_URL}User/UpdateUserAsync/${id}`,
-      data,
-      GetToken()
-    );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-export const CreateActionBies = async (data) => {
+export const CreateDeviceTypeAsync = async (data) => {
   try {
     const response = await axios.post(
-      `${API_URL}User/CreateUserAsync`,
+      `${API_URL}DeviceType/CreateDeviceTypeAsync`,
       data,
       GetToken()
     );
@@ -48,10 +36,22 @@ export const CreateActionBies = async (data) => {
     console.error(error);
   }
 };
-export const DeletectionByIdAsync = async (id) => {
+export const UpdateDeviceTypes = async (data, id) => {
+  try {
+    const response = await axios.put(
+      `${API_URL}DeviceType/UpdateDeviceTypeAsync/${id}`,
+      data,
+      GetToken()
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const DeleteDeviceTypeAsync = async (id) => {
   try {
     const response = await axios.delete(
-      `${API_URL}User/DeleteUserAsync/${id}`,
+      `${API_URL}DeviceType/DeleteDeviceTypeAsync/${id}`,
       GetToken()
     );
     return response.data;

@@ -75,6 +75,7 @@ function LoginForm() {
         });
         localStorage.setItem("Token", response.data.token);
         localStorage.setItem("username", response.data.fullname);
+        localStorage.setItem("roleId", response.data.roleid);
         setLoading(false);
          setTimeout(() => {
            window.location.href = '/'

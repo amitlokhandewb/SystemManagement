@@ -26,6 +26,16 @@ namespace SystemManagementApp.Controllers
             }
             return NotFound();
         }
+        [HttpGet("GetPriorityByIdAsync/{id}")]
+        public async Task<ActionResult<IEnumerable<Priority>>> GetPriorityByIdAsync(int id)
+        {
+            var response = await _priorityService.GetPriorityByIdAsync(id);
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
         [HttpPost("CreatePriorityAsync")]
         public async Task<ActionResult<Priority>> CreatePriorityAsync(Priority priority)
         {

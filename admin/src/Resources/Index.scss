@@ -10,7 +10,8 @@
 }
 
 .table {
-  width: variable.$table-width;
+  // width: variable.$table-width;
+  width: 98%;
   border-collapse: collapse;
   font-size: variable.$font-10*2-2;
   text-align: left;

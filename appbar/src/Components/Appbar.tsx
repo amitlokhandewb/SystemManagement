@@ -15,6 +15,7 @@ function Appbar() {
   const handleSignout = (e: any) => {
     localStorage.removeItem("username");
     localStorage.removeItem("Token");
+    localStorage.removeItem("roleId");
     navigateToUrl('/login')
   }
   return (

@@ -5,35 +5,46 @@ import { GrHostMaintenance } from "react-icons/gr";
 import { RiAdminFill } from "react-icons/ri";
 
 function SideNav() {
+  const adminrole = localStorage.getItem("roleId");
+
   const Data = [
     {
       src: <RiAlarmWarningLine size={32} />,
       title: "Maintainence Alert",
-      pathname : '/'
+      pathname: "/"
     },
     {
       src: <GrHostMaintenance size={32} />,
       title: "Maintainence Events",
-      pathname : '/maintainance-event'
+      pathname: "/maintainance-event"
     },
-    {
-      src: <RiAdminFill size={32} />,
-      title: "Admin",
-      pathname : '/admin'
-    }
+    ...(adminrole === "1"
+      ? [
+          {
+            src: <RiAdminFill size={32} />,
+            title: "Admin",
+            pathname: "/admin"
+          }
+        ]
+      : [])
   ];
+
   return (
     <div
       style={{
         overflowY: "auto",
         width: "80px",
-        minHeight: '842px',
+        minHeight: "842px",
         boxShadow: "0 4px 5px 0px rgba(0, 0, 0, 0.2)",
-        backgroundColor: 'white'
+        backgroundColor: "white"
       }}
     >
       {Data.map((item, key) => {
-        return <div key={key}><CustomApp src={item.src} title={item.title} pathname={item.pathname} /></div>;
+        return (
+          <div key={key}>
+            <CustomApp src={item.src} title={item.title} pathname={item.pathname} />
+          </div>
+        );
       })}
     </div>
   );

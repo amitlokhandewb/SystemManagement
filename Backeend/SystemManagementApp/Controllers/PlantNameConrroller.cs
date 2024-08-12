@@ -26,6 +26,16 @@ namespace SystemManagementApp.Controllers
             }
             return NotFound();
         }
+        [HttpGet("GetPLantNameByIdAsync/{id}")]
+        public async Task<ActionResult<IEnumerable<PlantName>>> GetPLantNameByIdAsync(int id)
+        {
+            var response = await _plantNameService.GetPlantNameByIDAsync(id);
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
         [HttpPost("CreatePlantNameAsycn")]
         public async Task<ActionResult<PlantName>> CreatePlantNameAsycn(PlantName plantName)
         {

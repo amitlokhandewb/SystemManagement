@@ -1,28 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { CreatePriorityAsync, DeletePriorityAsync, FetchPriority, GetPriorityByIdAsync, UpdatePriority } from "../../Services/PriorityService";
-import { Button, IconButton } from "@mui/material";
+import { IconButton, Button } from "@mui/material";
 import {
-  createColumnHelper,
   useReactTable,
   getCoreRowModel,
+  createColumnHelper,
 } from "@tanstack/react-table";
-import { Priority } from "../../Model/DeviceSettingModels";
-import GenericTable from "../GenericTable";
-import EditIcon from "@mui/icons-material/Edit";
+import React, { useEffect, useState } from "react";
+import GenericDialog from "./GenericDialog";
+import GenericTable from "./GenericTable";
 import DeleteIcon from "@mui/icons-material/Delete";
-import GenericDialog from "../GenericDialog";
+import EditIcon from "@mui/icons-material/Edit";
 
-function PriorityComponent() {
-  const columnHelper = createColumnHelper<Priority>();
-  const [data, setData] = useState<Priority[]>([]);
+function MajorDeviceGeneric({
+  label,
+  fieldname,
+  fieldidname,
+  fetchAll,
+  create,
+  update,
+  fetchbyid,
+  deletebyid,
+}) {
+  const columnHelper = createColumnHelper<any>();
+  const [data, setData] = useState<any[]>([]);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [initialData, setInitialData] = useState(null);
   const [id, setId] = useState(0);
 
   const fetchData = async () => {
     try {
-      const response = await FetchPriority();
-      console.log(response);
+      const response = await fetchAll();
       setData(response);
     } catch (error) {
       console.error(error);
@@ -33,26 +39,30 @@ function PriorityComponent() {
     FetchUserById(data);
     setDialogOpen(true);
   };
+
   const handleClose = () => {
     setDialogOpen(false);
     setId(0);
   };
   const handleSubmit = async (data) => {
-    let { priorityName } = data;
+    let fieldValue = data[fieldname];
+
     if (id === 0) {
-      let body = { priorityName: priorityName };
+      let body = { [fieldname]: fieldValue };
       await sendData(body);
     } else {
-      const update = { priorityId: id, priorityName: priorityName };
+      const update = { [fieldidname]: id, [fieldname]: fieldValue };
       await UpdateData(update, id);
     }
+
     fetchData();
     setId(0);
     setInitialData(null);
   };
+
   const sendData = async (data) => {
     try {
-      const response = await CreatePriorityAsync(data);
+      const response = await create(data);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -60,7 +70,7 @@ function PriorityComponent() {
   };
   const UpdateData = async (data, id) => {
     try {
-      const response = await UpdatePriority(data, id);
+      const response = await update(data, id);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -68,15 +78,15 @@ function PriorityComponent() {
   };
   const FetchUserById = async (id) => {
     try {
-      const response = await GetPriorityByIdAsync(id);
-      setInitialData({ ...initialData, priorityName: response.priorityName });
+      const response = await fetchbyid(id);
+      setInitialData({ ...initialData, [fieldname]: response[fieldname] });
     } catch (error) {
       console.error(error);
     }
   };
   const DeleteData = async (id) => {
     try {
-      const response = await DeletePriorityAsync(id);
+      const response = await deletebyid(id);
       fetchData();
     } catch (error) {
       console.error(error);
@@ -89,14 +99,14 @@ function PriorityComponent() {
     fetchData();
   }, []);
   const columns = [
-    columnHelper.accessor("priorityName", {
-      header: "Event Types",
+    columnHelper.accessor(fieldname, {
+      header: label,
       cell: (info) => <div>{info.getValue()}</div>,
     }),
-    columnHelper.accessor("priorityId", {
+    columnHelper.accessor(fieldidname, {
       header: "Action",
       cell: (info) => (
-        <>
+        <div>
           <IconButton aria-label="edit" color="info">
             <EditIcon onClick={() => handleOpen(info.getValue())} />
           </IconButton>
@@ -107,7 +117,7 @@ function PriorityComponent() {
           >
             <DeleteIcon />
           </IconButton>
-        </>
+        </div>
       ),
     }),
   ];
@@ -118,7 +128,7 @@ function PriorityComponent() {
   });
   return (
     <div style={{ maxHeight: "600px", overflowY: "auto" }}>
-       <div
+      <div
         style={{ display: "flex", justifyContent: "end", marginRight: "20px" }}
       >
         <Button
@@ -135,12 +145,12 @@ function PriorityComponent() {
         onClose={handleClose}
         onSubmit={handleSubmit}
         initialData={initialData}
-        field1="priorityName"
+        field1={fieldname}
         idField={id}
-        label={"Priority"}
+        label={label}
       />
     </div>
   );
 }
 
-export default PriorityComponent;
+export default MajorDeviceGeneric;

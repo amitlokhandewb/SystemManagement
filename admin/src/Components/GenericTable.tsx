@@ -7,13 +7,18 @@ function GenericTable({ table }) {
       <thead>
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
-            <th className="th" >Sr.No</th>
+            <th className="th" style={{ width: "100px" }}>
+              Sr.No
+            </th>
             {headerGroup.headers.map((header) => (
               <th
                 key={header.id}
                 className="th"
                 colSpan={header.colSpan}
                 onClick={header.column.getToggleSortingHandler()}
+                style={{
+                  width: header.index === 1 ? "150px" : "auto",
+                }}
               >
                 {header.isPlaceholder
                   ? null

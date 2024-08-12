@@ -6,6 +6,21 @@ import EventDescriptionComponent from "../DeviceSettingComponents/EventDescripti
 import EventTypeComponent from "../DeviceSettingComponents/EventTypeComponent";
 import PlantComponent from "../DeviceSettingComponents/PlantComponent";
 import PriorityComponent from "../DeviceSettingComponents/PriorityComponent";
+import MajorDeviceGeneric from "../MajorDeviceGeneric";
+import {
+  CreateActionBies,
+  DeletectionByIdAsync,
+  FetchActionBies,
+  FetchActionByIdAsync,
+  UpdateActionBies,
+} from "../../Services/ActionBiesServices";
+import {
+  CreateDeviceTypeAsync,
+  DeleteDeviceTypeAsync,
+  FetchDeviceTypeByIdAsync,
+  FetchDeviceTypes,
+  UpdateDeviceTypes,
+} from "../../Services/DeviceTypeServices";
 
 function DeviceSettingCOmponent() {
   const [deviceList, setDeviceList] = useState(1);
@@ -14,7 +29,18 @@ function DeviceSettingCOmponent() {
     {
       id: 1,
       label: "Action By",
-      Component: <ActionBiesComponent />,
+      Component: (
+        <MajorDeviceGeneric
+          label={"Action By"}
+          fieldname={"actionName"}
+          fieldidname={"actionById"}
+          fetchAll={FetchActionBies}
+          create={CreateActionBies}
+          update={UpdateActionBies}
+          deletebyid={DeletectionByIdAsync}
+          fetchbyid={FetchActionByIdAsync}
+        />
+      ),
     },
     {
       id: 2,

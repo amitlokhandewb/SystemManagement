@@ -26,6 +26,15 @@ namespace SystemManagementApp.Controllers
                 return Ok(response);
             }
             return NotFound();
+        }[HttpGet("GetEventDescriptipnByIdAsync/{id}")]
+        public async Task<ActionResult<IEnumerable<EventDescription>>> GetEventDescriptipnByIdAsync(int id)
+        {
+            var response = await _eventDescriptionService.GetEventDescriptionByIdAsync(id);
+            if(response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
         }
         [HttpPost("CreateEventDescriptionAsync")]
 

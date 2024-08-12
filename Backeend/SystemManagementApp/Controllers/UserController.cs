@@ -25,6 +25,16 @@ namespace SystemManagementApp.Controllers
                 return Ok(response);
             }
             return NotFound();
+        }  
+        [HttpGet("GetUsersByIdAsync/{id}")]
+        public async Task<ActionResult<IEnumerable<ActionBy>>> GetUsersByIdAsync(int id)
+        {
+            var response = await _userService.GetUsersByIdAsync(id);
+            if(response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
         }
         [HttpPost("CreateUserAsync")]
         public async Task<ActionResult<ActionBy>> CreateUserAsync(ActionBy actionBy)
