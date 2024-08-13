@@ -7,7 +7,7 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ServiceFilter(typeof(AuthorizeTokenAttribute))]
+    //[ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class UserRoleController : ControllerBase
     {
         private readonly RoleService _roleService;

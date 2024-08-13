@@ -63,6 +63,16 @@ namespace SystemManagementApp.Controllers
             }
             return Ok("User Updated Successfully" + response);
         }
+        [HttpPut("ToggleUserAsync/{id}")]
+        public async Task<ActionResult<EndUser>> ToggleUserAsync(bool toggledata, int id)
+        {
+            var response = await _endUserService.ToggleEndUserAsync(toggledata, id);
+            if (response == null)
+            {
+                return BadRequest();
+            }
+            return Ok("User Updated Successfully" + response);
+        }
         [HttpDelete("DeleteEndUserAsync/{id}")]
         public async Task<ActionResult<Boolean>> DeleteEndUserAsync(int id)
         {

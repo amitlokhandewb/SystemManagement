@@ -18,17 +18,16 @@ namespace SystemManagementApp.Repository
         public async Task<RoleMapping> GetRoleMapByIdAsync(int id)
         {
             return await _context.RoleMappings.FirstOrDefaultAsync(x => x.Id == id);
+        } 
+        public async Task<IEnumerable<RoleMapping>> GetRoleMapByRoleIdAsync(int id)
+        {
+            return await _context.RoleMappings.Where(x => x.roleId == id).ToListAsync();
         }
         public async Task<RoleMapping> CreateRoleMapping(RoleMapping roleMapping)
         {
-            var existing = await _context.RoleMappings.FirstOrDefaultAsync(x => x.pageName == roleMapping.pageName);
-            if (existing != null)
-            {
-                throw new InvalidOperationException($" {roleMapping.pageName} already exists.");
-            }
-            _context.RoleMappings.Add(roleMapping);
             try
             {
+                _context.RoleMappings.Add(roleMapping);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)
@@ -48,6 +47,7 @@ namespace SystemManagementApp.Repository
                 exist.view = roleMapping.view;
                 exist.add = roleMapping.add;
                 exist.edit = roleMapping.edit;
+                exist.roleId = roleMapping.roleId;
                 await _context.SaveChangesAsync();
                 return exist;
             }

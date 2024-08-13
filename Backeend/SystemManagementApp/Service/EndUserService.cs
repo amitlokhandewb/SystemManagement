@@ -36,6 +36,10 @@ namespace SystemManagementApp.Service
         {
             return await _endUserRepository.UpdateEndUserAsync(createEndUser, id);
         }
+        public async Task<EndUser> ToggleEndUserAsync(bool toggledata, int id)
+        {
+            return await _endUserRepository.ToggleEndUserAsync(toggledata, id);
+        }
         public async Task<Boolean> DeleteEndUserAsync(int id)
         {
             return await _endUserRepository.DeleteEndUserAsync(id);

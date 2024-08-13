@@ -7,13 +7,16 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class RoleMappingController : ControllerBase
     {
         private readonly RoleMappingService _roleMappingService;
+        private readonly RoleService _roleService;
 
-        public RoleMappingController(RoleMappingService roleMappingService)
+        public RoleMappingController(RoleMappingService roleMappingService, RoleService roleService)
         {
             _roleMappingService = roleMappingService;
+            _roleService = roleService;
         }
         [HttpGet("GetAllRoleMapping")]
         public async Task<ActionResult<IEnumerable<RoleMapping>>> GetAllRoleMapping()
@@ -34,6 +37,16 @@ namespace SystemManagementApp.Controllers
                 return NotFound();
             }
             return Ok(reponse);
+        } 
+        [HttpGet("GetComponentsByRoleId/{id}")]
+        public async Task<ActionResult<IEnumerable<RoleMapping>>> GetComponentsByRoleId(int id)
+        {
+            var reponse = await _roleMappingService.GetRoleMapByRoleIdAsync(id);
+            if (reponse == null)
+            {
+                return NotFound();
+            }
+            return Ok(reponse);
         }
         [HttpPost("CreateRoleMapping")]
         public async Task<ActionResult<RoleMapping>> CreateRoleMapping(RoleMapping roleMapping)
@@ -44,6 +57,25 @@ namespace SystemManagementApp.Controllers
                 return NotFound();
             }
             return Ok(reponse);
+        }
+        [HttpPost("AddComponents")]
+        public async Task<ActionResult<bool>> AddComponents(string component)
+        {
+            var roles = await _roleService.GetUserRolesAsync();
+            if (roles == null)
+            {
+                return NotFound();
+            }
+            foreach (var role in roles)
+            {
+                var createcomponent = new RoleMapping
+                {
+                    roleId = role.Id,
+                    pageName = component
+                };
+                await _roleMappingService.CreateRoleMappingAsync(createcomponent);
+            }
+            return Ok(true);
         }
         [HttpPut("UpdateRoleMapping/{id}")]
         public async Task<ActionResult<RoleMapping>> UpdateRoleMapping(RoleMapping roleMapping, int id)

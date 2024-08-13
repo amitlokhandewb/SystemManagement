@@ -36,6 +36,17 @@ export const UpdateUseer = async (data, id) => {
     console.error(error);
   }
 };
+export const Toogleseer = async (toogledata, id) => {
+  try {
+    const response = await axios.put(
+      `${API_URL}EndUser/ToggleUserAsync/${id}?toggledata=${toogledata}`,
+      GetToken()
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 export const CreateUser = async (data) => {
   try {
     const response = await axios.post(
@@ -43,7 +54,7 @@ export const CreateUser = async (data) => {
       data,
       GetToken()
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }

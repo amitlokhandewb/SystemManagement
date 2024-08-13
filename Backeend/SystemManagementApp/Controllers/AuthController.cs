@@ -28,7 +28,10 @@ namespace SystemManagementApp.Controllers
             {
                 return Unauthorized("Username or password is incorrect");
             }
-
+            if(user.IsActive == false)
+            {
+                return Unauthorized("User is Inactive");
+            }
             var payload = new BrancaTokenPayload
             {
                 Email = email,

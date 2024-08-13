@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ActionBiesComponent from "../DeviceSettingComponents/ActionBiesComponent";
-import DeviceTypeComponent from "../DeviceSettingComponents/DeviceTypeComponent";
 import GenericLayout from "../GenericLayout";
 import CreateNewUser from "../UserAccountComponents/CreateNewUser";
 import UserList from "../UserAccountComponents/UserList";
@@ -11,11 +9,6 @@ function UserAccountComponent() {
   const List = [
     {
       id: 1,
-      label: "Create New User",
-      Component: <CreateNewUser userId={0} />,
-    },
-    {
-      id: 2,
       label: "User List",
       Component: <UserList />,
     },

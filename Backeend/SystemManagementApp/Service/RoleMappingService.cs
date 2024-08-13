@@ -19,6 +19,10 @@ namespace SystemManagementApp.Service
         {
             return await _roleMappingRepository.GetRoleMapByIdAsync(id);
         }
+        public async Task<IEnumerable<RoleMapping>> GetRoleMapByRoleIdAsync(int id)
+        {
+            return await _roleMappingRepository.GetRoleMapByRoleIdAsync(id);
+        }
         public async Task<RoleMapping> CreateRoleMappingAsync(RoleMapping roleMapping)
         {
             return await _roleMappingRepository.CreateRoleMapping(roleMapping);

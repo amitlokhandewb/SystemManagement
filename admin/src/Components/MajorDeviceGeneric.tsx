@@ -19,13 +19,13 @@ function MajorDeviceGeneric({
   update,
   fetchbyid,
   deletebyid,
+  deviceList
 }) {
   const columnHelper = createColumnHelper<any>();
-  const [data, setData] = useState<any[]>([]);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [initialData, setInitialData] = useState(null);
   const [id, setId] = useState(0);
-
+  const [data, setData] = useState<any[]>([]);
   const fetchData = async () => {
     try {
       const response = await fetchAll();
@@ -97,7 +97,7 @@ function MajorDeviceGeneric({
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [deviceList]);
   const columns = [
     columnHelper.accessor(fieldname, {
       header: label,

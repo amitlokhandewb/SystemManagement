@@ -71,17 +71,25 @@ namespace SystemManagementApp.Repository
                 return null;
             }
             var passwordHash = BCrypt.Net.BCrypt.HashPassword(updateEndUser.PasswordHash);
-            var updatedUser = new EndUser
-            {
-                Id = id,
-                Email = updateEndUser.Email,
-                PasswordHash = passwordHash,
-                UserName = updateEndUser.UserName,
-                RoleId = updateEndUser.RoleId,
-            };
-            _context.EndUsers.Update(updatedUser);
+
+            user.Email = updateEndUser.Email;
+            user.UserName = updateEndUser.UserName;
+            user.RoleId = updateEndUser.RoleId;
             await _context.SaveChangesAsync();
-            return updatedUser;
+            return user;
+        }
+        public async Task<EndUser> ToggleEndUserAsync(bool toggledata, int id)
+        {
+            var user = await _context.EndUsers.FirstOrDefaultAsync(x => x.Id == id);
+            if (user == null)
+            {
+                return null;
+            }
+
+            user.IsActive = toggledata;
+            await _context.SaveChangesAsync();
+
+            return user;
         }
         public async Task<Boolean> DeleteEndUserAsync(int id)
         {
@@ -90,16 +98,7 @@ namespace SystemManagementApp.Repository
             {
                 return false;
             }
-            var updatedUser = new EndUser
-            {
-                Id = id,
-                Email = user.Email,
-                PasswordHash = user.PasswordHash,
-                UserName = user.UserName,
-                RoleId = user.RoleId,
-                IsActive = false,
-            };
-            _context.EndUsers.Update(updatedUser);
+            _context.EndUsers.Remove(user);
             await _context.SaveChangesAsync();
             return true;
 

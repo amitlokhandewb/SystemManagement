@@ -1,6 +1,7 @@
 import { Box, Grid, TextField, MenuItem, Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { FetchUserbyId } from "../../Services/UserServices";
+import { CreateUser, FetchUserbyId, UpdateUseer } from "../../Services/UserServices";
+import { fetchRolesAsync } from "../../Services/RoleServices";
 
 const initialData = {
   id: 0,
@@ -10,9 +11,10 @@ const initialData = {
   roleId: "",
 };
 
-function CreateNewUser({ userId }) {
+function CreateNewUser({ userId, handleClose,fetchData }) {
   const [formData, setFormData] = useState<any>(initialData);
   const [fieldError, setFieldError] = useState<any>(initialData);
+  const [roles, setRoles] = useState([]);
 
   useEffect(() => {
     if (userId > 0) {
@@ -62,24 +64,69 @@ function CreateNewUser({ userId }) {
   const fetchUserbyidasync = async (id) => {
     try {
       const response = await FetchUserbyId(id);
-      console.log("user by id", response.data);
+      setFormData({
+        ...formData,
+        username: response.userName,
+        email: response.email,
+        roleId: response.roleId,
+        password: response.passwordHash,
+      });
     } catch (error) {
       console.error(error);
     }
   };
   const handleSubmit = (e) => {
+    const updatedbody = {
+      userName: formData.username,
+      passwordHash:formData.password,
+      email: formData.email,
+      roleId: formData.roleId
+    }
     e.preventDefault();
     if (validateForm()) {
-      if (formData.id) {
+      if (userId) {
         console.log("Updating User:", formData);
+        updatewuser(updatedbody,userId);
+        handleClose()
       } else {
+        Creaetnewuser(updatedbody);
         console.log("Creating New User:", formData);
+        handleClose()
       }
       setFormData(initialData);
     } else {
       console.log("Validation failed");
     }
   };
+  const fetchRoles = async () => {
+    try {
+      const response = await fetchRolesAsync();
+      setRoles(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const Creaetnewuser = async(data) => {
+    try {
+      const response = await CreateUser(data);
+      console.log("User Created:", response);
+      fetchData();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const updatewuser = async(data,id) => {
+    try {
+      const response = await UpdateUseer(data,id);
+      console.log("User Created:", response);
+      fetchData();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    fetchRoles();
+  }, []);
 
   return (
     <Box component="form" onSubmit={handleSubmit}>
@@ -118,6 +165,7 @@ function CreateNewUser({ userId }) {
             type="password"
             fullWidth
             value={formData.password}
+            disabled={userId}
             onChange={handleChange}
             error={!!fieldError.password}
             helperText={fieldError.password}
@@ -135,14 +183,24 @@ function CreateNewUser({ userId }) {
             error={!!fieldError.roleId}
             helperText={fieldError.roleId}
           >
-            <MenuItem value={1}>Admin</MenuItem>
-            <MenuItem value={2}>User</MenuItem>
-            <MenuItem value={3}>Manager</MenuItem>
+            {roles.map((item, key) => (
+              <MenuItem key={key} value={item.id}>
+                {item.roleName}
+              </MenuItem>
+            ))}
           </TextField>
         </Grid>
-        <Grid item xs={3}>
-          <Button type="submit" variant="contained" color="primary" fullWidth>
-            {formData.id ? "Update" : "Submit"}
+        <Grid
+          item
+          xs={12}
+          gap={1}
+          style={{ display: "flex", justifyContent: "right" }}
+        >
+          <Button variant="contained" color="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button type="submit" variant="contained" color="primary">
+            {userId ? "Update" : "Submit"}
           </Button>
         </Grid>
       </Grid>
