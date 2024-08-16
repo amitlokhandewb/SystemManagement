@@ -39,7 +39,7 @@ export const UpdateUseer = async (data, id) => {
 export const Toogleseer = async (toogledata, id) => {
   try {
     const response = await axios.put(
-      `${API_URL}EndUser/ToggleUserAsync/${id}?toggledata=${toogledata}`,
+      `${API_URL}EndUser/ToggleUserAsync/${id}?toggledata=${toogledata}`,toogledata,
       GetToken()
     );
     return response.data;

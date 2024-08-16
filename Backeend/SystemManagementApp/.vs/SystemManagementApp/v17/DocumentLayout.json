@@ -15,16 +15,40 @@
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\rolemappingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\enduserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\enduserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\enduserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\enduserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\endusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\endusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240814065919_addedview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240814065919_addedview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\rolemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\rolemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\priorityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\priorityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\plantnameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\plantnameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,10 +63,6 @@
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\eventdescriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\enduserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\enduserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\service\\devicetypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:service\\devicetypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\enduserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:repository\\enduserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\repository\\eventdescriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,24 +111,8 @@
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\userrolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\model\\rolemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:model\\rolemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\dtos\\createenduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:dtos\\createenduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\endusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\endusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240813111433_added role in mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240813111433_added role in mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\migrations\\20240812104353_added role mapping1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -281,6 +281,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\migrations\\20240812101828_added role mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:migrations\\20240812101828_added role mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|d:\\amit lokhande\\revise\\practice\u0027\\system_management\\backeend\\systemmanagementapp\\migrations\\20240813111433_added role in mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28A61841-D83F-44AB-A504-9BF03CD5FC5D}|SystemManagementApp.csproj|solutionrelative:migrations\\20240813111433_added role in mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -290,63 +294,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EventFilterService.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventFilterService.cs",
-              "RelativeDocumentMoniker": "Service\\EventFilterService.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventFilterService.cs",
-              "RelativeToolTip": "Service\\EventFilterService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAUwI8AAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "RoleMappingController.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\RoleMappingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoleMappingController.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\RoleMappingController.cs",
+              "RelativeToolTip": "Controllers\\RoleMappingController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T06:22:26.616Z",
+              "WhenOpened": "2024-08-12T10:35:46.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EventService.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventService.cs",
-              "RelativeDocumentMoniker": "Service\\EventService.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventService.cs",
-              "RelativeToolTip": "Service\\EventService.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAWwG4AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T06:46:34.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EventTypeService.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventTypeService.cs",
-              "RelativeDocumentMoniker": "Service\\EventTypeService.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventTypeService.cs",
-              "RelativeToolTip": "Service\\EventTypeService.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAlwBcAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T08:57:22.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlantNameService.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PlantNameService.cs",
-              "RelativeDocumentMoniker": "Service\\PlantNameService.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PlantNameService.cs",
-              "RelativeToolTip": "Service\\PlantNameService.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAtwBcAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T09:07:25.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "PriorityService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PriorityService.cs",
               "RelativeDocumentMoniker": "Service\\PriorityService.cs",
@@ -354,8 +319,7 @@
               "RelativeToolTip": "Service\\PriorityService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T09:10:55.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T09:10:55.239Z"
             },
             {
               "$type": "Document",
@@ -365,7 +329,7 @@
               "RelativeDocumentMoniker": "Repository\\RoleMappingRepository.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\RoleMappingRepository.cs",
               "RelativeToolTip": "Repository\\RoleMappingRepository.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAwBYAAAAJAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAIwFMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-12T10:19:18.51Z",
               "EditorCaption": ""
@@ -378,27 +342,139 @@
               "RelativeDocumentMoniker": "Service\\RoleMappingService.cs",
               "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\RoleMappingService.cs",
               "RelativeToolTip": "Service\\RoleMappingService.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAYwBYAAAAJAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAwCkAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-12T10:31:42.78Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RoleMappingController.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\RoleMappingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RoleMappingController.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\RoleMappingController.cs",
-              "RelativeToolTip": "Controllers\\RoleMappingController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowB8AAABPAAAA",
+              "DocumentIndex": 9,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBwAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T10:35:46.013Z",
+              "WhenOpened": "2024-07-18T12:01:37.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EndUserController.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EndUserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EndUserController.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EndUserController.cs",
+              "RelativeToolTip": "Controllers\\EndUserController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBYAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:26:11.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EndUserService.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EndUserService.cs",
+              "RelativeDocumentMoniker": "Service\\EndUserService.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EndUserService.cs",
+              "RelativeToolTip": "Service\\EndUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:21:05.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EndUserRepository.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EndUserRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\EndUserRepository.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EndUserRepository.cs",
+              "RelativeToolTip": "Repository\\EndUserRepository.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAuwFQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T09:23:39.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EventTypeService.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventTypeService.cs",
+              "RelativeDocumentMoniker": "Service\\EventTypeService.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventTypeService.cs",
+              "RelativeToolTip": "Service\\EventTypeService.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAlwBcAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T08:57:22.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventService.cs",
+              "RelativeDocumentMoniker": "Service\\EventService.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventService.cs",
+              "RelativeToolTip": "Service\\EventService.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAWwG4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T06:46:34.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240814065919_addedview.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240814065919_addedview.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240814065919_addedview.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240814065919_addedview.cs",
+              "RelativeToolTip": "Migrations\\20240814065919_addedview.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:59:20.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PlantNameService.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PlantNameService.cs",
+              "RelativeDocumentMoniker": "Service\\PlantNameService.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\PlantNameService.cs",
+              "RelativeToolTip": "Service\\PlantNameService.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAtwBcAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T09:07:25.225Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "RoleMapping.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\RoleMapping.cs",
+              "RelativeDocumentMoniker": "Model\\RoleMapping.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\RoleMapping.cs",
+              "RelativeToolTip": "Model\\RoleMapping.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T10:14:04.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EventFilterService.cs",
+              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventFilterService.cs",
+              "RelativeDocumentMoniker": "Service\\EventFilterService.cs",
+              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventFilterService.cs",
+              "RelativeToolTip": "Service\\EventFilterService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAUwI8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T06:22:26.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "EventDescriptionService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EventDescriptionService.cs",
               "RelativeDocumentMoniker": "Service\\EventDescriptionService.cs",
@@ -406,25 +482,11 @@
               "RelativeToolTip": "Service\\EventDescriptionService.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAgwBcAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T08:51:43.401Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T08:51:43.401Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EndUserService.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EndUserService.cs",
-              "RelativeDocumentMoniker": "Service\\EndUserService.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\EndUserService.cs",
-              "RelativeToolTip": "Service\\EndUserService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAYwCwAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T10:21:05.639Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "DeviceTypeService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\DeviceTypeService.cs",
               "RelativeDocumentMoniker": "Service\\DeviceTypeService.cs",
@@ -432,12 +494,11 @@
               "RelativeToolTip": "Service\\DeviceTypeService.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T08:46:56.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T08:46:56.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "BrancaService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\BrancaService.cs",
               "RelativeDocumentMoniker": "Service\\BrancaService.cs",
@@ -445,12 +506,11 @@
               "RelativeToolTip": "Service\\BrancaService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T06:32:37.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T06:32:37.203Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "DeviceTypeRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\DeviceTypeRepository.cs",
               "RelativeDocumentMoniker": "Repository\\DeviceTypeRepository.cs",
@@ -458,25 +518,11 @@
               "RelativeToolTip": "Repository\\DeviceTypeRepository.cs",
               "ViewState": "AQIAAC4AAAAAAAAAAAAcwBQAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:05:54.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T07:05:54.133Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EndUserRepository.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EndUserRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\EndUserRepository.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EndUserRepository.cs",
-              "RelativeToolTip": "Repository\\EndUserRepository.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAkwEsAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T09:23:39.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "EventDescriptionRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EventDescriptionRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EventDescriptionRepository.cs",
@@ -484,12 +530,11 @@
               "RelativeToolTip": "Repository\\EventDescriptionRepository.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAEwB8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:12:12.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T07:12:12.812Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "EventRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EventRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EventRepository.cs",
@@ -497,12 +542,11 @@
               "RelativeToolTip": "Repository\\EventRepository.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAQwCcAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T06:37:44.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T06:37:44.787Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "EvenTypeRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\EvenTypeRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EvenTypeRepository.cs",
@@ -510,12 +554,11 @@
               "RelativeToolTip": "Repository\\EvenTypeRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAD4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:18:24.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T07:18:24.95Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "PlantNameRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\PlantNameRepository.cs",
               "RelativeDocumentMoniker": "Repository\\PlantNameRepository.cs",
@@ -523,12 +566,11 @@
               "RelativeToolTip": "Repository\\PlantNameRepository.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAawBgAAAB7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:24:00.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T07:24:00.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "PriorityRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\PriorityRepository.cs",
               "RelativeDocumentMoniker": "Repository\\PriorityRepository.cs",
@@ -536,12 +578,11 @@
               "RelativeToolTip": "Repository\\PriorityRepository.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAjwBwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T06:52:29.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T06:52:29.123Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "RoleRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\RoleRepository.cs",
               "RelativeDocumentMoniker": "Repository\\RoleRepository.cs",
@@ -549,12 +590,11 @@
               "RelativeToolTip": "Repository\\RoleRepository.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T09:03:37.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T09:03:37.416Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
@@ -562,12 +602,11 @@
               "RelativeToolTip": "Repository\\UserRepository.cs",
               "ViewState": "AQIAACcAAAAAAAAAAAAowBQAAABaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T07:01:15.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T07:01:15.984Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "RoleService.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Service\\RoleService.cs",
               "RelativeDocumentMoniker": "Service\\RoleService.cs",
@@ -575,12 +614,11 @@
               "RelativeToolTip": "Service\\RoleService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T09:06:57.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T09:06:57.254Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "UserRoleController.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\UserRoleController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserRoleController.cs",
@@ -588,38 +626,11 @@
               "RelativeToolTip": "Controllers\\UserRoleController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T09:08:45.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "RoleMapping.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\RoleMapping.cs",
-              "RelativeDocumentMoniker": "Model\\RoleMapping.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Model\\RoleMapping.cs",
-              "RelativeToolTip": "Model\\RoleMapping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T10:14:04.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T09:08:45.277Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCEAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T12:01:37.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
               "Title": "CreateEndUser.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\DTOs\\CreateEndUser.cs",
               "RelativeDocumentMoniker": "DTOs\\CreateEndUser.cs",
@@ -627,25 +638,11 @@
               "RelativeToolTip": "DTOs\\CreateEndUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T09:28:13.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T09:28:13.682Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "EndUserController.cs",
-              "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EndUserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EndUserController.cs",
-              "ToolTip": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Controllers\\EndUserController.cs",
-              "RelativeToolTip": "Controllers\\EndUserController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T10:26:11.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 70,
               "Title": "20240813111433_added role in mapping.cs",
               "DocumentMoniker": "D:\\Amit Lokhande\\Revise\\practice\u0027\\System_management\\Backeend\\SystemManagementApp\\Migrations\\20240813111433_added role in mapping.cs",
               "RelativeDocumentMoniker": "Migrations\\20240813111433_added role in mapping.cs",
@@ -653,8 +650,7 @@
               "RelativeToolTip": "Migrations\\20240813111433_added role in mapping.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T11:14:34.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T11:14:34.121Z"
             },
             {
               "$type": "Document",
@@ -666,8 +662,7 @@
               "RelativeToolTip": "Migrations\\20240812104353_added role mapping1.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T10:43:53.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T10:43:53.648Z"
             },
             {
               "$type": "Document",

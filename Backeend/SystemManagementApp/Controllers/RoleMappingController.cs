@@ -87,6 +87,16 @@ namespace SystemManagementApp.Controllers
             }
             return Ok(reponse);
         }
+        [HttpPut("ToggleRoleMapping/{id}")]
+        public async Task<ActionResult<RoleMapping>> ToggleRoleMapping(int id,string type, bool typevalue)
+        {
+            var reponse = await _roleMappingService.ToggleRoleMapping(id, type, typevalue);
+            if (reponse == null)
+            {
+                return NotFound();
+            }
+            return Ok(reponse);
+        }
         [HttpDelete("DeleteRoleMapping/{id}")]
         public async Task<ActionResult<bool>> DeleteRoleMapping(int id)
         {
@@ -97,5 +107,17 @@ namespace SystemManagementApp.Controllers
             }
             return Ok(reponse);
         }
+        [HttpGet("GetUniquesPageNamesAsync")]
+        public async Task<ActionResult<IEnumerable<object>>> GetUniquesPageNamesAsync()
+        {
+            var response = await _roleMappingService.GetUniquesPageNamesAsync();
+            if(response == null)
+            {
+                return Ok(new List<string>());
+            }
+            return Ok(response);
+        }
+
+
     }
 }

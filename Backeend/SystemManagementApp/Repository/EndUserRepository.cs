@@ -16,7 +16,7 @@ namespace SystemManagementApp.Repository
         }
         public async Task<IEnumerable<EndUser>> GetEndUsersAsync()
         {
-            return await _context.EndUsers.ToListAsync();
+            return await _context.EndUsers.OrderBy(x => x.UserName).ToListAsync();
         }
         public async Task<EndUser> GetEndUserByIdAsync(int id)
         {

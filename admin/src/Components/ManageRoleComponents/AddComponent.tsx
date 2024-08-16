@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import ComponentList from "./ComponentList";
 
 function AddComponent() {
-  return (
-    <div>AddComponent</div>
-  )
+  return <div><ComponentList /></div>;
 }
 
-export default AddComponent
+export default AddComponent;

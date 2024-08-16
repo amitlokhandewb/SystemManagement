@@ -45,9 +45,26 @@ namespace SystemManagementApp.Repository
                 exist.pageNo = roleMapping.pageNo;
                 exist.pageName = roleMapping.pageName;
                 exist.view = roleMapping.view;
-                exist.add = roleMapping.add;
-                exist.edit = roleMapping.edit;
+                exist.modify = roleMapping.modify;
                 exist.roleId = roleMapping.roleId;
+                await _context.SaveChangesAsync();
+                return exist;
+            }
+            return exist;
+        }public async Task<RoleMapping> ToggleRoleMapping(int id,string type,bool typevalue)
+        {
+            var exist = await _context.RoleMappings.FirstOrDefaultAsync(x => x.Id == id);
+            if (exist != null)
+            {
+                if(type == "view")
+                {
+                    exist.view = typevalue;
+                    exist.modify = typevalue == false ? false : exist.modify; 
+                }
+                if(type == "modify")
+                {
+                    exist.modify = typevalue;
+                }
                 await _context.SaveChangesAsync();
                 return exist;
             }
@@ -64,5 +81,20 @@ namespace SystemManagementApp.Repository
             }
             return false;
         }
+        public async Task<IEnumerable<object>> GetUniquesPageNamesAsync()
+        {
+            var response = await _context.RoleMappings
+                                         .Select(x => x.pageName)
+                                         .Distinct()
+                                         .ToListAsync();
+
+            var output = response.Select(pageName => new
+            {
+                ComponentName = pageName
+            }).ToList();
+
+            return output;
+        }
+
     }
 }

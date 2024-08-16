@@ -5,6 +5,8 @@ import Box from '@mui/material/Box';
 import DeviceSettingCOmponent from './TabComponents/DeviceSettingCOmponent';
 import UserAccountComponent from './TabComponents/UserAccountComponent';
 import ManageRoleComponent from './TabComponents/ManageRoleComponent';
+import { fetchRolemappingListByid } from '../Services/RoleMappingService';
+import { LoginRoleId } from '../Utils/Util';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -37,29 +39,75 @@ function a11yProps(index: number) {
 
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
+  const [roleaccess, setRoleAccess] = React.useState([]);
+
+  const fetchRoleAccesbyROleID = async(id: number) => {
+    try {
+      const response = await fetchRolemappingListByid(id);
+      console.log("role mapped", response)
+      setRoleAccess(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  React.useEffect(() => {
+    fetchRoleAccesbyROleID(Number(LoginRoleId));
+  },[])
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  const List = [
+    {
+      id: 1,
+      label:"Device Settings",
+      component: <DeviceSettingCOmponent roleaccess={roleaccess} />
+    },
+    {
+      id: 2,
+      label:"User Accounts",
+      component: <UserAccountComponent roleaccess={roleaccess} />
+    },
+    {
+      id: 3,
+      label:"Manage Roles",
+      component:  <ManageRoleComponent roleaccess={roleaccess} />
+    },
+  ];
+
+  const filteredList = List.filter((item) =>
+    roleaccess.some(
+      (access) => access.pageName === item?.label && access.view
+    )
+  );
+  console.log("data from basic tabs", filteredList);
 
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Device Settings" {...a11yProps(0)} />
-          <Tab label="User Accounts" {...a11yProps(1)} />
-          <Tab label="Manage Roles" {...a11yProps(2)} />
+          {filteredList.map((item,key) => (
+            <Tab key={key} {...a11yProps(key)} label={item.label} />
+          ))}
+          {/* <Tab label="Device Settings" {...a11yProps(0)} /> */}
+          {/* <Tab label="User Accounts" {...a11yProps(1)} />
+          <Tab label="Manage Roles" {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0} >
-        <DeviceSettingCOmponent />
+      {filteredList.map((item,key) => (
+        <CustomTabPanel value={value} index={key} >
+        {item.component}
+      </CustomTabPanel>
+      ))}
+      {/* <CustomTabPanel value={value} index={0} >
+        <DeviceSettingCOmponent roleaccess={roleaccess} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <UserAccountComponent />
+        <UserAccountComponent roleaccess={roleaccess} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <ManageRoleComponent />
-      </CustomTabPanel>
+        <ManageRoleComponent roleaccess={roleaccess} />
+      </CustomTabPanel> */}
     </Box>
   );
 }

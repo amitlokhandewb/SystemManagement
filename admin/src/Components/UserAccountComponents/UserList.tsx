@@ -86,7 +86,9 @@ function UserList() {
     }),
     columnHelper.accessor("roleId", {
       header: "Role",
-      cell: (info) => <div>{roles.find((item) => item.id === info.getValue())?.roleName}</div>,
+      cell: (info) => (
+        <div>{roles.find((item) => item.id === info.getValue())?.roleName}</div>
+      ),
     }),
     columnHelper.accessor("isActive", {
       header: "Is Active",

@@ -30,10 +30,18 @@ namespace SystemManagementApp.Service
         public async Task<RoleMapping> UpdateRoleMappingAsync(RoleMapping roleMapping, int id)
         {
             return await _roleMappingRepository.UpdateRoleMapping(roleMapping, id);
+        } 
+        public async Task<RoleMapping> ToggleRoleMapping(int id,string type, bool typevalue)
+        {
+            return await _roleMappingRepository.ToggleRoleMapping(id, type, typevalue);
         }
         public async Task<bool> DeleteRoleMappingAsync(int id)
         {
             return await _roleMappingRepository.DeleteRoleMapping(id);
+        }
+        public async Task<IEnumerable<object>> GetUniquesPageNamesAsync()
+        {
+            return await _roleMappingRepository.GetUniquesPageNamesAsync();
         }
     }
 }

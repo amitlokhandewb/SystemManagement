@@ -3,10 +3,43 @@ import CustomApp from "./CustomApp";
 import { RiAlarmWarningLine } from "react-icons/ri";
 import { GrHostMaintenance } from "react-icons/gr";
 import { RiAdminFill } from "react-icons/ri";
+import { fetchRolemappingListById } from "../Services/RoleMappingService";
 
 function SideNav() {
-  const adminrole = localStorage.getItem("roleId");
-
+  const roleid = localStorage.getItem("roleId");
+  const [roleaccess, setRoleAccess] = React.useState([]);
+  // const Data = [
+  //   {
+  //     src: <RiAlarmWarningLine size={32} />,
+  //     title: "Maintainence Alert",
+  //     pathname: "/"
+  //   },
+  //   {
+  //     src: <GrHostMaintenance size={32} />,
+  //     title: "Maintainence Events",
+  //     pathname: "/maintainance-event"
+  //   },
+  //   ...(adminrole === "1"
+  //     ? [
+  //         {
+  //           src: <RiAdminFill size={32} />,
+  //           title: "Admin",
+  //           pathname: "/admin"
+  //         }
+  //       ]
+  //     : [])
+  // ];
+  const fetchRoleAccesbyROleID = async(id: number) => {
+    try {
+      const response = await fetchRolemappingListById(id);
+      setRoleAccess(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  React.useEffect(() => {
+    fetchRoleAccesbyROleID(Number(roleid));
+  },[])
   const Data = [
     {
       src: <RiAlarmWarningLine size={32} />,
@@ -18,17 +51,17 @@ function SideNav() {
       title: "Maintainence Events",
       pathname: "/maintainance-event"
     },
-    ...(adminrole === "1"
-      ? [
-          {
-            src: <RiAdminFill size={32} />,
-            title: "Admin",
-            pathname: "/admin"
-          }
-        ]
-      : [])
+    {
+      src: <RiAdminFill size={32} />,
+      title: "Admin",
+      pathname: "/admin"
+    }
   ];
-
+  const filteredList = Data.filter((item) =>
+    roleaccess.some(
+      (access) => access.pageName === item?.title && access.view
+    )
+  );
   return (
     <div
       style={{
@@ -39,7 +72,7 @@ function SideNav() {
         backgroundColor: "white"
       }}
     >
-      {Data.map((item, key) => {
+      {filteredList.map((item, key) => {
         return (
           <div key={key}>
             <CustomApp src={item.src} title={item.title} pathname={item.pathname} />
@@ -51,3 +84,4 @@ function SideNav() {
 }
 
 export default SideNav;
+

@@ -30,7 +30,7 @@ namespace SystemManagementApp.Controllers
             }
             if(user.IsActive == false)
             {
-                return Unauthorized("User is Inactive");
+                return Unauthorized();
             }
             var payload = new BrancaTokenPayload
             {

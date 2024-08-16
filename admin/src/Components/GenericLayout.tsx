@@ -6,7 +6,7 @@ function GenericLayout({ componentList, state, setState }) {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={2}>
-          {componentList.map((item) => (
+          {componentList.map((item,key) => (
             <div
               key={item.id}
               onClick={() => setState(item.id)}
@@ -27,7 +27,7 @@ function GenericLayout({ componentList, state, setState }) {
         </Grid>
         <Grid item xs={10}>
           {componentList.find((item) => item.id === state)?.Component || (
-            <div>Component not found</div>
+            <div>Please select some options from left side</div>
           )}
         </Grid>
       </Grid>

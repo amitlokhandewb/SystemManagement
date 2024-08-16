@@ -19,7 +19,8 @@ function MajorDeviceGeneric({
   update,
   fetchbyid,
   deletebyid,
-  deviceList
+  deviceList,
+  fetchEditAccess
 }) {
   const columnHelper = createColumnHelper<any>();
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -46,7 +47,6 @@ function MajorDeviceGeneric({
   };
   const handleSubmit = async (data) => {
     let fieldValue = data[fieldname];
-
     if (id === 0) {
       let body = { [fieldname]: fieldValue };
       await sendData(body);
@@ -98,29 +98,36 @@ function MajorDeviceGeneric({
   useEffect(() => {
     fetchData();
   }, [deviceList]);
+
+
   const columns = [
     columnHelper.accessor(fieldname, {
       header: label,
       cell: (info) => <div>{info.getValue()}</div>,
     }),
-    columnHelper.accessor(fieldidname, {
-      header: "Action",
-      cell: (info) => (
-        <div>
-          <IconButton aria-label="edit" color="info">
-            <EditIcon onClick={() => handleOpen(info.getValue())} />
-          </IconButton>
-          <IconButton
-            color="error"
-            aria-label="delete"
-            onClick={() => handleDelete(info.getValue())}
-          >
-            <DeleteIcon />
-          </IconButton>
-        </div>
-      ),
-    }),
   ];
+
+  if (fetchEditAccess) {
+    columns.push(
+      columnHelper.accessor(fieldidname, {
+        header: "Action",
+        cell: (info) => (
+          <div>
+            <IconButton aria-label="edit" color="info">
+              <EditIcon onClick={() => handleOpen(info.getValue())} />
+            </IconButton>
+            <IconButton
+              color="error"
+              aria-label="delete"
+              onClick={() => handleDelete(info.getValue())}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </div>
+        ),
+      })
+    );
+  }
   const table = useReactTable({
     data,
     columns,
@@ -128,7 +135,8 @@ function MajorDeviceGeneric({
   });
   return (
     <div style={{ maxHeight: "600px", overflowY: "auto" }}>
-      <div
+      {fetchEditAccess && (
+        <div
         style={{ display: "flex", justifyContent: "end", marginRight: "20px" }}
       >
         <Button
@@ -139,6 +147,7 @@ function MajorDeviceGeneric({
           Add
         </Button>
       </div>
+      )}
       <GenericTable table={table} />
       <GenericDialog
         open={dialogOpen}

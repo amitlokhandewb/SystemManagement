@@ -4,7 +4,7 @@ import RoleMappingList from "../ManageRoleComponents/RoleMappingList";
 import AddComponent from "../ManageRoleComponents/AddComponent";
 
 
-function ManageRoleComponent() {
+function ManageRoleComponent({roleaccess}) {
   const [deviceList, setDeviceList] = useState(1);
 
   const List = [
@@ -19,6 +19,10 @@ function ManageRoleComponent() {
       Component: <AddComponent />,
     },
   ];
+
+  const filteredList = List.filter((item) => {
+    roleaccess.some((access) => access.pageName === item.label && access.view)
+  })
 
   return (
     <GenericLayout
