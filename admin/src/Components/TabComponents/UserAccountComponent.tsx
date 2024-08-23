@@ -3,25 +3,26 @@ import GenericLayout from "../GenericLayout";
 import CreateNewUser from "../UserAccountComponents/CreateNewUser";
 import UserList from "../UserAccountComponents/UserList";
 
-function UserAccountComponent({roleaccess}) {
-  const [deviceList, setDeviceList] = useState(1);
-
+function UserAccountComponent({ roleaccess }) {
+  const [deviceList, setDeviceList] = useState(0);
+  const fetchEditAccess = (data) => {
+    const res = roleaccess.find((item) => item.pageName === data);
+    return res?.modify;
+  };
   const List = [
     {
-      id: 43,
+      id: 1,
       label: "User List",
-      Component: <UserList />,
+      Component: <UserList fetchEditAccess={fetchEditAccess("User List")} />,
     },
   ];
-  const filterData = roleaccess.find((item) => item.pageName === "User List");
-  const filteredList = List.filter((item) => {
-    roleaccess.some((access) => access.pageName === item.label)
-  })
-  console.log("user account roles: ",filteredList)
 
+  const filteredList = List.filter((item) =>
+    roleaccess.some((access) => access.pageName === item?.label && access.view)
+  );
   return (
     <GenericLayout
-      componentList={List}
+      componentList={filteredList}
       state={deviceList}
       setState={setDeviceList}
     />

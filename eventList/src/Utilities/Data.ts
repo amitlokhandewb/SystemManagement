@@ -53,6 +53,44 @@ export const plantName = [
   "East Plant",
   "West Plant",
 ];
+export const SortKeysBinding = [
+  {
+    label : "Date Time",
+    value : "dateTime"
+  },
+  {
+    label: "Event Description",
+    value: "eventDescription"
+  },
+  {
+    label: "Priority",
+    value: "priorityName"
+  },
+  {
+    label: "Event ID",
+    value: "eventid"
+  },
+  {
+    label: "Event Type",
+    value: "eventTypeName"
+  },
+  {
+    label: "Device Type",
+    value: "deviceName"
+  },
+  {
+    label: "Action By",
+    value: "actionName"
+  },
+  {
+    label: "Plant Name",
+    value: "plantName"
+  },
+];
+
+export const GetSortByvalue = (item) => {
+  return SortKeysBinding.find((x) => x.label === item).value;
+}
 
 const APIURL = 'https://localhost:7105/api/';
 export { APIURL }

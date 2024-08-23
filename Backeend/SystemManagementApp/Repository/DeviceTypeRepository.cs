@@ -28,12 +28,13 @@ namespace SystemManagementApp.Repository
         }
         public async Task<DeviceType> GetDeviceTypeByIDAsync(int id)
         {
-            var parameters = new { p_id = id };
-            using (var connection = CreateConnection())
-            {
-                var sql = "SELECT * FROM GetDeviceTypeByID(@p_id)";
-                return await connection.QueryFirstOrDefaultAsync<DeviceType>(sql, parameters);
-            }
+            //var parameters = new { p_id = id };
+            //using (var connection = CreateConnection())
+            //{
+            //    var sql = "SELECT * FROM GetDeviceTypeByID(@p_id)";
+            //    return await connection.QueryFirstOrDefaultAsync<DeviceType>(sql, parameters);
+            //}
+            return await _context.DeviceTypes.FirstOrDefaultAsync(x => x.deviceTypeId == id);
         }
         public async Task<DeviceType> CreateDeviceType(DeviceType deviceType)
         {

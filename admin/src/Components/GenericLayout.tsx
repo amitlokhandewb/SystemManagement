@@ -6,13 +6,13 @@ function GenericLayout({ componentList, state, setState }) {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={2}>
-          {componentList.map((item,key) => (
+          {componentList.map((item, index) => (
             <div
-              key={item.id}
-              onClick={() => setState(item.id)}
+              key={index}
+              onClick={() => setState(index)}
               style={{
-                backgroundColor: state === item.id ? "#3dcd58" : "#CACACA",
-                color: state === item.id ? "white" : "black",
+                backgroundColor: state === index ? "#3dcd58" : "#CACACA",
+                color: state === index ? "white" : "black",
                 paddingTop: "15px",
                 paddingBottom: "15px",
                 margin: 5,
@@ -26,8 +26,8 @@ function GenericLayout({ componentList, state, setState }) {
           ))}
         </Grid>
         <Grid item xs={10}>
-          {componentList.find((item) => item.id === state)?.Component || (
-            <div>Please select some options from left side</div>
+          {componentList[state]?.Component || (
+            <div>You don't have permission to this tabs</div>
           )}
         </Grid>
       </Grid>

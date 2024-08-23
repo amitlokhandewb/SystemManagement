@@ -8,38 +8,43 @@ import {
 } from "@tanstack/react-table";
 import React, { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
+import { GetSortByvalue } from "../Utilities/Data";
 type ColumnSort = {
   id: string;
   desc: boolean;
 };
 
 type SortingState = ColumnSort[];
-function EventTable({ data, columns }) {
+function EventTable({ data, columns, sort, setSort }) {
   const [showloader, setshowloeader] = useState(true);
 
-useEffect(() => {
-   
-setTimeout(() => {
-  setshowloeader(false);
-}, 2000);
+  useEffect(() => {
+    setTimeout(() => {
+      setshowloeader(false);
+    }, 2000);
+  }, []);
 
-},[])
-
-  const [sorting, setSorting] = useState<SortingState>([{
-    id: "column-2",
-    desc: true,
-  }]);
+  const [sorting, setSorting] = useState<SortingState>([
+    {
+      id: "column-2",
+      desc: true,
+    },
+  ]);
   const table = useReactTable({
     data,
     columns,
-    enableSortingRemoval: false,
     getCoreRowModel: getCoreRowModel(),
-    state: {
-      sorting,
-    },
-    onSortingChange: setSorting,
-    getSortedRowModel: getSortedRowModel(),
   });
+  const handleSorting = (headerId) => {
+    if (headerId === sort.sortKey) {
+      setSort({
+        ...sort,
+        sortOrder: sort.sortOrder === "ASC" ? "DESC" : "ASC",
+      });
+    } else {
+      setSort({ ...sort, sortKey: headerId, sortOrder: "ASC" });
+    }
+  };
 
   return (
     <table className="table">
@@ -48,7 +53,9 @@ setTimeout(() => {
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
               <th
-                onClick={header.column.getToggleSortingHandler()}
+                onClick={() =>
+                  handleSorting(GetSortByvalue(header.column.columnDef.header))
+                }
                 className="th"
                 key={header.id}
                 style={{
@@ -59,11 +66,11 @@ setTimeout(() => {
                   header.column.columnDef.header,
                   header.getContext()
                 )}
-                {header.column.getIsSorted() === false
-                  ? null
-                  : header.column.getIsSorted() === "asc"
-                  ? "▲"
-                  : "▼"}
+                {sort.sortKey === GetSortByvalue(header.column.columnDef.header)
+                  ? sort.sortOrder === "ASC"
+                    ? " ▼"
+                    : " ▲"
+                  : ""}
               </th>
             ))}
           </tr>
@@ -88,7 +95,7 @@ setTimeout(() => {
               top: "50%",
             }}
           >
-           {showloader && showloader ? <ClipLoader />:  'No Result Found'}
+            {showloader && showloader ? <ClipLoader /> : "No Result Found"}
           </div>
         )}
       </tbody>

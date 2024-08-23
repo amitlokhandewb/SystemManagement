@@ -21,7 +21,7 @@ namespace SystemManagementApp.Repository
         } 
         public async Task<IEnumerable<RoleMapping>> GetRoleMapByRoleIdAsync(int id)
         {
-            return await _context.RoleMappings.Where(x => x.roleId == id).ToListAsync();
+            return await _context.RoleMappings.Where(x => x.roleId == id).OrderBy(x => x.pageName).ToListAsync();
         }
         public async Task<RoleMapping> CreateRoleMapping(RoleMapping roleMapping)
         {

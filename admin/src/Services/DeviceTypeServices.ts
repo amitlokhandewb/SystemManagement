@@ -25,16 +25,14 @@ export const FetchDeviceTypeByIdAsync = async (id) => {
   }
 };
 export const CreateDeviceTypeAsync = async (data) => {
-  try {
+
     const response = await axios.post(
       `${API_URL}DeviceType/CreateDeviceTypeAsync`,
       data,
       GetToken()
     );
     return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+
 };
 export const UpdateDeviceTypes = async (data, id) => {
   try {

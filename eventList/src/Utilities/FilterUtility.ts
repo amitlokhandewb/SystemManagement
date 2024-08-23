@@ -24,7 +24,8 @@ export const FilterUtility = (
   chip,
   currentPage,
   itemsperpage,
-  settotalPages
+  settotalPages,
+  sort
 ) => {
   const [filter, setFilter] = useState(iniitalFilter);
   const [previousfilter, setpreviousfilter] = useState(iniitalFilter);
@@ -115,10 +116,12 @@ export const FilterUtility = (
   };
   useEffect(() => {
     applyFilters();
-  }, [resetTrigger]);
+  }, [resetTrigger,sort]);
+
+
   useEffect(() => {
     SendDataFilter();
-  }, [currentPage, itemsperpage]);
+  }, [currentPage, itemsperpage,]);
   const fetchEventTYpes = async () => {
     try {
       const response = await fetchEventTypes();
@@ -172,11 +175,14 @@ export const FilterUtility = (
       eventId: filter.eventId,
       startDate: startDate === null ? "" : startDate,
       endDate: endDate === null ? "" : endDate,
+      sortKey: sort.sortKey,
+      sortOrder: sort.sortOrder,
     };
 
     try {
       const response = await sendFilter(sendData, currentPage, itemsperpage);
-      settotalPages(response.count);
+      settotalPages(response?.count);
+      console.log("what is output:", response);
       setFilterData(response.pagonatedData);
     } catch (error) {
       console.error("Error sending filter data:", error);

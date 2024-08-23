@@ -65,7 +65,7 @@ function MajorDeviceGeneric({
       const response = await create(data);
       return response.data;
     } catch (error) {
-      console.error(error);
+      console.error("error from api",error);
     }
   };
   const UpdateData = async (data, id) => {

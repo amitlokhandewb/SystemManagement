@@ -17,7 +17,7 @@ import GenericTable from "../GenericTable";
 import UserDialog from "./UserDialog";
 import { fetchRolesAsync } from "../../Services/RoleServices";
 
-function UserList() {
+function UserList({fetchEditAccess}) {
   const columnHelper = createColumnHelper<UserModel>();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [id, setId] = useState(0);
@@ -96,35 +96,41 @@ function UserList() {
         <div>
           <Switch
             checked={info.getValue()}
+            disabled={!fetchEditAccess}
             onChange={handletoggle(info.row.original.id)}
             inputProps={{ "aria-label": "controlled" }}
           />
         </div>
       ),
     }),
-    columnHelper.accessor("id", {
-      header: "Action",
-      cell: (info) => (
-        <div>
-          <IconButton
-            aria-label="edit"
-            color="info"
-            onClick={() => handleOpen(info.getValue())}
-          >
-            <EditIcon />
-          </IconButton>
-          <IconButton
-            color="error"
-            aria-label="delete"
-            onClick={() => handleDelete(info.getValue())}
-          >
-            <DeleteIcon />
-          </IconButton>
-        </div>
-      ),
-    }),
   ];
 
+
+  if(fetchEditAccess){
+    columns.push(
+      columnHelper.accessor("id", {
+        header: "Action",
+        cell: (info) => (
+          <div>
+            <IconButton
+              aria-label="edit"
+              color="info"
+              onClick={() => handleOpen(info.getValue())}
+            >
+              <EditIcon />
+            </IconButton>
+            <IconButton
+              color="error"
+              aria-label="delete"
+              onClick={() => handleDelete(info.getValue())}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </div>
+        ),
+      }),
+    )
+  }
   const table = useReactTable({
     data,
     columns,
@@ -138,7 +144,8 @@ function UserList() {
 
   return (
     <div style={{ maxHeight: "600px", overflowY: "auto" }}>
-      <div
+      {fetchEditAccess && (
+        <div
         style={{ display: "flex", justifyContent: "end", marginRight: "20px" }}
       >
         <Button
@@ -149,6 +156,7 @@ function UserList() {
           Add
         </Button>
       </div>
+      )}
       <GenericTable table={table} />
       <UserDialog
         open={dialogOpen}

@@ -53,7 +53,10 @@ function EventLayout() {
   const [paginatedData, setPaginatedData] = useState<any[]>([]);
   const [currentPageDeviceType, setcurrentPageDeviceType] = useState([]);
   const [totalPages, settotalPages] = useState(0);
-  // const totalPages = Math.ceil(filterData.length / itemsperpage);
+  const [sort, setSort] = useState({
+    sortKey: "dateTime",
+    sortOrder: "DESC",
+  });
 
   const FilterrUtility = FilterUtility(
     setisfilterOPen,
@@ -66,7 +69,8 @@ function EventLayout() {
     chip,
     currentPage,
     itemsperpage,
-    settotalPages
+    settotalPages,
+    sort
   );
 
   const {
@@ -121,16 +125,27 @@ function EventLayout() {
 
   const fetcheventList = async () => {
     try {
-      const response = await fetchEventList(currentPage, itemsperpage);
-    setData(response?.paginatedData);
+      if (currentPage === 1 && !filterActive && sort.sortKey === "dateTime") {
+        const response = await fetchEventList(currentPage, itemsperpage);
+        setData(response?.paginatedData);
+      }
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentPage === 1 && !filterActive) {
+        fetcheventList();
+      }
+    }, 11000);
+
+    return () => clearInterval(interval); 
+  }, [currentPage, filterActive, sort]);
+
+  useEffect(() => {
     GenricINterval(CreateRandomEvent, 10000);
-    GenricINterval(fetcheventList, 11000);
   }, []);
   const columns = visibleColumns.filter((col) => col.visible);
   return (
@@ -159,7 +174,12 @@ function EventLayout() {
         </div>
       </div>
       <div className="table-layout">
-        <EventTable data={paginatedData} columns={columns} />
+        <EventTable
+          data={paginatedData}
+          columns={columns}
+          sort={sort}
+          setSort={setSort}
+        />
       </div>
       <Pagination
         currentPage={currentPage}

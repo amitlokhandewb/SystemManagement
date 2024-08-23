@@ -139,12 +139,15 @@ namespace SystemManagementApp.Service
                 p_startDate = string.IsNullOrWhiteSpace(filterDTO.startDate) ? null : filterDTO.startDate,
                 p_endDate = string.IsNullOrWhiteSpace(filterDTO.endDate) ? null : filterDTO.endDate,
                 p_page = page,
-                p_pageLimit = pageLimit
+                p_pageLimit = pageLimit,
+                p_sortKey = filterDTO.sortKey,
+                p_sortOrder = filterDTO.sortOrder,
             };
 
             using (var connection = CreateConnection())
             {
-                var sql = "SELECT * FROM GetFilteredAndEnrichedEvents(@p_priority, @p_eventId, @p_deviceType, @p_eventType, @p_startDate, @p_endDate, @p_page, @p_pageLimit)";
+               // var sql = "SELECT * FROM GetFilteredAndEnrichedEvents(@p_priority, @p_eventId, @p_deviceType, @p_eventType, @p_startDate, @p_endDate, @p_page, @p_pageLimit)";
+                var sql = "SELECT * FROM GetFilteredAndEnrichedEvents(@p_priority, @p_eventId, @p_deviceType, @p_eventType, @p_startDate, @p_endDate, @p_page, @p_pageLimit, @p_sortKey, @p_sortOrder)";
                 var response = await connection.QueryAsync<EventFromSP>(sql, parameters);
 
                 var hasResults = response.Any();

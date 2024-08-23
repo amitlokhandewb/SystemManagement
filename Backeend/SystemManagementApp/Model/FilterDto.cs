@@ -8,5 +8,7 @@
         public int eventId { get; set; }
         public string startDate { get; set; }
         public string endDate { get; set; }
+        public string sortKey { get; set; }
+        public string sortOrder { get; set; }
     }
 }

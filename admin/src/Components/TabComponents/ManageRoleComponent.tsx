@@ -5,7 +5,7 @@ import AddComponent from "../ManageRoleComponents/AddComponent";
 
 
 function ManageRoleComponent({roleaccess}) {
-  const [deviceList, setDeviceList] = useState(1);
+  const [deviceList, setDeviceList] = useState(0);
 
   const List = [
     {

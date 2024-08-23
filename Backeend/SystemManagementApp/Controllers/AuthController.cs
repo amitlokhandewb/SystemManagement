@@ -26,7 +26,7 @@ namespace SystemManagementApp.Controllers
             var user = await _endUserService.GetEndUserByEmailAsync(email);
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
             {
-                return Unauthorized("Username or password is incorrect");
+                return BadRequest("Username or password is incorrect");
             }
             if(user.IsActive == false)
             {

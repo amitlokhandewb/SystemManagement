@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { LoginAsync } from "../Services/LoginService";
-import { navigateToUrl } from "single-spa";
 import { toast } from "react-toastify";
 export interface LoginForm {
   email: string;
@@ -82,8 +81,7 @@ function LoginForm() {
         }, 1000);
       }
     } catch (error) {
-      //console.error(error.response.data);
-      if (error?.response?.status === 401) {
+      if (error?.response?.status === 400) {
         toast.error(error.response.data, {
           position: "top-right",
         });
