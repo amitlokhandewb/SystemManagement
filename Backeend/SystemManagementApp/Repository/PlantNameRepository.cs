@@ -19,17 +19,16 @@ namespace SystemManagementApp.Repository
         public async Task<PlantName> GetPlantNameByIDAsync(int id)
         {
             return await _context.PlantName.FirstOrDefaultAsync(x => x.plantId == id);
+        } 
+        public async Task<PlantName> GetPlantNameByNameAsync(string plantname)
+        {
+            return await _context.PlantName.FirstOrDefaultAsync(x => x.plantName == plantname);
         }
         public async Task<PlantName> CreatePlantName(PlantName plantName)
         {
-            var existingPlantNamee = await _context.PlantName.FirstOrDefaultAsync(x => x.plantName == plantName.plantName);
-            if (existingPlantNamee != null)
-            {
-                throw new InvalidOperationException($"A device type with ID {plantName.plantId} already exists.");
-            }
-            _context.PlantName.Add(plantName);
             try
             {
+                _context.PlantName.Add(plantName);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)

@@ -25,37 +25,25 @@ export const GetPriorityByIdAsync = async (id) => {
   }
 };
 export const CreatePriorityAsync = async (data) => {
-  try {
     const response = await axios.post(
       `${API_URL}Priority/CreatePriorityAsync`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const UpdatePriority = async (data, id) => {
-  try {
     const response = await axios.put(
       `${API_URL}Priority/UpdatePriorityAsync/${id}`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const DeletePriorityAsync = async (id) => {
-  try {
     const response = await axios.delete(
       `${API_URL}Priority/DeletePriorityAsync/${id}`,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };

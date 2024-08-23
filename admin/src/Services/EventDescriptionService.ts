@@ -25,37 +25,25 @@ export const FetchEventDescriptionById = async (id) => {
   }
 };
 export const CreateEventDescriptionAsync = async (data) => {
-  try {
     const response = await axios.post(
       `${API_URL}EventDescription/CreateEventDescriptionAsync`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const UpdateEventDescripton = async (data, id) => {
-  try {
     const response = await axios.put(
       `${API_URL}EventDescription/UpdateEventDescriptionAsync/${id}`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const DeleteEvenetDescriptionAsync = async (id) => {
-  try {
     const response = await axios.delete(
       `${API_URL}EventDescription/DeleteEvenetDescriptionAsync/${id}`,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };

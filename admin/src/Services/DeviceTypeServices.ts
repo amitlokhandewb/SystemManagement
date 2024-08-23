@@ -25,35 +25,25 @@ export const FetchDeviceTypeByIdAsync = async (id) => {
   }
 };
 export const CreateDeviceTypeAsync = async (data) => {
-
-    const response = await axios.post(
-      `${API_URL}DeviceType/CreateDeviceTypeAsync`,
-      data,
-      GetToken()
-    );
-    return response.data;
-
+  const response = await axios.post(
+    `${API_URL}DeviceType/CreateDeviceTypeAsync`,
+    data,
+    GetToken()
+  );
+  return response;
 };
 export const UpdateDeviceTypes = async (data, id) => {
-  try {
     const response = await axios.put(
       `${API_URL}DeviceType/UpdateDeviceTypeAsync/${id}`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const DeleteDeviceTypeAsync = async (id) => {
-  try {
     const response = await axios.delete(
       `${API_URL}DeviceType/DeleteDeviceTypeAsync/${id}`,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };

@@ -31,20 +31,30 @@ namespace SystemManagementApp.Controllers
         [HttpPost("CreateDeviceTypeAsync")]
         public async Task<ActionResult<DeviceType>> CreateDeviceTypeAsync(DeviceType deviceType)
         {
+            var alreadyexist = await _deviceTypeService.GetDeviceTypeByNameAsync(deviceType.deviceName);
+            if(alreadyexist != null)
+            {
+                return BadRequest("A device Type Already Exist");
+            }
             var response = await _deviceTypeService.CreateDeviceTypeAsync(deviceType);
             if(response != null)
             {
-                return Ok(response);
+                return Ok("Device Type Added Successfully");
             }
             return NotFound();
         }
         [HttpPut("UpdateDeviceTypeAsync/{id}")]
         public async Task<ActionResult<DeviceType>> UpdateDeviceTypeAsync(DeviceType deviceType, int id)
         {
+            var alreadyexist = await _deviceTypeService.GetDeviceTypeByNameAsync(deviceType.deviceName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("A device Type Already Exist");
+            }
             var response = await _deviceTypeService.UpdateDeviceTypeAsync(deviceType,id);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Device Type Updated Successfully");
             }
             return NotFound();
         }
@@ -52,11 +62,11 @@ namespace SystemManagementApp.Controllers
         public async Task<ActionResult<Boolean>> DeleteDeviceTypeAsync(int id)
         {
             var response = await _deviceTypeService.DeleteDeviceTypeAsync( id);
-            if (response != null)
+            if (response == false)
             {
-                return Ok(response);
+                return BadRequest("Error occured while deleting the Device Type");
             }
-            return NotFound();
+            return Ok("Device Type Deleted Successfully");
         }
         [HttpGet("GetDeviceTypeById/{id}")]
         public async Task<ActionResult<DeviceType>> GetDeviceTypeById(int id)

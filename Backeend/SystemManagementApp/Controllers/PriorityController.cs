@@ -39,20 +39,30 @@ namespace SystemManagementApp.Controllers
         [HttpPost("CreatePriorityAsync")]
         public async Task<ActionResult<Priority>> CreatePriorityAsync(Priority priority)
         {
+            var alreadyexist = await _priorityService.GetPriorityByNameAsync(priority.priorityName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("Priority Already Exist");
+            }
             var response = await _priorityService.CreatePriorityAsync(priority);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Priority Added Successfully");
             }
             return NotFound();
         }
         [HttpPut("UpdatePriorityAsync/{id}")]
         public async Task<ActionResult<Priority>> UpdatePriorityAsync(Priority priority, int id)
         {
+            var alreadyexist = await _priorityService.GetPriorityByNameAsync(priority.priorityName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("Priority Already Exist");
+            }
             var response = await _priorityService.UpdatePriorityAsync(priority,id);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Priority Updated Successfully");
             }
             return NotFound();
         }
@@ -60,11 +70,11 @@ namespace SystemManagementApp.Controllers
         public async Task<ActionResult<Boolean>> DeletePriorityAsync(int id)
         {
             var response = await _priorityService.DeletePriorityAsync(id);
-            if (response != null)
+            if (response == false)
             {
-                return Ok(response);
+                return BadRequest("Error occured while deleting the Priority");
             }
-            return NotFound();
+            return Ok("Priority Deleted Successfully");
         }
     }
 }

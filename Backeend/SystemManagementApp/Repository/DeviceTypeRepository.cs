@@ -38,15 +38,9 @@ namespace SystemManagementApp.Repository
         }
         public async Task<DeviceType> CreateDeviceType(DeviceType deviceType)
         {
-  
-            var existingDeviceType = await _context.DeviceTypes.FirstOrDefaultAsync(x => x.deviceName == deviceType.deviceName);
-            if (existingDeviceType != null)
-            {
-                throw new InvalidOperationException($"A device type with ID {deviceType.deviceName} already exists.");
-            }
-            _context.DeviceTypes.Add(deviceType);
             try
             {
+                _context.DeviceTypes.Add(deviceType);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)
@@ -55,6 +49,11 @@ namespace SystemManagementApp.Repository
             }
 
             return deviceType;
+        }
+        public async Task<DeviceType> GetDeviceTypebyNameAsync(string deviceTypeName)
+        {
+            var existingDeviceType = await _context.DeviceTypes.FirstOrDefaultAsync(x => x.deviceName == deviceTypeName);
+            return existingDeviceType;
         }
 
         public async Task<DeviceType> UpdateDeviceType(DeviceType deviceType, int id)

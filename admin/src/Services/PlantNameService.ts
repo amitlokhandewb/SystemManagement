@@ -25,37 +25,25 @@ export const GetPLantNameByIdAsync = async (id) => {
   }
 };
 export const CreatePlantNameAsycn = async (data) => {
-  try {
     const response = await axios.post(
       `${API_URL}PlantNameConrroller/CreatePlantNameAsycn`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const UpdatePlantName = async (data, id) => {
-  try {
     const response = await axios.put(
       `${API_URL}PlantNameConrroller/UpdatePlantNameAsync/${id}`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const DeletePlantNameAsync = async (id) => {
-  try {
     const response = await axios.delete(
       `${API_URL}PlantNameConrroller/DeletePlantNameAsync/${id}`,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };

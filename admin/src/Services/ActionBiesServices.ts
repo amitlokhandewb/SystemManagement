@@ -25,37 +25,25 @@ export const FetchActionByIdAsync = async (id) => {
   }
 };
 export const UpdateActionBies = async (data, id) => {
-  try {
     const response = await axios.put(
       `${API_URL}User/UpdateUserAsync/${id}`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const CreateActionBies = async (data) => {
-  try {
-    const response = await axios.post(
-      `${API_URL}User/CreateUserAsync`,
-      data,
-      GetToken()
-    );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+  const response = await axios.post(
+    `${API_URL}User/CreateUserAsync`,
+    data,
+    GetToken()
+  );
+  return response;
 };
 export const DeletectionByIdAsync = async (id) => {
-  try {
     const response = await axios.delete(
       `${API_URL}User/DeleteUserAsync/${id}`,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };

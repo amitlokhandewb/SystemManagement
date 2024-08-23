@@ -20,16 +20,15 @@ namespace SystemManagementApp.Repository
         {
             return await _context.ActionBies.FirstOrDefaultAsync(x => x.actionById == id);
         }
+        public async Task<ActionBy> GetUsersByNameAsync(string name)
+        {
+            return await _context.ActionBies.FirstOrDefaultAsync(x => x.actionName == name);
+        }
         public async Task<ActionBy> CreateUser(ActionBy users)
         {
-            var existingusers = await _context.ActionBies.FirstOrDefaultAsync(x => x.actionName ==  users.actionName);
-            if (existingusers != null)
-            {
-                throw new InvalidOperationException($"A device type with ID {users.actionName} already exists.");
-            }
-            _context.ActionBies.Add(users);
             try
             {
+                _context.ActionBies.Add(users);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)

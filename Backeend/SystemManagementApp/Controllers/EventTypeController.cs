@@ -39,20 +39,31 @@ namespace SystemManagementApp.Controllers
         [HttpPost("CreateEventTypeAsync")]
         public async Task<ActionResult<EventType>> CreateEventTypeAsync(EventType eventType)
         {
+            var alreadyexist = await _eventTypeService.GetEventTypeByNameAsync(eventType.eventTypeName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("Event Type Already Exist");
+            }
+
             var response = await _eventTypeService.CreateEventTypeAsync(eventType);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Event Type Added Successfully");
             }
             return NotFound();
         }
         [HttpPut("UpdateEventTypeAsync/{id}")]
         public async Task<ActionResult<EventType>> UpdateEventTypeAsync(EventType eventType, int id)
         {
+            var alreadyexist = await _eventTypeService.GetEventTypeByNameAsync(eventType.eventTypeName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("Event Type Already Exist");
+            }
             var response = await _eventTypeService.UpdateEventTypeAsync(eventType, id);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Event Type Updated Successfully");
             }
             return NotFound();
         }
@@ -60,11 +71,11 @@ namespace SystemManagementApp.Controllers
         public async Task<ActionResult<Boolean>> DeleteEventTypeAsync(int id)
         {
             var response = await _eventTypeService.DeleteEventTypeAsync(id);
-            if (response != null)
+            if (response == false)
             {
-                return Ok(response);
+                return BadRequest("Error occured while deleting the Event Type");
             }
-            return NotFound();
+            return Ok("Event Type Deleted Successfully");
         }
     }
 }

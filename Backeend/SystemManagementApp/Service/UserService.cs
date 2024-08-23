@@ -19,6 +19,10 @@ namespace SystemManagementApp.Service
         {
             return await _userRepository.GetUsersByIdAsync(id);
         }
+        public async Task<ActionBy> GetUsersByNameAsync(string name)
+        {
+            return await _userRepository.GetUsersByNameAsync(name);
+        }
         public async Task<ActionBy> CreateUserAsync(ActionBy actionBy)
         {
             return await _userRepository.CreateUser(actionBy);

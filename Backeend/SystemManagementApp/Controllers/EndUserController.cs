@@ -51,17 +51,23 @@ namespace SystemManagementApp.Controllers
             {
                 return BadRequest();
             }
-            return Ok("User Added Successfully" + response);
+            return Ok("User Added Successfully");
         }
         [HttpPut("UpdateEndUserAsync/{id}")]
         public async Task<ActionResult<EndUser>> UpdateEndUserAsync(CreateEndUser createEndUser, int id)
         {
+            var enduserexist = await _endUserService.GetEndUserByUserNameAsync(createEndUser.UserName);
+            if (enduserexist != null)
+            {
+                return NotFound("Username already exist");
+
+            }
             var response = await _endUserService.UpdateEndUserAsync(createEndUser,id);
             if (response == null)
             {
                 return BadRequest();
             }
-            return Ok("User Updated Successfully" + response);
+            return Ok("User Updated Successfully");
         }
         [HttpPut("ToggleUserAsync/{id}")]
         public async Task<ActionResult<EndUser>> ToggleUserAsync(bool toggledata, int id)

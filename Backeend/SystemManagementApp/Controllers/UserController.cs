@@ -39,20 +39,30 @@ namespace SystemManagementApp.Controllers
         [HttpPost("CreateUserAsync")]
         public async Task<ActionResult<ActionBy>> CreateUserAsync(ActionBy actionBy)
         {
+            var alreadyexist = await _userService.GetUsersByNameAsync(actionBy.actionName);
+            if(alreadyexist != null)
+            {
+                return BadRequest("User Already Exist");
+            }
             var response = await _userService.CreateUserAsync(actionBy);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("User Added Successfully");
             }
             return NotFound();
         }
         [HttpPut("UpdateUserAsync/{id}")]
         public async Task<ActionResult<ActionBy>> UpdateUserAsync(ActionBy actionBy, int id)
         {
+            var alreadyexist = await _userService.GetUsersByNameAsync(actionBy.actionName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("User Already Exist");
+            }
             var response = await _userService.UpdateUserAsync(actionBy,id);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("User Updated Successfully");
             }
             return NotFound();
         }
@@ -60,11 +70,11 @@ namespace SystemManagementApp.Controllers
         public async Task<ActionResult<Boolean>> DeleteUserAsync(int id)
         {
             var response = await _userService.DeleteUserAsync(id);
-            if (response != null)
+            if (response == false)
             {
-                return Ok(response);
+                return BadRequest("Error occured while deleting the end user");
             }
-            return NotFound();
+            return Ok("User Deleted Successfully");
         }
     }
 }

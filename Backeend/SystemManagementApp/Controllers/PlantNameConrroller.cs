@@ -29,6 +29,7 @@ namespace SystemManagementApp.Controllers
         [HttpGet("GetPLantNameByIdAsync/{id}")]
         public async Task<ActionResult<IEnumerable<PlantName>>> GetPLantNameByIdAsync(int id)
         {
+            
             var response = await _plantNameService.GetPlantNameByIDAsync(id);
             if (response != null)
             {
@@ -39,20 +40,30 @@ namespace SystemManagementApp.Controllers
         [HttpPost("CreatePlantNameAsycn")]
         public async Task<ActionResult<PlantName>> CreatePlantNameAsycn(PlantName plantName)
         {
+            var alreadyexist = await _plantNameService.GetPlantNameByNameAsync(plantName.plantName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("Plant Name Already Exist");
+            }
             var response = await _plantNameService.CreatePlantNameAsync(plantName);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Plant Added Successfuly");
             }
             return NotFound();
         }
         [HttpPut("UpdatePlantNameAsync/{id}")]
         public async Task<ActionResult<PlantName>> UpdatePlantNameAsync(PlantName plantName, int id)
         {
+            var alreadyexist = await _plantNameService.GetPlantNameByNameAsync(plantName.plantName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("Plant Name Already Exist");
+            }
             var response = await _plantNameService.UpdatePlantNameAsync(plantName, id);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Plant Updated Successfuly");
             }
             return NotFound();
         }
@@ -60,11 +71,11 @@ namespace SystemManagementApp.Controllers
         public async Task<ActionResult<Boolean>> DeletePlantNameAsync(int id)
         {
             var response = await _plantNameService.DeletePlantNameAsync(id);
-            if (response != null)
+            if (response == false)
             {
-                return Ok(response);
+                return BadRequest("Error occured while deleting the Plant ");
             }
-            return NotFound();
+            return Ok("Plant Deleted Successfully");
         }
     }
 }

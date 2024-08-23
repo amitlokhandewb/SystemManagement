@@ -20,16 +20,15 @@ namespace SystemManagementApp.Repository
         {
             return await _context.Priorities.FirstOrDefaultAsync(x => x.priorityId == id);
         }
+        public async Task<Priority> GetPriorityByNameAsync(string priorityname)
+        {
+            return await _context.Priorities.FirstOrDefaultAsync(x => x.priorityName == priorityname);
+        }
         public async Task<Priority> CreatePriority(Priority priority)
         {
-            var existingPriority = await _context.Priorities.FirstOrDefaultAsync(x => x.priorityName == priority.priorityName);
-            if (existingPriority != null)
-            {
-                throw new InvalidOperationException($"A device type with ID {priority.priorityName} Already exists.");
-            }
-            _context.Priorities.Add(priority);
             try
             {
+                _context.Priorities.Add(priority);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)

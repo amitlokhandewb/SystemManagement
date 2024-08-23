@@ -40,20 +40,30 @@ namespace SystemManagementApp.Controllers
 
         public async Task<ActionResult<EventDescription>> CreateEventDescriptionAsync(EventDescription eventDescription)
         {
+            var alreadyexist = await _eventDescriptionService.GetEventDescriptionByNameAsync(eventDescription.eventDescription);
+            if(alreadyexist != null)
+            {
+                return BadRequest("Event Description Already Exist");
+            }
             var response = await _eventDescriptionService.CreateEventDescriptionAsync(eventDescription);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Event Description Added Successfully");
             }
             return NotFound();
         }
         [HttpPut("UpdateEventDescriptionAsync/{id}")]
         public async Task<ActionResult<EventDescription>> UpdateEventDescriptionAsync(EventDescription eventDescription, int id)
         {
+            var alreadyexist = await _eventDescriptionService.GetEventDescriptionByNameAsync(eventDescription.eventDescription);
+            if (alreadyexist != null)
+            {
+                return BadRequest("Event Description Already Exist");
+            }
             var response = await _eventDescriptionService.UpdateEventDescriptionAsync(eventDescription, id);
             if (response != null)
             {
-                return Ok(response);
+                return Ok("Event Description Updated Successfully");
             }
             return NotFound();
 
@@ -62,11 +72,11 @@ namespace SystemManagementApp.Controllers
         public async Task<ActionResult<Boolean>> DeleteEvenetDescriptionAsync(int id)
         {
             var response = await _eventDescriptionService.DeleteEventDescriptionAsync( id);
-            if (response != null)
+            if (response == false)
             {
-                return Ok(response);
+                return BadRequest("Error occured while deleting the Event Description");
             }
-            return NotFound();
+            return Ok("Event Description Deleted Successfully");
         }
     }
 }

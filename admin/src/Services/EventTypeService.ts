@@ -25,37 +25,25 @@ export const GetEventTypeByIdAsync = async (id) => {
   }
 };
 export const CreateEventTypeAsync = async (data) => {
-  try {
     const response = await axios.post(
       `${API_URL}EventType/CreateEventTypeAsync`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const UpdateEventType= async (data, id) => {
-  try {
     const response = await axios.put(
       `${API_URL}EventType/UpdateEventTypeAsync/${id}`,
       data,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };
 export const DeleteEventTypeAsync = async (id) => {
-  try {
     const response = await axios.delete(
       `${API_URL}EventType/DeleteEventTypeAsync/${id}`,
       GetToken()
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
 };

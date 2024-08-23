@@ -18,6 +18,10 @@ namespace SystemManagementApp.Repository
         public async Task<RoleMapping> GetRoleMapByIdAsync(int id)
         {
             return await _context.RoleMappings.FirstOrDefaultAsync(x => x.Id == id);
+        }
+        public async Task<RoleMapping> GetRoleMapByPageNameAsync(string pagename)
+        {
+            return await _context.RoleMappings.FirstOrDefaultAsync(x => x.pageName == pagename);
         } 
         public async Task<IEnumerable<RoleMapping>> GetRoleMapByRoleIdAsync(int id)
         {

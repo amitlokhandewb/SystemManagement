@@ -18,6 +18,10 @@ namespace SystemManagementApp.Service
         public async Task<Priority> GetPriorityByIdAsync(int id)
         {
             return await _repository.GetPriorityByIdAsync(id);
+        } 
+        public async Task<Priority> GetPriorityByNameAsync(string priorityname)
+        {
+            return await _repository.GetPriorityByNameAsync(priorityname);
         }
         public async Task<Priority> CreatePriorityAsync(Priority priority)
         {

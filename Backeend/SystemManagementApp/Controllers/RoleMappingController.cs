@@ -51,12 +51,17 @@ namespace SystemManagementApp.Controllers
         [HttpPost("CreateRoleMapping")]
         public async Task<ActionResult<RoleMapping>> CreateRoleMapping(RoleMapping roleMapping)
         {
+            var alreadyexist = await _roleMappingService.GetRoleMapByPageNameAsync(roleMapping.pageName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("PageName Already Exist");
+            }
             var reponse = await _roleMappingService.CreateRoleMappingAsync(roleMapping);
             if (reponse == null)
             {
                 return NotFound();
             }
-            return Ok(reponse);
+            return Ok("Page Added Successfully");
         }
         [HttpPost("AddComponents")]
         public async Task<ActionResult<bool>> AddComponents(string component)
@@ -80,12 +85,17 @@ namespace SystemManagementApp.Controllers
         [HttpPut("UpdateRoleMapping/{id}")]
         public async Task<ActionResult<RoleMapping>> UpdateRoleMapping(RoleMapping roleMapping, int id)
         {
+            var alreadyexist = await _roleMappingService.GetRoleMapByPageNameAsync(roleMapping.pageName);
+            if (alreadyexist != null)
+            {
+                return BadRequest("PageName Already Exist");
+            }
             var reponse = await _roleMappingService.UpdateRoleMappingAsync(roleMapping, id);
             if (reponse == null)
             {
                 return NotFound();
             }
-            return Ok(reponse);
+            return Ok("Page Name Updated Successfully");
         }
         [HttpPut("ToggleRoleMapping/{id}")]
         public async Task<ActionResult<RoleMapping>> ToggleRoleMapping(int id,string type, bool typevalue)

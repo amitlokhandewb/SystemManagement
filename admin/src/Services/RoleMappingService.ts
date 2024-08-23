@@ -36,13 +36,9 @@ export const ToggleRole = async (id, type, typevalue) => {
   }
 };
 export const AddComponent = async (data: any) => {
-    try {
       const response = await axios.post(
         `${API_URL}RoleMapping/AddComponents?component=${data.component}`,data,
         GetToken()
       );
-      return response.data;
-    } catch (error) {
-      console.error(error);
-    }
+      return response;
   };

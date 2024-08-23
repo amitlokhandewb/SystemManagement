@@ -20,16 +20,15 @@ namespace SystemManagementApp.Repository
         {
             return await _context.EventDescription.FirstOrDefaultAsync(x => x.eventDescriptionId == id);
         }
+        public async Task<EventDescription> GetEventDescriptionByNameAsync(string  eventdescription)
+        {
+            return await _context.EventDescription.FirstOrDefaultAsync(x => x.eventDescription == eventdescription);
+        }
         public async Task<EventDescription> CreateEventDescription(EventDescription eventDescription)
         {
-            var existingeventDescription = await _context.EventDescription.FirstOrDefaultAsync(x => x.eventDescription == eventDescription.eventDescription);
-            if (existingeventDescription != null)
-            {
-                throw new InvalidOperationException($"A device type with  {eventDescription.eventDescription} already exists.");
-            }
-            _context.EventDescription.Add(eventDescription);
             try
             {
+                _context.EventDescription.Add(eventDescription);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)

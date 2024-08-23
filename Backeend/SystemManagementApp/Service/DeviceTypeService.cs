@@ -19,6 +19,10 @@ namespace SystemManagementApp.Service
         {
             return await _repository.GetDeviceTypeByIDAsync(id);
         }
+        public async Task<DeviceType> GetDeviceTypeByNameAsync(string devicetype)
+        {
+            return await _repository.GetDeviceTypebyNameAsync(devicetype);
+        }
         public async Task<DeviceType> CreateDeviceTypeAsync(DeviceType deviceType)
         {
             return await _repository.CreateDeviceType(deviceType);

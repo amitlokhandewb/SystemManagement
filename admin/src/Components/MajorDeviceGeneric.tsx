@@ -9,6 +9,7 @@ import GenericDialog from "./GenericDialog";
 import GenericTable from "./GenericTable";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import { toast } from "react-toastify";
 
 function MajorDeviceGeneric({
   label,
@@ -20,7 +21,7 @@ function MajorDeviceGeneric({
   fetchbyid,
   deletebyid,
   deviceList,
-  fetchEditAccess
+  fetchEditAccess,
 }) {
   const columnHelper = createColumnHelper<any>();
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -63,17 +64,33 @@ function MajorDeviceGeneric({
   const sendData = async (data) => {
     try {
       const response = await create(data);
-      return response.data;
+      toast.success(response.data, {
+        position: "top-center",
+        autoClose: 3000,
+      });
+      return response;
     } catch (error) {
-      console.error("error from api",error);
+      toast.error(error?.response?.data, {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
   const UpdateData = async (data, id) => {
     try {
       const response = await update(data, id);
+      console.log("updated", response)
+      toast.info(response?.data,{
+        position: "top-center",
+        autoClose: 3000,
+      })
       return response.data;
     } catch (error) {
       console.error(error);
+      toast.error(error?.response?.data, {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
   const FetchUserById = async (id) => {
@@ -87,9 +104,18 @@ function MajorDeviceGeneric({
   const DeleteData = async (id) => {
     try {
       const response = await deletebyid(id);
+      toast.warning(response?.data,{
+        position: "top-center",
+        autoClose: 3000,
+      })
+      console.log("delete what: ", response);
       fetchData();
     } catch (error) {
       console.error(error);
+      toast.error(error?.response?.data, {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
   const handleDelete = (id) => {
@@ -98,7 +124,6 @@ function MajorDeviceGeneric({
   useEffect(() => {
     fetchData();
   }, [deviceList]);
-
 
   const columns = [
     columnHelper.accessor(fieldname, {
@@ -113,12 +138,12 @@ function MajorDeviceGeneric({
         header: "Action",
         cell: (info) => (
           <div>
-            <IconButton aria-label="edit" color="info">
-              <EditIcon onClick={() => handleOpen(info.getValue())} />
+            <IconButton  color="info" onClick={() => handleOpen(info.getValue())}>
+              <EditIcon  />
             </IconButton>
             <IconButton
               color="error"
-              aria-label="delete"
+              
               onClick={() => handleDelete(info.getValue())}
             >
               <DeleteIcon />
@@ -137,16 +162,20 @@ function MajorDeviceGeneric({
     <div style={{ maxHeight: "600px", overflowY: "auto" }}>
       {fetchEditAccess && (
         <div
-        style={{ display: "flex", justifyContent: "end", marginRight: "20px" }}
-      >
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => setDialogOpen(true)}
+          style={{
+            display: "flex",
+            justifyContent: "end",
+            marginRight: "20px",
+          }}
         >
-          Add
-        </Button>
-      </div>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => setDialogOpen(true)}
+          >
+            Add
+          </Button>
+        </div>
       )}
       <GenericTable table={table} />
       <GenericDialog
