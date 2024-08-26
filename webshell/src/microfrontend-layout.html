@@ -20,7 +20,13 @@
       </div>
     </route>
     <route path="admin">
-      <application name="@SET/admin"></application>
+      <application name="@SET/appbar"></application>
+      <div style="display: flex">
+        <application name="@SET/sidebar"></application>
+        <div style="display: flex">
+          <application name="@SET/admin"></application>
+        </div>
+      </div>
     </route>
     <route path="login">
       <application name="@SET/login"></application>

@@ -23,6 +23,14 @@ namespace SystemManagementApp.Repository
         {
             return await _context.RoleMappings.FirstOrDefaultAsync(x => x.pageName == pagename);
         } 
+        public async Task<RoleMapping> GetParentAsync(string pagename)
+        {
+            return await _context.RoleMappings.FirstOrDefaultAsync(x => x.pageName == pagename);
+        }
+        public async Task<IEnumerable<RoleMapping>> GetChildListAsync(int parentid, int roleid)
+        {
+            return await _context.RoleMappings.Where(x => x.pageNo == parentid && x.roleId == roleid).ToListAsync();
+        } 
         public async Task<IEnumerable<RoleMapping>> GetRoleMapByRoleIdAsync(int id)
         {
             return await _context.RoleMappings.Where(x => x.roleId == id).OrderBy(x => x.pageName).ToListAsync();

@@ -127,6 +127,16 @@ namespace SystemManagementApp.Controllers
             }
             return Ok(response);
         }
+        [HttpGet("GetChildByTabNameAsync/{tabname}/{roleid}")]
+        public async Task<ActionResult<IEnumerable<RoleMapping>>> GetChildByTabNameAsync(string tabname, int roleid)
+        {
+            var response = await _roleMappingService.GetChildbyTabNameAsync(tabname, roleid);
+            if(response == null)
+            {
+                return BadRequest($"Failed to get child of {tabname}");
+            }
+            return Ok(response);
+        }
 
 
     }

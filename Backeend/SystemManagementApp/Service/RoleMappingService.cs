@@ -47,5 +47,11 @@ namespace SystemManagementApp.Service
         {
             return await _roleMappingRepository.GetUniquesPageNamesAsync();
         }
+        public async Task<IEnumerable<RoleMapping>> GetChildbyTabNameAsync(string tabname,int roleid)
+        {
+            var devicesetting = await _roleMappingRepository.GetParentAsync(tabname);
+            var childList = await _roleMappingRepository.GetChildListAsync(devicesetting.Id, roleid);
+            return childList;
+        }
     }
 }

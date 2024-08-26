@@ -60,7 +60,7 @@ let routesConfig = `
 </single-spa-router>
 `;
 
-const routes = constructRoutes(routesConfig);
+const routes = constructRoutes(microfrontendLayout);
 const applications = constructApplications({
   routes,
   loadApp({ name }) {
