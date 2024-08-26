@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -37,75 +38,76 @@ namespace SystemManagementApp.Controllers
                 return NotFound();
             }
             return Ok(reponse);
+        }  
+        [HttpGet("GetRoleMapByParentAsync")]
+        public async Task<ActionResult<IEnumerable<RoleMapping>>> GetRoleMapByParentAsync()
+        {
+            var reponse = await _roleMappingService.GetRoleMapByParentAsync();
+            if (reponse == null)
+            {
+                return NotFound();
+            }
+            return Ok(reponse);
         } 
         [HttpGet("GetComponentsByRoleId/{id}")]
         public async Task<ActionResult<IEnumerable<RoleMapping>>> GetComponentsByRoleId(int id)
         {
-            var reponse = await _roleMappingService.GetRoleMapByRoleIdAsync(id);
-            if (reponse == null)
-            {
-                return NotFound();
-            }
-            return Ok(reponse);
+            //var reponse = await _roleMappingService.GetRoleMapByRoleIdAsync(id);
+            //if (reponse == null)
+            //{
+            //    return NotFound();
+            //}
+            //return Ok(reponse);
+            return NoContent();
         }
         [HttpPost("CreateRoleMapping")]
         public async Task<ActionResult<RoleMapping>> CreateRoleMapping(RoleMapping roleMapping)
         {
-            var alreadyexist = await _roleMappingService.GetRoleMapByPageNameAsync(roleMapping.pageName);
-            if (alreadyexist != null)
-            {
-                return BadRequest("PageName Already Exist");
-            }
-            var reponse = await _roleMappingService.CreateRoleMappingAsync(roleMapping);
-            if (reponse == null)
-            {
-                return NotFound();
-            }
-            return Ok("Page Added Successfully");
+            //var alreadyexist = await _roleMappingService.GetRoleMapByPageNameAsync(roleMapping.pageName);
+            //if (alreadyexist != null)
+            //{
+            //    return BadRequest("PageName Already Exist");
+            //}
+            //var reponse = await _roleMappingService.CreateRoleMappingAsync(roleMapping);
+            //if (reponse == null)
+            //{
+            //    return NotFound();
+            //}
+            //return Ok("Page Added Successfully");
+            return NoContent();
         }
         [HttpPost("AddComponents")]
-        public async Task<ActionResult<bool>> AddComponents(string component)
+        public async Task<ActionResult<bool>> AddComponents(string component, int parentId)
         {
-            var roles = await _roleService.GetUserRolesAsync();
-            if (roles == null)
+            var alreadyexist = await _roleMappingService.GetRoleMapByPageNameAsync(component);
+            if(alreadyexist != null)
             {
-                return NotFound();
+                return BadRequest($"{component} already exist");
             }
-            foreach (var role in roles)
+            var createcomponent = new RoleMapping
             {
-                var createcomponent = new RoleMapping
-                {
-                    roleId = role.Id,
-                    pageName = component
-                };
-                await _roleMappingService.CreateRoleMappingAsync(createcomponent);
-            }
-            return Ok(true);
+                parentId = parentId,
+                pageName = component
+            };
+
+            await _roleMappingService.CreateRoleMappingAsync(createcomponent);
+            return Ok("Page Created Successfully");
         }
         [HttpPut("UpdateRoleMapping/{id}")]
         public async Task<ActionResult<RoleMapping>> UpdateRoleMapping(RoleMapping roleMapping, int id)
         {
-            var alreadyexist = await _roleMappingService.GetRoleMapByPageNameAsync(roleMapping.pageName);
-            if (alreadyexist != null)
-            {
-                return BadRequest("PageName Already Exist");
-            }
-            var reponse = await _roleMappingService.UpdateRoleMappingAsync(roleMapping, id);
-            if (reponse == null)
-            {
-                return NotFound();
-            }
-            return Ok("Page Name Updated Successfully");
-        }
-        [HttpPut("ToggleRoleMapping/{id}")]
-        public async Task<ActionResult<RoleMapping>> ToggleRoleMapping(int id,string type, bool typevalue)
-        {
-            var reponse = await _roleMappingService.ToggleRoleMapping(id, type, typevalue);
-            if (reponse == null)
-            {
-                return NotFound();
-            }
-            return Ok(reponse);
+            //var alreadyexist = await _roleMappingService.GetRoleMapByPageNameAsync(roleMapping.pageName);
+            //if (alreadyexist != null)
+            //{
+            //    return BadRequest("PageName Already Exist");
+            //}
+            //var reponse = await _roleMappingService.UpdateRoleMappingAsync(roleMapping, id);
+            //if (reponse == null)
+            //{
+            //    return NotFound();
+            //}
+            //return Ok("Page Name Updated Successfully");
+            return NoContent();
         }
         [HttpDelete("DeleteRoleMapping/{id}")]
         public async Task<ActionResult<bool>> DeleteRoleMapping(int id)
@@ -116,26 +118,6 @@ namespace SystemManagementApp.Controllers
                 return NotFound();
             }
             return Ok(reponse);
-        }
-        [HttpGet("GetUniquesPageNamesAsync")]
-        public async Task<ActionResult<IEnumerable<object>>> GetUniquesPageNamesAsync()
-        {
-            var response = await _roleMappingService.GetUniquesPageNamesAsync();
-            if(response == null)
-            {
-                return Ok(new List<string>());
-            }
-            return Ok(response);
-        }
-        [HttpGet("GetChildByTabNameAsync/{tabname}/{roleid}")]
-        public async Task<ActionResult<IEnumerable<RoleMapping>>> GetChildByTabNameAsync(string tabname, int roleid)
-        {
-            var response = await _roleMappingService.GetChildbyTabNameAsync(tabname, roleid);
-            if(response == null)
-            {
-                return BadRequest($"Failed to get child of {tabname}");
-            }
-            return Ok(response);
         }
 
 

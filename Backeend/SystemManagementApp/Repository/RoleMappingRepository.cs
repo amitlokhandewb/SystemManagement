@@ -18,22 +18,14 @@ namespace SystemManagementApp.Repository
         public async Task<RoleMapping> GetRoleMapByIdAsync(int id)
         {
             return await _context.RoleMappings.FirstOrDefaultAsync(x => x.Id == id);
-        }
-        public async Task<RoleMapping> GetRoleMapByPageNameAsync(string pagename)
-        {
-            return await _context.RoleMappings.FirstOrDefaultAsync(x => x.pageName == pagename);
         } 
-        public async Task<RoleMapping> GetParentAsync(string pagename)
+        public async Task<RoleMapping> GetRoleMapByPageNameAsync(string pageName)
         {
-            return await _context.RoleMappings.FirstOrDefaultAsync(x => x.pageName == pagename);
-        }
-        public async Task<IEnumerable<RoleMapping>> GetChildListAsync(int parentid, int roleid)
-        {
-            return await _context.RoleMappings.Where(x => x.pageNo == parentid && x.roleId == roleid).ToListAsync();
+            return await _context.RoleMappings.FirstOrDefaultAsync(x => x.pageName == pageName);
         } 
-        public async Task<IEnumerable<RoleMapping>> GetRoleMapByRoleIdAsync(int id)
+        public async Task<IEnumerable<RoleMapping>> GetRoleMapByParentAsync()
         {
-            return await _context.RoleMappings.Where(x => x.roleId == id).OrderBy(x => x.pageName).ToListAsync();
+            return await _context.RoleMappings.Where(x => x.parentId == 0).ToListAsync();
         }
         public async Task<RoleMapping> CreateRoleMapping(RoleMapping roleMapping)
         {
@@ -54,34 +46,14 @@ namespace SystemManagementApp.Repository
             var exist = await _context.RoleMappings.FirstOrDefaultAsync(x => x.Id == id);
             if (exist != null)
             {
-                exist.pageNo = roleMapping.pageNo;
                 exist.pageName = roleMapping.pageName;
-                exist.view = roleMapping.view;
-                exist.modify = roleMapping.modify;
-                exist.roleId = roleMapping.roleId;
-                await _context.SaveChangesAsync();
-                return exist;
-            }
-            return exist;
-        }public async Task<RoleMapping> ToggleRoleMapping(int id,string type,bool typevalue)
-        {
-            var exist = await _context.RoleMappings.FirstOrDefaultAsync(x => x.Id == id);
-            if (exist != null)
-            {
-                if(type == "view")
-                {
-                    exist.view = typevalue;
-                    exist.modify = typevalue == false ? false : exist.modify; 
-                }
-                if(type == "modify")
-                {
-                    exist.modify = typevalue;
-                }
+                exist.parentId = roleMapping.parentId;
                 await _context.SaveChangesAsync();
                 return exist;
             }
             return exist;
         }
+        
         public async Task<Boolean> DeleteRoleMapping(int id)
         {
             var eexist = await _context.RoleMappings.FirstOrDefaultAsync(x => x.Id == id);
@@ -93,20 +65,5 @@ namespace SystemManagementApp.Repository
             }
             return false;
         }
-        public async Task<IEnumerable<object>> GetUniquesPageNamesAsync()
-        {
-            var response = await _context.RoleMappings
-                                         .Select(x => x.pageName)
-                                         .Distinct()
-                                         .ToListAsync();
-
-            var output = response.Select(pageName => new
-            {
-                ComponentName = pageName
-            }).ToList();
-
-            return output;
-        }
-
     }
 }

@@ -1038,6 +1038,11 @@
         "Name": "component",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "parentId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -1152,6 +1157,26 @@
   },
   {
     "ContainingType": "SystemManagementApp.Controllers.RoleMappingController",
+    "Method": "GetRoleMapByParentAsync",
+    "RelativePath": "api/RoleMapping/GetRoleMapByParentAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SystemManagementApp.Model.RoleMapping, SystemManagementApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SystemManagementApp.Controllers.RoleMappingController",
     "Method": "GetRoleMappingById",
     "RelativePath": "api/RoleMapping/GetRoleMappingById/{id}",
     "HttpMethod": "GET",
@@ -1162,62 +1187,6 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "SystemManagementApp.Model.RoleMapping",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "SystemManagementApp.Controllers.RoleMappingController",
-    "Method": "GetUniquesPageNamesAsync",
-    "RelativePath": "api/RoleMapping/GetUniquesPageNamesAsync",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "SystemManagementApp.Controllers.RoleMappingController",
-    "Method": "ToggleRoleMapping",
-    "RelativePath": "api/RoleMapping/ToggleRoleMapping/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "type",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "typevalue",
-        "Type": "System.Boolean",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": [

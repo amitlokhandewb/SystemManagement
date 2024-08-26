@@ -18,6 +18,7 @@ namespace SystemManagementApp.Data
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<EndUser> EndUsers { get; set; }
         public DbSet<RoleMapping> RoleMappings { get; set; }
+        public DbSet<PagePermission> PagePermissions { get; set; }
 
     }
 }
