@@ -45,7 +45,7 @@ export default function BasicTabs() {
     try {
       const response = await fetchRolemappingListByid(id);
       console.log("role mapped", response);
-      setRoleAccess(response);
+      setRoleAccess(response.data);
     } catch (error) {
       console.error(error);
     }

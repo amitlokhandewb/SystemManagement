@@ -6,7 +6,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { fetchUserList } from "../../Services/UserServices";
 import GenericTable from "../GenericTable";
-import { GetUniquesPageNamesAsync } from "../../Services/RoleMappingService";
+import { fetchRolemappingListByid, GetRoleMappingAsync } from "../../Services/RoleMappingService";
 import { Button } from "@mui/material";
 import AddComponentDialog from "./AddComponentDialog";
 
@@ -17,7 +17,7 @@ function ComponentList() {
 
   const fetchData = async () => {
     try {
-      const response = await GetUniquesPageNamesAsync();
+      const response = await GetRoleMappingAsync();
       console.log("res", response);
       setData(response);
     } catch (error) {
@@ -29,7 +29,7 @@ function ComponentList() {
   };
 
   const columns = [
-    columnHelper.accessor("componentName", {
+    columnHelper.accessor("pageName", {
       header: "Component Name",
       cell: (info) => <div>{info.getValue()}</div>,
     }),

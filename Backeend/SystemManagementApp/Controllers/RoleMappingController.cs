@@ -13,11 +13,13 @@ namespace SystemManagementApp.Controllers
     {
         private readonly RoleMappingService _roleMappingService;
         private readonly RoleService _roleService;
+        private readonly PagePermissionService _pagePermissionService;
 
-        public RoleMappingController(RoleMappingService roleMappingService, RoleService roleService)
+        public RoleMappingController(RoleMappingService roleMappingService, RoleService roleService, PagePermissionService pagePermissionService)
         {
             _roleMappingService = roleMappingService;
             _roleService = roleService;
+            _pagePermissionService = pagePermissionService;
         }
         [HttpGet("GetAllRoleMapping")]
         public async Task<ActionResult<IEnumerable<RoleMapping>>> GetAllRoleMapping()
@@ -39,8 +41,8 @@ namespace SystemManagementApp.Controllers
             }
             return Ok(reponse);
         }  
-        [HttpGet("GetRoleMapByParentAsync")]
-        public async Task<ActionResult<IEnumerable<RoleMapping>>> GetRoleMapByParentAsync()
+        [HttpGet("GetRoleMapByDropDownAsync")]
+        public async Task<ActionResult<IEnumerable<RoleMapping>>> GetRoleMapByParentIdAsync()
         {
             var reponse = await _roleMappingService.GetRoleMapByParentAsync();
             if (reponse == null)
@@ -52,13 +54,12 @@ namespace SystemManagementApp.Controllers
         [HttpGet("GetComponentsByRoleId/{id}")]
         public async Task<ActionResult<IEnumerable<RoleMapping>>> GetComponentsByRoleId(int id)
         {
-            //var reponse = await _roleMappingService.GetRoleMapByRoleIdAsync(id);
-            //if (reponse == null)
-            //{
-            //    return NotFound();
-            //}
-            //return Ok(reponse);
-            return NoContent();
+            var reponse = await _roleMappingService.GetAccesByRoleId(id);
+            if (reponse == null)
+            {
+                return NotFound();
+            }
+            return Ok(reponse);
         }
         [HttpPost("CreateRoleMapping")]
         public async Task<ActionResult<RoleMapping>> CreateRoleMapping(RoleMapping roleMapping)
@@ -90,7 +91,8 @@ namespace SystemManagementApp.Controllers
                 pageName = component
             };
 
-            await _roleMappingService.CreateRoleMappingAsync(createcomponent);
+            var response = await _roleMappingService.CreateRoleMappingAsync(createcomponent);
+            var creaetpagepermission = await _pagePermissionService.CreatePagepermsissonAsync(response.Id);
             return Ok("Page Created Successfully");
         }
         [HttpPut("UpdateRoleMapping/{id}")]

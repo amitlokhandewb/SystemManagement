@@ -1157,8 +1157,8 @@
   },
   {
     "ContainingType": "SystemManagementApp.Controllers.RoleMappingController",
-    "Method": "GetRoleMapByParentAsync",
-    "RelativePath": "api/RoleMapping/GetRoleMapByParentAsync",
+    "Method": "GetRoleMapByParentIdAsync",
+    "RelativePath": "api/RoleMapping/GetRoleMapByDropDownAsync",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

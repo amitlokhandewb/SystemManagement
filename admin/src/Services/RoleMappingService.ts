@@ -8,15 +8,27 @@ export const fetchRolemappingListByid = async (id) => {
       `${API_URL}RoleMapping/GetComponentsByRoleId/${id}`,
       GetToken()
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
 };
-export const GetUniquesPageNamesAsync = async () => {
+
+  export const GetRoleMappingAsync = async () => {
     try {
       const response = await axios.get(
-        `${API_URL}RoleMapping/GetUniquesPageNamesAsync/`,
+        `${API_URL}RoleMapping/GetAllRoleMapping/`,
+        GetToken()
+      );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  export const GetRoleMapByDropDownAsync = async () => {
+    try {
+      const response = await axios.get(
+        `${API_URL}RoleMapping/GetRoleMapByDropDownAsync/`,
         GetToken()
       );
       return response.data;
@@ -37,7 +49,7 @@ export const ToggleRole = async (id, type, typevalue) => {
 };
 export const AddComponent = async (data: any) => {
       const response = await axios.post(
-        `${API_URL}RoleMapping/AddComponents?component=${data.component}`,data,
+        `${API_URL}RoleMapping/AddComponents?component=${data.component}&parentId=${data.parentId}`,data,
         GetToken()
       );
       return response;

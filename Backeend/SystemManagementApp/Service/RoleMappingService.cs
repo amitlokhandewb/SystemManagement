@@ -1,4 +1,9 @@
-﻿using SystemManagementApp.Model;
+﻿using Dapper;
+using Microsoft.Extensions.Configuration;
+using Npgsql;
+using System.Data;
+using SystemManagementApp.DTOs;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
@@ -6,10 +11,16 @@ namespace SystemManagementApp.Service
     public class RoleMappingService
     {
         private readonly RoleMappingRepository _roleMappingRepository;
-
-        public RoleMappingService(RoleMappingRepository roleMappingRepository)
+        private readonly IConfiguration _configuration;
+       
+        public RoleMappingService(RoleMappingRepository roleMappingRepository, IConfiguration configuration)
         {
             _roleMappingRepository = roleMappingRepository;
+            _configuration = configuration;
+        }
+        private IDbConnection CreateConnection()
+        {
+            return new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
         }
         public async Task<IEnumerable<RoleMapping>> GetRoleMapListAsync()
         {
@@ -38,6 +49,17 @@ namespace SystemManagementApp.Service
         public async Task<bool> DeleteRoleMappingAsync(int id)
         {
             return await _roleMappingRepository.DeleteRoleMapping(id);
+        }
+        public async Task<object> GetAccesByRoleId(int roleId)
+        {
+            var parameters = new { roleId = roleId };
+            using (var connection = CreateConnection())
+            {
+                var sql = "SELECT * FROM get_role_permissions(@roleId)";
+                var response = await connection.QueryAsync(sql, parameters);
+                return response;
+            }
+
         }
     }
 }

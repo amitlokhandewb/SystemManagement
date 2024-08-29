@@ -33,6 +33,7 @@ function SideNav() {
     try {
       const response = await fetchRolemappingListById(id);
       setRoleAccess(response);
+      console.log("role by id", response)
     } catch (error) {
       console.error(error);
     }

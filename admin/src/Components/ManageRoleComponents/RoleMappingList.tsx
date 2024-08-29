@@ -26,7 +26,7 @@ function RoleMappingList() {
   const fetchData = async () => {
     try {
       const response = await fetchRolemappingListByid(dropdown);
-      setData(response);
+      setData(response.data);
     } catch (error) {
       console.error(error);
     }
