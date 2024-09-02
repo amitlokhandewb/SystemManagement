@@ -1,4 +1,5 @@
 ﻿using SystemManagementApp.DTOs;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
@@ -13,6 +14,10 @@ namespace SystemManagementApp.Service
             _pagePerissionRepository = pagePerissionRepository;
             _roleRepository = roleRepository;
         }
+        public async Task<PagePermission> GetPagepermissionByIdAsync(int id)
+        {
+            return await _pagePerissionRepository.GetPagepermissionByIdAsync(id);
+        }
         public async Task<CreatePagePermissionDTO> CreatePagepermsissonAsync(int rolemappingid)
         {
             var roles = await _roleRepository.GetRolesAsync();
@@ -24,6 +29,10 @@ namespace SystemManagementApp.Service
             }
             return new CreatePagePermissionDTO { roleMappingId = rolemappingid };
 
+        }
+        public async Task<PagePermission> TogglePagepermissionAsync(string type, bool value, int id)
+        {
+           return await _pagePerissionRepository.TogglePagepermissionAsync(type, value, id);
         }
     }
 }

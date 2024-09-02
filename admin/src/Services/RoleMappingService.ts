@@ -13,6 +13,18 @@ export const fetchRolemappingListByid = async (id) => {
     console.error(error);
   }
 };
+export const GetAccesByRoleforId = async (id) => {
+  try {
+    const response = await axios.get(
+      `${API_URL}RoleMapping/GetAccesByRoleforId/${id}`,
+      GetToken()
+    );
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
   export const GetRoleMappingAsync = async () => {
     try {
@@ -39,7 +51,7 @@ export const fetchRolemappingListByid = async (id) => {
 export const ToggleRole = async (id, type, typevalue) => {
   try {
     const response = await axios.put(
-      `${API_URL}RoleMapping/ToggleRoleMapping/${id}?type=${type}&typevalue=${typevalue}`,
+      `${API_URL}PagePermission/TogglePagePermission/${id}?type=${type}&value=${typevalue}`,
       GetToken()
     );
     return response.data;

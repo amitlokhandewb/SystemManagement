@@ -57,7 +57,7 @@ function AddComponentDialog({ open, onClose, fetchData }) {
       console.log("Form submitted successfully:", formData);
       const res = AddComponent(formData);
       if (res) {
-        setFormData(initialData); // Reset form including parentId
+        setFormData(initialData); 
         onClose();
       }
       fetchData();

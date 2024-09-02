@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import DeviceSettingCOmponent from "./TabComponents/DeviceSettingCOmponent";
 import UserAccountComponent from "./TabComponents/UserAccountComponent";
 import ManageRoleComponent from "./TabComponents/ManageRoleComponent";
-import { fetchRolemappingListByid } from "../Services/RoleMappingService";
+import { fetchRolemappingListByid, GetAccesByRoleforId } from "../Services/RoleMappingService";
 import { LoginRoleId } from "../Utils/Util";
 
 interface TabPanelProps {
@@ -43,8 +43,8 @@ export default function BasicTabs() {
 
   const fetchRoleAccesbyROleID = async (id: number) => {
     try {
-      const response = await fetchRolemappingListByid(id);
-      console.log("role mapped", response);
+      const response = await GetAccesByRoleforId(id);
+      console.log("role mapped", response.data);
       setRoleAccess(response.data);
     } catch (error) {
       console.error(error);
@@ -54,9 +54,11 @@ export default function BasicTabs() {
     fetchRoleAccesbyROleID(Number(LoginRoleId));
   }, []);
 
+
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
   const List = [
     {
       id: 1,

@@ -60,6 +60,16 @@ namespace SystemManagementApp.Controllers
                 return NotFound();
             }
             return Ok(reponse);
+        } 
+        [HttpGet("GetAccesByRoleforId/{id}")]
+        public async Task<ActionResult<IEnumerable<RoleMapping>>> GetAccesByRoleforId(int id)
+        {
+            var reponse = await _roleMappingService.GetAccesByRoleforId(id);
+            if (reponse == null)
+            {
+                return NotFound();
+            }
+            return Ok(reponse);
         }
         [HttpPost("CreateRoleMapping")]
         public async Task<ActionResult<RoleMapping>> CreateRoleMapping(RoleMapping roleMapping)

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Npgsql;
 using System.Data;
+using System.Security;
 using SystemManagementApp.DTOs;
 using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
@@ -56,10 +57,40 @@ namespace SystemManagementApp.Service
             using (var connection = CreateConnection())
             {
                 var sql = "SELECT * FROM get_role_permissions(@roleId)";
-                var response = await connection.QueryAsync(sql, parameters);
+                var response = (await connection.QueryAsync<PermissionDTO>(sql, parameters)).ToList();
+
+                var lookup = response.ToLookup(x => x.ParentId);
+                var rootItems = response.Where(x => x.ParentId == 0).ToList();
+
+                var result = BuildHierarchy(rootItems, lookup);
+                return result;
+            }
+        }public async Task<object> GetAccesByRoleforId(int roleId)
+        {
+            var parameters = new { roleId = roleId };
+            using (var connection = CreateConnection())
+            {
+                var sql = "SELECT * FROM get_role_permissions(@roleId)";
+                var response = (await connection.QueryAsync<PermissionDTO>(sql, parameters)).ToList();
                 return response;
             }
-
         }
+
+
+        private static object BuildHierarchy(List<PermissionDTO> items, ILookup<int, PermissionDTO> lookup)
+        {
+            return items.Select(item => new
+            {
+                Id = item.Id,
+                PermissionId = item.PermissionId,
+                ParentId = item.ParentId,
+                View = item.View,
+                Modify = item.Modify,
+                RoleId = item.RoleId,
+                PageName = item.PageName,
+                Children = BuildHierarchy(lookup[item.Id].ToList(), lookup)
+            }).ToList();
+        }
+
     }
 }

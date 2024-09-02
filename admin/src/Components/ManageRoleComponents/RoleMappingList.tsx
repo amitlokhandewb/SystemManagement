@@ -6,11 +6,14 @@ import {
   getCoreRowModel,
   createColumnHelper,
 } from "@tanstack/react-table";
-import { fetchRolemappingListByid, ToggleRole } from "../../Services/RoleMappingService";
+import {
+  fetchRolemappingListByid,
+  ToggleRole,
+} from "../../Services/RoleMappingService";
 import { fetchRolesAsync } from "../../Services/RoleServices";
+import { CustomTable } from "./CustomTable";
 
 function RoleMappingList() {
-  const columnHelper = createColumnHelper<any>();
   const [data, setData] = useState<any[]>([]);
   const [dropdown, setdropdown] = useState(1);
   const [roles, setRoles] = useState([]);
@@ -31,9 +34,9 @@ function RoleMappingList() {
       console.error(error);
     }
   };
-  const togglerolenadfetch = async (id,type,isActive) => {
+  const togglePagePermission = async (id, type, value) => {
     try {
-      const res = await ToggleRole(id,type,isActive)
+      const res = await ToggleRole(id, type, value);
       console.log(res);
       fetchData();
     } catch (error) {
@@ -43,49 +46,11 @@ function RoleMappingList() {
   const handlechange = (e) => {
     setdropdown(e.target.value);
   };
-  const handletoggle = (id,type) => (event) => {
-    const isActive = event.target.checked;
-    togglerolenadfetch(id,type,isActive);
-  };
+
   useEffect(() => {
     fetchData();
   }, [dropdown]);
-  const columns = [
-    columnHelper.accessor("pageName", {
-      header: "Component",
-      cell: (info) => <div>{info.getValue()}</div>,
-    }),
-    columnHelper.accessor("view", {
-      header: "View",
-      cell: (info) => (
-        <div>
-          <Switch
-            checked={info.getValue()}
-            onChange={handletoggle(info.row.original.id, "view")}
-            inputProps={{ "aria-label": "controlled" }}
-          />
-        </div>
-      ),
-    }),
 
-    columnHelper.accessor("modify", {
-      header: "Modify",
-      cell: (info) => (
-        <div>
-          <Switch
-            checked={info.getValue()}
-            onChange={handletoggle(info.row.original.id, "modify")}
-            inputProps={{ "aria-label": "controlled" }}
-          />
-        </div>
-      ),
-    }),
-  ];
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  });
   useEffect(() => {
     fetchData();
     fetchRoles();
@@ -114,7 +79,7 @@ function RoleMappingList() {
           ))}
         </TextField>
       </div>
-      <GenericTable table={table} />
+      <CustomTable data={data} togglePagePermission={togglePagePermission} />
     </div>
   );
 }
