@@ -1,13 +1,15 @@
-﻿using SystemManagementApp.Model;
+﻿using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class PlantNameService
+    public class PlantNameService: IPlantNameService
     {
-        private readonly PlantNameRepository _repository;
+        private readonly IPlantNameRepository _repository;
 
-        public PlantNameService(PlantNameRepository plantNameRepository)
+        public PlantNameService(IPlantNameRepository plantNameRepository)
         {
             _repository = plantNameRepository;
         }

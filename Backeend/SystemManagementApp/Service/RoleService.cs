@@ -1,13 +1,15 @@
-﻿using SystemManagementApp.Model;
+﻿using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class RoleService
+    public class RoleService: IRoleService
     {
-        private readonly RoleRepository _repository;
+        private readonly IRoleRepository _repository;
 
-        public RoleService(RoleRepository repository)
+        public RoleService(IRoleRepository repository)
         {
             _repository = repository;
         }

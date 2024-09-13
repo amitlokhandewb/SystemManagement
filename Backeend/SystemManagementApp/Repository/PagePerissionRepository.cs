@@ -2,11 +2,12 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SystemManagementApp.Data;
 using SystemManagementApp.DTOs;
+using SystemManagementApp.IRepository;
 using SystemManagementApp.Model;
 
 namespace SystemManagementApp.Repository
 {
-    public class PagePerissionRepository
+    public class PagePerissionRepository: IPagePermissionRepository
     {
         private readonly AppDbContext _context;
 

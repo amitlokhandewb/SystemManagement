@@ -1,5 +1,8 @@
-﻿namespace SystemManagementApp.Model
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace SystemManagementApp.Model
 {
+    [ExcludeFromCodeCoverage]
     public class RoleMapping
     {
         public int Id { get; set; }

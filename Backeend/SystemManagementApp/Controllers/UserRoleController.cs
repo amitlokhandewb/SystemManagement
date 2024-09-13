@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -10,9 +11,9 @@ namespace SystemManagementApp.Controllers
     //[ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class UserRoleController : ControllerBase
     {
-        private readonly RoleService _roleService;
+        private readonly IRoleService _roleService;
 
-        public UserRoleController(RoleService roleService)
+        public UserRoleController(IRoleService roleService)
         {
             _roleService = roleService;
         }

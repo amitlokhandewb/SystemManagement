@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SystemManagementApp.Model
 {
+    [ExcludeFromCodeCoverage]
     public class EndUser
     {
         public int Id { get; set; }

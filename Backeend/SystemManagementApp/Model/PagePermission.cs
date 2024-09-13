@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SystemManagementApp.Model
 {
+    [ExcludeFromCodeCoverage]
     public class PagePermission
     {
         public int id { get; set; }

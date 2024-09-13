@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using System.Text;
 using Newtonsoft.Json;
 using Sodium;
 using SystemManagementApp.Model;
 
+[ExcludeFromCodeCoverage]
 public class BrancaService
 {
     private readonly byte[] _key;

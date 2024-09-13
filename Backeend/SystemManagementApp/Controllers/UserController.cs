@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -10,9 +11,9 @@ namespace SystemManagementApp.Controllers
     [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class UserController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
-        public UserController(UserService userService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }

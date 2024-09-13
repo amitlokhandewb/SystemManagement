@@ -1,13 +1,15 @@
-﻿using SystemManagementApp.Model;
+﻿using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class PriorityService
+    public class PriorityService: IPriorityService
     {
-        private readonly PriorityRepository _repository;
+        private readonly IPriorityRepository _repository;
 
-        public PriorityService(PriorityRepository priorityRepository)
+        public PriorityService(IPriorityRepository priorityRepository)
         {
             _repository = priorityRepository;
         }

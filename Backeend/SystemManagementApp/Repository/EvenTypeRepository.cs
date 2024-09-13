@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SystemManagementApp.Data;
+using SystemManagementApp.IRepository;
 using SystemManagementApp.Model;
 
 namespace SystemManagementApp.Repository
 {
-    public class EvenTypeRepository
+    public class EvenTypeRepository: IEventTypeRepository
     {
         private readonly AppDbContext _context;
 

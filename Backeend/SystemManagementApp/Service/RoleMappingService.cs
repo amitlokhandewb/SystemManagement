@@ -4,17 +4,19 @@ using Npgsql;
 using System.Data;
 using System.Security;
 using SystemManagementApp.DTOs;
+using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class RoleMappingService
+    public class RoleMappingService: IRoleMappingService
     {
-        private readonly RoleMappingRepository _roleMappingRepository;
+        private readonly IRoleMappingRepository _roleMappingRepository;
         private readonly IConfiguration _configuration;
        
-        public RoleMappingService(RoleMappingRepository roleMappingRepository, IConfiguration configuration)
+        public RoleMappingService(IRoleMappingRepository roleMappingRepository, IConfiguration configuration)
         {
             _roleMappingRepository = roleMappingRepository;
             _configuration = configuration;
@@ -65,7 +67,8 @@ namespace SystemManagementApp.Service
                 var result = BuildHierarchy(rootItems, lookup);
                 return result;
             }
-        }public async Task<object> GetAccesByRoleforId(int roleId)
+        }
+        public async Task<object> GetAccesByRoleforId(int roleId)
         {
             var parameters = new { roleId = roleId };
             using (var connection = CreateConnection())

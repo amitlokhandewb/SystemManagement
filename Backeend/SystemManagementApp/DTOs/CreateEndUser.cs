@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using SystemManagementApp.Model;
 
 namespace SystemManagementApp.DTOs
 {
+    [ExcludeFromCodeCoverage]
     public class CreateEndUser
     {
         public string UserName { get; set; }

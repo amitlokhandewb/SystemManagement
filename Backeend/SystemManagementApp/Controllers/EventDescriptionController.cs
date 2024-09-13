@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -11,9 +12,9 @@ namespace SystemManagementApp.Controllers
     [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class EventDescriptionController : ControllerBase
     {
-        private readonly EventDescriptionService _eventDescriptionService;
+        private readonly IEventDescritionService _eventDescriptionService;
 
-        public EventDescriptionController(EventDescriptionService eventDescriptionService)
+        public EventDescriptionController(IEventDescritionService eventDescriptionService)
         {
             _eventDescriptionService = eventDescriptionService;
         }

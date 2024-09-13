@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -10,9 +11,9 @@ namespace SystemManagementApp.Controllers
     [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class PlantNameConrroller : ControllerBase
     {
-        private readonly PlantNameService _plantNameService;
+        private readonly IPlantNameService _plantNameService;
 
-        public PlantNameConrroller(PlantNameService plantNameService)
+        public PlantNameConrroller(IPlantNameService plantNameService)
         {
             _plantNameService = plantNameService;
         }

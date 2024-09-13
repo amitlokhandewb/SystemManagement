@@ -1,13 +1,15 @@
-﻿using SystemManagementApp.Model;
+﻿using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class UserService
+    public class UserService: IUserService
     {
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(UserRepository userRepository)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }

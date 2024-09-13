@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SystemManagementApp.Data;
+using SystemManagementApp.IRepository;
 using SystemManagementApp.Model;
 
 namespace SystemManagementApp.Repository
 {
-    public class PriorityRepository
+    public class PriorityRepository: IPriorityRepository
     {
         private readonly AppDbContext _context;
 

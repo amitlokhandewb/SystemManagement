@@ -1,13 +1,15 @@
-﻿using SystemManagementApp.Model;
+﻿using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class EventTypeService
+    public class EventTypeService:IEventTypeService
     {
-        private readonly EvenTypeRepository _typeRepository;
+        private readonly IEventTypeRepository _typeRepository;
 
-        public EventTypeService(EvenTypeRepository typeRepository)
+        public EventTypeService(IEventTypeRepository typeRepository)
         {
             _typeRepository = typeRepository;
         }

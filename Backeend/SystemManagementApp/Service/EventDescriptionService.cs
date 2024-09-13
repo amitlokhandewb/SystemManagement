@@ -1,13 +1,15 @@
-﻿using SystemManagementApp.Model;
+﻿using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class EventDescriptionService
+    public class EventDescriptionService: IEventDescritionService
     {
-        private readonly EventDescriptionRepository _repository;
+        private readonly IEventDescriptionRepository _repository;
 
-        public EventDescriptionService(EventDescriptionRepository repository)
+        public EventDescriptionService(IEventDescriptionRepository repository)
         {
             _repository = repository;
         }

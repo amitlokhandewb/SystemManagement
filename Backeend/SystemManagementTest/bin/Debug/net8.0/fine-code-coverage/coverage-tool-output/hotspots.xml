@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Hotspots>
+  <Hotspot>
+    <Assembly>SystemManagementApp</Assembly>
+    <Class>SystemManagementApp.Service.EventFilterService</Class>
+    <MethodName>GetFilterData()</MethodName>
+    <ShortName />
+    <Line>42</Line>
+    <FileIndex>0</FileIndex>
+    <Metrics>
+      <Metric>
+        <Name>Cyclomatic complexity</Name>
+        <Exceeded>true</Exceeded>
+        <Value>48</Value>
+      </Metric>
+    </Metrics>
+  </Hotspot>
+  <Hotspot>
+    <Assembly>SystemManagementApp</Assembly>
+    <Class>SystemManagementApp.Service.EventService</Class>
+    <MethodName>GetEventsAsync()</MethodName>
+    <ShortName />
+    <Line>37</Line>
+    <FileIndex>0</FileIndex>
+    <Metrics>
+      <Metric>
+        <Name>Cyclomatic complexity</Name>
+        <Exceeded>true</Exceeded>
+        <Value>36</Value>
+      </Metric>
+    </Metrics>
+  </Hotspot>
+</Hotspots>

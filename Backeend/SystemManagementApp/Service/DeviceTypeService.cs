@@ -1,13 +1,15 @@
-﻿using SystemManagementApp.Model;
+﻿using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class DeviceTypeService
+    public class DeviceTypeService: IDeviceTypeService
     {
-        private readonly DeviceTypeRepository _repository;
+        private readonly IDeviceTypeRepository _repository;
 
-        public DeviceTypeService(DeviceTypeRepository repository)
+        public DeviceTypeService(IDeviceTypeRepository repository)
         {
             _repository = repository;
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -10,9 +11,9 @@ namespace SystemManagementApp.Controllers
     //[ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class EventFilterController : ControllerBase
     {
-        private readonly EventFilterService _eventFilterService;
+        private readonly IEventFilterService _eventFilterService;
 
-        public EventFilterController(EventFilterService eventFilterService)
+        public EventFilterController(IEventFilterService eventFilterService)
         {
             _eventFilterService = eventFilterService;
         }

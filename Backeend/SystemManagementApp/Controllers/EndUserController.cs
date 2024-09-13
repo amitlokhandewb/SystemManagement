@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SystemManagementApp.DTOs;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -8,12 +9,12 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ServiceFilter(typeof(AuthorizeTokenAttribute))]
+   // [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class EndUserController : ControllerBase
     {
-        private readonly EndUserService _endUserService;
+        private readonly IEndUserService _endUserService;
 
-        public EndUserController(EndUserService endUserService)
+        public EndUserController(IEndUserService endUserService)
         {
             _endUserService = endUserService;
         }
@@ -21,11 +22,15 @@ namespace SystemManagementApp.Controllers
         public async Task<ActionResult<IEnumerable<EndUser>>> GetEndUsersAsync()
         {
             var response = await _endUserService.GetEndUsersAsync();
-            if(response == null)
+            if(response != null)
             {
-                return BadRequest();
+                return Ok(response);
             }
-            return Ok(response);
+            else
+            {
+                return BadRequest("Failed to load End User List");
+            }
+           
         } 
         [HttpGet("GetEndUserByIdAsync/{id}")]
         public async Task<ActionResult<IEnumerable<EndUser>>> GetEndUserByIdAsync(int id)

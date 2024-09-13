@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -8,13 +9,13 @@ namespace SystemManagementApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ServiceFilter(typeof(AuthorizeTokenAttribute))]
+    //[ServiceFilter(typeof(AuthorizeTokenAttribute))]
 
     public class DeviceTypeController : ControllerBase
     {
-        private readonly DeviceTypeService _deviceTypeService;
+        private readonly IDeviceTypeService _deviceTypeService;
 
-        public DeviceTypeController(DeviceTypeService deviceTypeService)
+        public DeviceTypeController(IDeviceTypeService deviceTypeService)
         {
             _deviceTypeService = deviceTypeService;
         }
@@ -28,9 +29,23 @@ namespace SystemManagementApp.Controllers
             }
             return NotFound();
         }
+        [HttpGet("GetDeviceTypeById/{id}")]
+        public async Task<ActionResult<DeviceType>> GetDeviceTypeById(int id)
+        {
+            var response = await _deviceTypeService.GetDeviceTypeByIdAsync(id);
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
         [HttpPost("CreateDeviceTypeAsync")]
         public async Task<ActionResult<DeviceType>> CreateDeviceTypeAsync(DeviceType deviceType)
         {
+            if(deviceType.deviceName == "")
+            {
+                return BadRequest("A device Type cannot be empty");
+            }
             var alreadyexist = await _deviceTypeService.GetDeviceTypeByNameAsync(deviceType.deviceName);
             if(alreadyexist != null)
             {
@@ -56,7 +71,11 @@ namespace SystemManagementApp.Controllers
             {
                 return Ok("Device Type Updated Successfully");
             }
-            return NotFound();
+            else
+            {
+                return BadRequest("Failed to update device type");
+            }
+            
         }
         [HttpDelete("DeleteDeviceTypeAsync/{id}")]
         public async Task<ActionResult<Boolean>> DeleteDeviceTypeAsync(int id)
@@ -68,15 +87,6 @@ namespace SystemManagementApp.Controllers
             }
             return Ok("Device Type Deleted Successfully");
         }
-        [HttpGet("GetDeviceTypeById/{id}")]
-        public async Task<ActionResult<DeviceType>> GetDeviceTypeById(int id)
-        {
-            var response = await _deviceTypeService.GetDeviceTypeByIdAsync(id);
-            if (response != null)
-            {
-                return Ok(response);
-            }
-            return NotFound();
-        }
+       
     }
 }

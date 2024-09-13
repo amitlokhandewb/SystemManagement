@@ -1,14 +1,16 @@
 ﻿using SystemManagementApp.DTOs;
+using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class EndUserService
+    public class EndUserService:IEndUserService
     {
-        private readonly EndUserRepository _endUserRepository;
+        private readonly IEndUserRepository _endUserRepository;
 
-        public EndUserService(EndUserRepository endUserRepository)
+        public EndUserService(IEndUserRepository endUserRepository)
         {
             _endUserRepository = endUserRepository;
         }

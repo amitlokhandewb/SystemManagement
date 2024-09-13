@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -11,11 +12,11 @@ namespace SystemManagementApp.Controllers
     //[ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class RoleMappingController : ControllerBase
     {
-        private readonly RoleMappingService _roleMappingService;
-        private readonly RoleService _roleService;
-        private readonly PagePermissionService _pagePermissionService;
+        private readonly IRoleMappingService _roleMappingService;
+        private readonly IRoleService _roleService;
+        private readonly IPagePermissionService _pagePermissionService;
 
-        public RoleMappingController(RoleMappingService roleMappingService, RoleService roleService, PagePermissionService pagePermissionService)
+        public RoleMappingController(IRoleMappingService roleMappingService, IRoleService roleService, IPagePermissionService pagePermissionService)
         {
             _roleMappingService = roleMappingService;
             _roleService = roleService;

@@ -1,5 +1,8 @@
-﻿namespace SystemManagementApp.DTOs
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace SystemManagementApp.DTOs
 {
+    [ExcludeFromCodeCoverage]
     public class GetEventDTO
     {
         public int id { get; set; }

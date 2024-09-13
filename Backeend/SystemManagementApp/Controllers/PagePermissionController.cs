@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -9,9 +10,9 @@ namespace SystemManagementApp.Controllers
     [ApiController]
     public class PagePermissionController : ControllerBase
     {
-        private readonly PagePermissionService _permissionService;
+        private readonly IPagePermissionService _permissionService;
 
-        public PagePermissionController(PagePermissionService permissionService)
+        public PagePermissionController(IPagePermissionService permissionService)
         {
             _permissionService = permissionService;
         }

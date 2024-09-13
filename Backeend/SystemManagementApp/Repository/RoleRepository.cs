@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SystemManagementApp.Data;
+using SystemManagementApp.IRepository;
 using SystemManagementApp.Model;
 
 namespace SystemManagementApp.Repository
 {
-    public class RoleRepository
+    public class RoleRepository: IRoleRepository
     {
         private readonly AppDbContext _context;
 

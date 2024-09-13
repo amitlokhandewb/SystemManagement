@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SystemManagementApp.DTOs;
+using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class EventService
+    public class EventService:IEventService
     {
-        private readonly EventRepository _eventRepository;
+        private readonly IEventRepository _eventRepository;
         private readonly Random _random;
-        private readonly DeviceTypeService _deviceTypeService;
-        private readonly EventDescriptionService _eventDescriptionService;
-        private readonly EventTypeService _eventTypeService;
-        private readonly PriorityService _priorityService;
-        private readonly PlantNameService _plantNameService;
-        private readonly UserService _userService;
+        private readonly IDeviceTypeService _deviceTypeService;
+        private readonly IEventDescritionService _eventDescriptionService;
+        private readonly IEventTypeService _eventTypeService;
+        private readonly IPriorityService _priorityService;
+        private readonly IPlantNameService _plantNameService;
+        private readonly IUserService _userService;
 
-        public EventService(EventRepository eventRepository, DeviceTypeService deviceTypeService, EventDescriptionService eventDescriptionService, EventTypeService eventTypeService, PriorityService priorityService, PlantNameService plantNameService, UserService userService)
+        public EventService(IEventRepository eventRepository, IDeviceTypeService deviceTypeService, IEventDescritionService eventDescriptionService, IEventTypeService eventTypeService, IPriorityService priorityService, IPlantNameService plantNameService, IUserService userService)
         {
             _eventRepository = eventRepository ?? throw new ArgumentNullException(nameof(eventRepository));
             _deviceTypeService = deviceTypeService;

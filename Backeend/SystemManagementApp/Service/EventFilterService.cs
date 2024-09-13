@@ -6,22 +6,24 @@ using Newtonsoft.Json;
 using Npgsql;
 using System.Data;
 using SystemManagementApp.DTOs;
+using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class EventFilterService
+    public class EventFilterService:IEventFilterService
     {
-        private readonly EventRepository _eventRepository;
-        private readonly DeviceTypeService _deviceTypeService;
-        private readonly EventDescriptionService _eventDescriptionService;
-        private readonly EventTypeService _eventTypeService;
-        private readonly PriorityService _priorityService;
-        private readonly PlantNameService _plantNameService;
-        private readonly UserService _userService;
+        private readonly IEventRepository _eventRepository;
+        private readonly IDeviceTypeService _deviceTypeService;
+        private readonly IEventDescritionService _eventDescriptionService;
+        private readonly IEventTypeService _eventTypeService;
+        private readonly IPriorityService _priorityService;
+        private readonly IPlantNameService _plantNameService;
+        private readonly IUserService _userService;
         private readonly IConfiguration _configuration;
-        public EventFilterService(EventRepository eventRepository, DeviceTypeService deviceTypeService, EventDescriptionService eventDescriptionService, EventTypeService eventTypeService, PriorityService priorityService, PlantNameService plantNameService, UserService userService, IConfiguration configuration)
+        public EventFilterService(IEventRepository eventRepository, IDeviceTypeService deviceTypeService, IEventDescritionService eventDescriptionService, IEventTypeService eventTypeService, IPriorityService priorityService, IPlantNameService plantNameService, IUserService userService, IConfiguration configuration)
         {
             _eventRepository = eventRepository;
             _deviceTypeService = deviceTypeService;

@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
+
+[ExcludeFromCodeCoverage]
 public class AuthorizeTokenAttribute : Attribute, IAuthorizationFilter
 {
     private readonly BrancaService _brancaService;

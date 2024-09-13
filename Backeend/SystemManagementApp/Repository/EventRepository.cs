@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SystemManagementApp.Data;
 using SystemManagementApp.DTOs;
+using SystemManagementApp.IRepository;
 using SystemManagementApp.Model;
 
 namespace SystemManagementApp.Repository
 {
-    public class EventRepository
+    public class EventRepository: IEventRepository
     {
         private readonly AppDbContext _dbContext;
         

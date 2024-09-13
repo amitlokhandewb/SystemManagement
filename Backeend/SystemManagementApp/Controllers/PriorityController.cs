@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Service;
 
@@ -10,9 +11,9 @@ namespace SystemManagementApp.Controllers
     [ServiceFilter(typeof(AuthorizeTokenAttribute))]
     public class PriorityController : ControllerBase
     {
-        private readonly PriorityService _priorityService;
+        private readonly IPriorityService _priorityService;
 
-        public PriorityController(PriorityService priorityService)
+        public PriorityController(IPriorityService priorityService)
         {
             _priorityService = priorityService;
         }

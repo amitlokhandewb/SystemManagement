@@ -1,15 +1,17 @@
 ﻿using SystemManagementApp.DTOs;
+using SystemManagementApp.IRepository;
+using SystemManagementApp.IServices;
 using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
 
 namespace SystemManagementApp.Service
 {
-    public class PagePermissionService
+    public class PagePermissionService: IPagePermissionService
     {
-        private readonly PagePerissionRepository _pagePerissionRepository;
-        private readonly RoleRepository _roleRepository;
+        private readonly IPagePermissionRepository _pagePerissionRepository;
+        private readonly IRoleRepository _roleRepository;
 
-        public PagePermissionService(PagePerissionRepository pagePerissionRepository, RoleRepository roleRepository)
+        public PagePermissionService(IPagePermissionRepository pagePerissionRepository, IRoleRepository roleRepository)
         {
             _pagePerissionRepository = pagePerissionRepository;
             _roleRepository = roleRepository;

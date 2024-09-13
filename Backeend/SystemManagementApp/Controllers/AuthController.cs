@@ -4,6 +4,7 @@ using SystemManagementApp.Service;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SystemManagementApp.DTOs;
+using SystemManagementApp.IServices;
 
 namespace SystemManagementApp.Controllers
 {
@@ -11,10 +12,10 @@ namespace SystemManagementApp.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly EndUserService _endUserService;
+        private readonly IEndUserService _endUserService;
         private readonly BrancaService _brancaService;
 
-        public AuthController(EndUserService endUserService, BrancaService brancaService)
+        public AuthController(IEndUserService endUserService, BrancaService brancaService)
         {
             _endUserService = endUserService;
             _brancaService = brancaService;

@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SystemManagementApp.Model
 {
+    [ExcludeFromCodeCoverage]
     public class PlantName
     {
         [Key]
