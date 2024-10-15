@@ -7,11 +7,27 @@ import { navigateToUrl } from "single-spa";
 function Appbar() {
   const [open, setOpen] = useState<Boolean>(false);
   const [username, setusername] = useState("");
+  const [role, setRole] = useState(1);
 
   useEffect(() => {
     setusername(localStorage.getItem("username"));
+    setRole(parseInt(localStorage.getItem("roleId")));
   },[]);
 
+  const rolebasedlogo = [
+    {
+      id : 1,
+      logo: 'AD'
+    },
+    {
+      id: 2,
+      logo: "MN"
+    },
+    {
+      id: 3,
+      logo: "ME"
+    }
+  ]
   const handleSignout = (e: any) => {
     localStorage.removeItem("username");
     localStorage.removeItem("Token");
@@ -63,7 +79,7 @@ function Appbar() {
           }}
           onClick={() => setOpen(!open)}
         >
-          ME
+          {rolebasedlogo.find((item) => item.id === role).logo}
         </div>
         <img
           src={logo}

@@ -49,8 +49,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@aspnet/signalr": "^1.0.27",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@microsoft/signalr": "^8.0.7",
     "@mui/material": "^5.15.21",
     "@tanstack/react-table": "^8.17.3",
     "@types/jest": "^27.0.1",

@@ -20,6 +20,8 @@ import CustomChip from "./CustomChip";
 import { CreateRandomEvent, fetchEventList } from "../Services/EventServices";
 import { Util } from "./Util";
 import { GenricINterval, getUniqueDeviceTypes } from "../Utilities/Generic";
+import { HubConnectionBuilder } from "@microsoft/signalr";
+import * as signalR from "@aspnet/signalr";
 
 function EventLayout() {
   const Uitl = Util();
@@ -57,6 +59,7 @@ function EventLayout() {
     sortKey: "dateTime",
     sortOrder: "DESC",
   });
+  const [connection, setConnection] = useState(null);
 
   const FilterrUtility = FilterUtility(
     setisfilterOPen,
@@ -134,19 +137,57 @@ function EventLayout() {
     }
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentPage === 1 && !filterActive) {
-        fetcheventList();
-      }
-    }, 11000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (currentPage === 1 && !filterActive) {
+  //       fetcheventList();
+  //     }
+  //   }, 11000);
 
-    return () => clearInterval(interval); 
-  }, [currentPage, filterActive, sort]);
+  //   return () => clearInterval(interval);
+  // }, [currentPage, filterActive, sort]);
 
   useEffect(() => {
-    GenricINterval(CreateRandomEvent, 10000);
-  }, []);
+    const newConnection = new HubConnectionBuilder()
+      .withUrl("https://localhost:7105/eventhub", {
+        skipNegotiation: true,
+        transport: signalR.HttpTransportType.WebSockets,
+      })
+      .withAutomaticReconnect()
+      .build();
+  
+    setConnection(newConnection);
+  
+    newConnection
+      .start()
+      .then(() => {
+        console.log("SignalR connected");
+        
+        newConnection.on("ReceiveEventList", (newEvent) => {
+          if (currentPage === 1 && !filterActive && sort.sortKey === "dateTime") {
+            setData(newEvent?.paginatedData);
+          }
+        });
+  
+        const intervalId = setInterval(() => {
+          newConnection.invoke("CreateRandomEventAsync", currentPage, itemsperpage)
+          .catch(err => console.error("Error calling CreateRandomEventAsync:", err));
+        }, 10000);
+  
+        return () => clearInterval(intervalId);
+  
+      })
+      .catch((error) => console.error("SignalR connection error:", error));
+  
+    return () => {
+      newConnection.stop();
+    };
+  }, [currentPage, filterActive, sort.sortKey, itemsperpage]);
+  
+
+  // useEffect(() => {
+  //   GenricINterval(CreateRandomEvent, 10000);
+  // }, []);
   const columns = visibleColumns.filter((col) => col.visible);
   return (
     <div className="event-layout">

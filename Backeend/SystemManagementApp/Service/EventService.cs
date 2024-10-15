@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.SignalR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,8 +21,9 @@ namespace SystemManagementApp.Service
         private readonly IPriorityService _priorityService;
         private readonly IPlantNameService _plantNameService;
         private readonly IUserService _userService;
+        private readonly IHubContext<EventHub> _hubContext;
 
-        public EventService(IEventRepository eventRepository, IDeviceTypeService deviceTypeService, IEventDescritionService eventDescriptionService, IEventTypeService eventTypeService, IPriorityService priorityService, IPlantNameService plantNameService, IUserService userService)
+        public EventService(IEventRepository eventRepository, IDeviceTypeService deviceTypeService, IEventDescritionService eventDescriptionService, IEventTypeService eventTypeService, IPriorityService priorityService, IPlantNameService plantNameService, IUserService userService, IHubContext<EventHub> hubContext)
         {
             _eventRepository = eventRepository ?? throw new ArgumentNullException(nameof(eventRepository));
             _deviceTypeService = deviceTypeService;
@@ -31,6 +33,7 @@ namespace SystemManagementApp.Service
             _plantNameService = plantNameService;
             _userService = userService;
             _random = new Random();
+            _hubContext = hubContext;
         }
 
         public async Task<object> GetEventsAsync(int page, int pageLimit)
@@ -144,7 +147,11 @@ namespace SystemManagementApp.Service
                 plantId = GetRandomItem(plantNames)?.plantId ?? 0,
             };
 
-            return await CreateEvents(newEvent);
+            var createdEvent = await CreateEvents(newEvent);
+
+            //await _hubContext.Clients.All.SendAsync("ReceiveEventList", await GetEventsAsync(1, 10));
+
+            return createdEvent;
         }
 
         private T GetRandomItem<T>(IEnumerable<T> items) where T : class

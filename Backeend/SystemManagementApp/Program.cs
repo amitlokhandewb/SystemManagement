@@ -2,6 +2,7 @@
     using SystemManagementApp.Data;
     using SystemManagementApp.IRepository;
 using SystemManagementApp.IServices;
+using SystemManagementApp.Model;
 using SystemManagementApp.Repository;
     using SystemManagementApp.Service;
 
@@ -11,6 +12,7 @@ using SystemManagementApp.Repository;
     var connection = builder.Configuration.GetConnectionString("DefaultConnection");
     builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connection));
     builder.Services.AddControllers();
+    builder.Services.AddSignalR();
     builder.Services.AddScoped<IDeviceTypeRepository, DeviceTypeRepository>();
     builder.Services.AddScoped<IDeviceTypeService, DeviceTypeService>();
     builder.Services.AddScoped<IEventRepository,EventRepository>();
@@ -70,6 +72,7 @@ using SystemManagementApp.Repository;
 
     app.UseHttpsRedirection();
     app.UseCors(MyAllowSpecificOrigins);
+    app.MapHub<EventHub>("/eventhub");
     app.UseAuthorization();
 
     app.MapControllers();

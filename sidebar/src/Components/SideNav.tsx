@@ -8,27 +8,7 @@ import { fetchRolemappingListById } from "../Services/RoleMappingService";
 function SideNav() {
   const roleid = localStorage.getItem("roleId");
   const [roleaccess, setRoleAccess] = React.useState([]);
-  // const Data = [
-  //   {
-  //     src: <RiAlarmWarningLine size={32} />,
-  //     title: "Maintainence Alert",
-  //     pathname: "/"
-  //   },
-  //   {
-  //     src: <GrHostMaintenance size={32} />,
-  //     title: "Maintainence Events",
-  //     pathname: "/maintainance-event"
-  //   },
-  //   ...(adminrole === "1"
-  //     ? [
-  //         {
-  //           src: <RiAdminFill size={32} />,
-  //           title: "Admin",
-  //           pathname: "/admin"
-  //         }
-  //       ]
-  //     : [])
-  // ];
+
   const fetchRoleAccesbyROleID = async(id: number) => {
     try {
       const response = await fetchRolemappingListById(id);
