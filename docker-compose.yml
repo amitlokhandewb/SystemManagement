@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  webshell:
+    build:
+      context: ./webshell
+    ports:
+      - "9000:9000"
+    command: npm start
+
+  admin:
+    build:
+      context: ./admin
+    ports:
+      - "3008:3008"
+    command: npm run start:standalone
+
+  appbar:
+    build:
+      context: ./appbar
+    ports:
+      - "3001:3001"
+    command: npm run start:standalone
+
+  assetinventory:
+    build:
+      context: ./assetinventory
+    ports:
+      - "3002:3002"
+    command: npm run start:standalone
+
+  eventlist:
+    build:
+      context: ./eventList
+    ports:
+      - "3005:3005"
+    command: npm run start:standalone
+
+  login:
+    build:
+      context: ./login
+    ports:
+      - "3006:3006"
+    command: npm run start:standalone
+
+  monitor:
+    build:
+      context: ./monitor
+    ports:
+      - "3003:3003"
+    command: npm run start:standalone
+
+  register:
+    build:
+      context: ./register
+    ports:
+      - "3007:3007"
+    command: npm run start:standalone
+
+  sidebar:
+    build:
+      context: ./sidebar
+    ports:
+      - "3004:3004"
+    command: npm run start:standalone
